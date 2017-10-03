@@ -1,5 +1,21 @@
 
 # Goroutine
+Bài viết:
+[Concurrency and Parallelism in Golang](https://medium.com/@tilaklodha/concurrency-and-parallelism-in-golang-5333e9a4ba64)
+
+Tìm hiểu về Concurrent và Parallel:
+
+- Định nghĩa và sự khác biệt
+
+- Kiến trúc từng thành phần
+
+[Link1](https://kipalog.com/posts/7-concurrency-models-in-seven-week--phan-1)
+
+[Link2](http://thachleblog.com/phan-biet-parallelism-va-concurrency/)
+
+[Concurrency Programming Guide](https://viblo.asia/p/concurrency-programming-guide-63vKjpYdl2R)
+
+
 
 ***1. Check number goroutine is running***
 
