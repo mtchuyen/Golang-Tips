@@ -16,6 +16,26 @@ Tìm hiểu về Concurrent và Parallel:
 [Concurrency Programming Guide](https://viblo.asia/p/concurrency-programming-guide-63vKjpYdl2R)
 
 
+### Channel
+
+Channel là tính năng cho phép 2 goroutine giao tiếp/trao đổi dữ liệu với nhau.
+
+***Điều hướng channel***
+
+[Source](http://phocode.com/go/go-lap-trinh-go/go-concurrency/)
+
+Chúng ta có thể quy định channel chỉ được phép đọc hoặc chỉ được phép ghi dữ liệu vào đó. Ví dụ:
+
+> func pinger(c ***chan<-*** string)
+
+Dòng code trên quy định channel c chỉ được truyền ***dữ liệu vào***.
+
+> func printer(c ***<-chan*** string)
+
+Dòng code trên quy định channel c chỉ được phép ***đọc dữ liệu***.
+
+Nếu không quy định hướng đi của channel thì mặc định channel sẽ được phép vừa đọc vừa ghi.
+
 
 ***1. Check number goroutine is running***
 
