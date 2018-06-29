@@ -63,3 +63,23 @@ Chi tiết bài viết ở đây: [Golang embedded type - Kế thừa trong Go](
 
 # Golang Powered Robotics
 https://gobot.io/: Gobot is a framework for robots, drones, and the Internet of Things (IoT), written in the Go programming language
+
+# Best Golang Books
+- The Go Programming Language (advanced programmers)
+> This is maybe one of the most complete books about go language. It covers the basics and then goes deeper in lower levels. The downside of this book is that it don’t cover the higher level of the language, like web.
+If you want to master this language it’s a good choice to buy.
+
+- Go in Practice: Includes 70 Techniques
+> It approaches a more higher level of this language but also gives good foundations to be a go programmer. It covers web applications development, micro services and even deployment.
+A good solution for the developer that want to use go for webapplications.
+
+- Go Web Programming
+> This book is more oriented and specific to web development. If you intend to build apis, develop full stack applications and understand how go fits exactly in this world, this book is an excellent choice.
+If you want to master web development this is the book.
+
+- Concurrency in Go: Tools and Techniques for Developers
+> Concurrency is one of the most appealing features in go. Although the simplicity of concurrency primitives in go, building more complex things requires some knowledge and practice.
+If you want to master concurrency go for this one.
+
+- Go Programming Blueprints — Second Edition
+> For me this is the go programming bible. If you read this book, you will have the necessary tool to build massive applications with go. Besides that, Mat Ryer is one of the most enthusiastic voices in go community.
