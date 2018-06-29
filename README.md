@@ -61,6 +61,12 @@ func main() {
 ```
 Chi tiết bài viết ở đây: [Golang embedded type - Kế thừa trong Go](https://techmaster.vn/posts/34682/golang-embedded-type-ke-thua-trong-go)
 
+
+# Golang Concepts
+
+https://medium.com/jexia/master-the-world-of-golang-issue-1-4c4c3732e13f
+
+
 # Golang Powered Robotics
 https://gobot.io/: Gobot is a framework for robots, drones, and the Internet of Things (IoT), written in the Go programming language
 
