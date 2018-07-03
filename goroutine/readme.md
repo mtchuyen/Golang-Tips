@@ -13,6 +13,9 @@ Tìm hiểu về Concurrent và Parallel:
 
 [Link2](http://thachleblog.com/phan-biet-parallelism-va-concurrency/)
 
+[Do not communicate by sharing memory. Instead, share memory by communicating](http://www.minaandrawos.com/2015/12/06/concurrency-in-golang/)
+
+
 [Concurrency Programming Guide](https://viblo.asia/p/concurrency-programming-guide-63vKjpYdl2R)
 
 
