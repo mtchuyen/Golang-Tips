@@ -17,7 +17,7 @@ Nếu để file `main.go` ở trong root path của project thì có đặc đi
 
 to fix this is to simply use a ***cmd*** directory in my project where each of its subdirectories is an application binary.
 
-```
+```go
 adder/
   adder.go
   cmd/
@@ -66,3 +66,4 @@ func main() {
   // Etc.
 }
 ```
+Với kiểu khai báo biến MyDB là `struct` giúp việc truyền biến dễ dàng hơn.
