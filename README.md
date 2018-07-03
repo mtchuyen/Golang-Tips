@@ -66,6 +66,13 @@ Chi tiết bài viết ở đây: [Golang embedded type - Kế thừa trong Go](
 
 https://medium.com/jexia/master-the-world-of-golang-issue-1-4c4c3732e13f
 
+## A Class Factory in Golang (Google Go)
+
+http://www.minaandrawos.com/2014/09/25/class-factory-in-golang-google-go/
+
+## Auto-Scaling and Self-Defensive Services in Golang
+https://dzone.com/articles/auto-scaling-and-self-defensive-services-in-golang-1
+
 
 # Golang Powered Robotics
 https://gobot.io/: Gobot is a framework for robots, drones, and the Internet of Things (IoT), written in the Go programming language
