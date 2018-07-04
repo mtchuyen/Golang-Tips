@@ -100,6 +100,9 @@ https://dzone.com/articles/auto-scaling-and-self-defensive-services-in-golang-1
 
 https://deferpanic.com/blog/understanding-golang-memory-usage/
 
+## Integration of a Go service with systemd
+[1](https://vincent.bernat.im/en/blog/2017-systemd-golang), [2](https://vincent.bernat.im/en/blog/2018-systemd-golang-socket-activation)
+
 # Golang Powered Robotics
 https://gobot.io/: Gobot is a framework for robots, drones, and the Internet of Things (IoT), written in the Go programming language
 
