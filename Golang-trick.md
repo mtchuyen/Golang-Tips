@@ -72,3 +72,6 @@ Với kiểu khai báo biến MyDB là `struct` giúp việc truyền biến d�
 
 https://segment.com/blog/5-advanced-testing-techniques-in-go/
 
+## Optimising Go allocations using pprof
+
+https://www.robustperception.io/optimising-go-allocations-using-pprof/
