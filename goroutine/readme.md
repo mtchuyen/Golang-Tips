@@ -78,6 +78,7 @@ Tìm hiểu về Concurrent và Parallel:
 
 [Concurrency Programming Guide](https://viblo.asia/p/concurrency-programming-guide-63vKjpYdl2R)
 
+[Pool Go Routines To Process Task Oriented Work](https://www.ardanlabs.com/blog/2013/09/pool-go-routines-to-process-task.html)
 
 ### Channel
 
