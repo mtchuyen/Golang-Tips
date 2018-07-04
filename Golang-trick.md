@@ -75,3 +75,9 @@ https://segment.com/blog/5-advanced-testing-techniques-in-go/
 ## Optimising Go allocations using pprof
 
 https://www.robustperception.io/optimising-go-allocations-using-pprof/
+
+## A Makefile for your Go project
+
+https://vincent.bernat.im/en/blog/2017-makefile-build-golang
+
+
