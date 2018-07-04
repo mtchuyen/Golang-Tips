@@ -1,5 +1,30 @@
 
 # Goroutine
+
+## Concurrency
+***Concurrency***:
+- Concurrency trong một chương trình là khi chúng ta cho phép chạy nhiều hơn một công việc (task) một cách đồng thời.
+- Concurrency không phải là Parallelism
+- Cocurrency đi kèm hai khái niệm cơ bản: goroutines và channels
+
+***Goroutine***:
+- Một goroutine là một hàm mà có thể chạy *đồng thời* với các hàm khác kể cả hàm *main*, nhưng lại phụ thuộc hàm *main*: nếu *main* kết thúc thì hàm đó cũng bị cưỡng bức kết thúc (terminate).
+- Goroutines được xem như như thread nhưng nhẹ hơn, tuy nhiên nó không phải là một tiến trình(process) hay là thread của hệ thống(OS).
+- Lý thuyết hoạt động goroutines dựa trên sự chia sẻ vùng nhớ.
+- Goroutines rất rẻ. Một goroutine được tạo ra chỉ tốn 2KB trong stack, và khi chạy xong bị huỷ bởi runtime. Chúng ta có thể sử dụng goroutines thoải mái mà không phải lo nghĩ về việc tốn kém bộ nhớ. 
+- 
+## Goroutine:
+### Khai báo:
+
+Sử dụng bằng cách thêm keyword `go` trước một hàm. 
+```go
+go say("hello")
+```
+Chúng ta có thể define số goroutines chạy cùng lúc tối đa bằng khai báo:
+```
+export GOMAXPROCS=100
+```
+
 Bài viết:
 [Concurrency and Parallelism in Golang](https://medium.com/@tilaklodha/concurrency-and-parallelism-in-golang-5333e9a4ba64)
 
@@ -58,3 +83,5 @@ func (cg CountWG) Done() {
   cg.WaitGroup.Done()
 }
 ```
+# Referral:
+- Lê Ngọc Thạch, [Concurrency trong Go Lang](https://devblog.dwarvesf.com/post/concurrency/)
