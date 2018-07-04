@@ -9,6 +9,8 @@
 
 ## NATS, NAT-IO
 
+[Building messaging in Go network clients](https://www.oreilly.com/ideas/building-messaging-in-go-network-clients)
+
 ## Websocket
 
 ## Database
@@ -27,4 +29,9 @@
 
 ### NonSQL
 
+### Couchbase 
+[Developing a Go with Couchbase Application](https://blog.couchbase.com/create-continuous-deployment-pipeline-golang-jenkins/)
 
+
+## Microservices
+[Microservices in Golang](https://ewanvalentine.io/microservices-in-golang-part-1/)
