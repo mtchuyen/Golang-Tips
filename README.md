@@ -99,6 +99,10 @@ https://dzone.com/articles/auto-scaling-and-self-defensive-services-in-golang-1
 # Golang Powered Robotics
 https://gobot.io/: Gobot is a framework for robots, drones, and the Internet of Things (IoT), written in the Go programming language
 
+# Tiền điện tử
+
+https://vicrypto.org/
+
 # Best Golang Books
 - The Go Programming Language (advanced programmers)
 > This is maybe one of the most complete books about go language. It covers the basics and then goes deeper in lower levels. The downside of this book is that it don’t cover the higher level of the language, like web.
