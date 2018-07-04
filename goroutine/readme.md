@@ -1,5 +1,7 @@
 <note: đổi thư mục thành Concurrency>
 ## Concurrency
+http://runikitkat.com/post/go-routine-under-the-hood/
+
 ***Concurrency***:
 - Concurrency trong một chương trình là khi chúng ta cho phép chạy nhiều hơn một công việc (task) một cách đồng thời.
 - Concurrency không phải là Parallelism
