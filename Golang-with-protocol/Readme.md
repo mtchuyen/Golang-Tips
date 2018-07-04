@@ -10,3 +10,6 @@
 ## Protocol buffers (Protobuf)
 [A practical guide to protocol buffers (Protobuf) in Go (Golang)](http://www.minaandrawos.com/2014/05/27/practical-guide-protocol-buffers-protobuf-go-golang/)
 
+[Implementing gRPC service in Golang](https://toolbox.kurio.co.id/implementing-grpc-service-in-golang-afb9e05c0064)
+
+
