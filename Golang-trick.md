@@ -67,3 +67,8 @@ func main() {
 }
 ```
 Với kiểu khai báo biến MyDB là `struct` giúp việc truyền biến dễ dàng hơn.
+
+## 5 advanced testing techniques in Go
+
+https://segment.com/blog/5-advanced-testing-techniques-in-go/
+
