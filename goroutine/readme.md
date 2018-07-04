@@ -1,6 +1,4 @@
-
-# Goroutine
-
+<note: đổi thư mục thành Concurrency>
 ## Concurrency
 ***Concurrency***:
 - Concurrency trong một chương trình là khi chúng ta cho phép chạy nhiều hơn một công việc (task) một cách đồng thời.
@@ -12,7 +10,13 @@
 - Goroutines được xem như như thread nhưng nhẹ hơn, tuy nhiên nó không phải là một tiến trình(process) hay là thread của hệ thống(OS).
 - Lý thuyết hoạt động goroutines dựa trên sự chia sẻ vùng nhớ.
 - Goroutines rất rẻ. Một goroutine được tạo ra chỉ tốn 2KB trong stack, và khi chạy xong bị huỷ bởi runtime. Chúng ta có thể sử dụng goroutines thoải mái mà không phải lo nghĩ về việc tốn kém bộ nhớ. 
-- 
+
+***Channels***:
+- Channel sinh ra dùng để giao tiếp giữa 2 goroutines, bao gồm gửi và nhận dữ liệu.
+- Channel là reference type.
+- Về cơ bản, concept của channel là “typed pipes”. Nó tạo một đường ống liên kết giữa 2 goroutines, chúng ta có thể gửi các object phức tạp qua channel.
+- Channel có thể dùng cho synchronization.
+
 ## Goroutine:
 ### Khai báo:
 
@@ -24,8 +28,37 @@ Chúng ta có thể define số goroutines chạy cùng lúc tối đa bằng kh
 ```
 export GOMAXPROCS=100
 ```
+### Sử dụng:
 
-Bài viết:
+## Channel
+### Khai báo:
+
+Chúng ta tạo channel bằng ***make***:
+```go
+chInt := make(chan int)
+chPully := make(chan Pully) // Pully là interface
+```
+### Sử dụng:
+-  Để gửi data thông qua channel:
+```go
+chInt <- 3
+```
+- Để nhận data:
+```go
+x := chanInt
+or 
+x := <- ch
+```
+- Kiểm tra channel đóng
+```go
+_, ok = <- c // ok bằng true nếu c còn mở
+```
+- Close một channel
+```go
+close(c)
+```
+
+## Bài viết:
 [Concurrency and Parallelism in Golang](https://medium.com/@tilaklodha/concurrency-and-parallelism-in-golang-5333e9a4ba64)
 
 Tìm hiểu về Concurrent và Parallel:
