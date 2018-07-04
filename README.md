@@ -121,6 +121,7 @@ If you want to master concurrency go for this one.
 
 # Dạy Golang bằng tiếng Việt
 - Lập trình Go: https://phocode.com/blog/2016/08/26/go-con-tro/
+- https://techblog.vn/tags/golang
 
 # Referral:
 - [Cách sử dụng package `sync` của golang](https://kipalog.com/posts/Cach-su-dung-package--sync--cua-golang)
