@@ -92,6 +92,20 @@ https://medium.com/jexia/master-the-world-of-golang-issue-1-4c4c3732e13f
 
 http://www.minaandrawos.com/2014/09/25/class-factory-in-golang-google-go/
 
+https://matthewbrown.io/2016/01/23/factory-pattern-in-golang/
+
+Chúng ta xem xét 1 interface có tên là `AbstractFactory`:
+
+```go
+type AbstractFactory interface {
+        CreateMyLove()
+}
+```
+Ở đây có 2 khái niệm:
+- Interface `AbstractFactory` có method là `CreateMyLove()`
+- `CreateMyLove()` được gọi là 1 ***factory method***.
+
+
 ## Auto-Scaling and Self-Defensive Services in Golang
 
 https://dzone.com/articles/auto-scaling-and-self-defensive-services-in-golang-1
