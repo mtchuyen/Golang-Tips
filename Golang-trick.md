@@ -110,7 +110,7 @@ Tham khảo [link](https://blog.learngoprogramming.com/golang-variadic-funcs-how
 numbers := []int{1, 2, 3}
 f(numbers...)
 ```
-Như vậy dùng dấu 3 chấm `"..."` trong biến ``numbers...``` (dạng slice) sẽ phân rã biến ```numbers``` thành các ```number```
+Như vậy dùng dấu 3 chấm `"..."` trong biến ```numbers...``` (dạng slice) sẽ phân rã biến ```numbers``` thành các ```number```
 
 
 ## 5 advanced testing techniques in Go
