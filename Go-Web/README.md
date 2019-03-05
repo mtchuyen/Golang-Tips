@@ -50,3 +50,10 @@ Thuộc tính `action="/save/{{.Title}}"` có nghĩa là khi bấm nút `submit`
 
 https://blog.meshstudio.io/serving-up-html-with-go-92f767856daf
 
+
+### Referral
+[1] https://gowebexamples.com/http-server/
+[2] https://hackernoon.com/golang-template-1-bcb690165663
+[3] https://viblo.asia
+[4] http://www.cihanozhan.com/building-login-and-register-application-with-golang/
+[5] https://mschoebel.info/2014/03/09/snippet-golang-webapp-login-logout/
