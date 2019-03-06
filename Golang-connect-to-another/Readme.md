@@ -5,7 +5,10 @@
 
 ## RabbitMQ
 
+[Work queue with Go and RabbitMQ](https://medium.com/@masnun/work-queue-with-go-and-rabbitmq-b8c295cde861)
+
 [Message Queues in Golang Via RabbitMQ](https://medium.com/@agiratech/message-queues-in-golang-via-rabbitmq-a3be7e426ad4)
+
 
 ## NATS, NAT-IO
 
