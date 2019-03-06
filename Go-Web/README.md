@@ -50,6 +50,9 @@ Thuộc tính `action="/save/{{.Title}}"` có nghĩa là khi bấm nút `submit`
 
 https://blog.meshstudio.io/serving-up-html-with-go-92f767856daf
 
+### Web Service Architecture for Golang Developers
+https://medium.com/@boobo94/web-service-architecture-for-golang-developers-a4147b8141ff
+
 
 ### Referral
 [1] https://gowebexamples.com/http-server/
