@@ -41,6 +41,18 @@ func main() {
     t.Execute(os.Stdout, p) //merge template ‘t’ with content of ‘p’
 }
 ```
+#### IF-ELSE
+#### PRINT
+#### DEFINE: a template Set
+```
+{{define "content1"}}
+<p>content 1</p>
+{{end}}
+```
+Key points to note:
+* each template is enclosed within {{define}} and {{end}}
+* each template is given a unique name - repeating the same name will cause a panic. Ex: "content1"
+* Dùng 1 template khác bên trong 1 template hiện hành - using `{{template "template name"}}`
 
 ### Referral
 [1] http://golangtutorials.blogspot.com/2011/06/go-templates.html
