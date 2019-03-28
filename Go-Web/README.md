@@ -51,8 +51,22 @@ Thuộc tính `action="/save/{{.Title}}"` có nghĩa là khi bấm nút `submit`
 https://blog.meshstudio.io/serving-up-html-with-go-92f767856daf
 
 ### Web Service Architecture for Golang Developers
+
 https://medium.com/@boobo94/web-service-architecture-for-golang-developers-a4147b8141ff
 
+### Learning Golang through WebAssembly
+
+[Learning Golang through WebAssembly](https://www.aaron-powell.com/posts/2019-02-05-golang-wasm-2-writing-go/)
+
+https://dev.to/hajimehoshi/gopherjs-vs-webassembly-for-go-148m
+
+[Some notes about the upcoming WebAssembly support in Go](https://blog.owulveryck.info/2018/06/08/some-notes-about-the-upcoming-webassembly-support-in-go.html)
+
+https://matthewphillips.info/programming/wasm-golang-ce.html
+
+https://www.sitepen.com/blog/compiling-go-to-webassembly/
+
+https://mycodesmells.com/post/building-wasm-applications-in-go-1-11
 
 ### Referral
 [1] https://gowebexamples.com/http-server/
