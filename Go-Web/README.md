@@ -50,6 +50,20 @@ Thuộc tính `action="/save/{{.Title}}"` có nghĩa là khi bấm nút `submit`
 
 https://blog.meshstudio.io/serving-up-html-with-go-92f767856daf
 
+
+### Automagical HTTPS with Docker and Go
+
+***Guide https free by Go***
+
+- https://github.com/kjk/go-cookbook/tree/master/free-ssl-certificates
+- https://blog.kowalczyk.info/article/Jl3G/https-for-free-in-go.html
+
+And simpler:
+
+- https://medium.com/weareservian/automagical-https-with-docker-and-go-4953fdaf83d2
+
+
+
 ### Web Service Architecture for Golang Developers
 
 https://medium.com/@boobo94/web-service-architecture-for-golang-developers-a4147b8141ff
