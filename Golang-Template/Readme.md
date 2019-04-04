@@ -59,6 +59,38 @@ Return:
 
 > t1.html
 
+Tuy nhiên nếu 2 phương thức `PraseFiles` và `ParseGlob` mà có các định nghĩa (define) lồng nhau thì Golang sẽ hiểu là đó chỉ là 1 ***define*** và thực hiện phương thức `ExecuteTemplate` lần lượt từ cha đến con
+```
+//layout.html
+{{ define "layout" }}
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Go Web Programming</title>
+  </head>
+  <body>
+    {{ template "content" }}
+  </body>
+</html>
+```
+
+và
+
+```
+//content.html
+{{ end }}
+{{ define "content" }}
+Hello World!
+{{ end }}
+```
+
+Thì khi thực hiện
+```
+t, _ = template.ParseFiles("layout.html", "content.html")
+t.ExecuteTemplate(w, "layout", "")
+```
+Golang sẽ parser cả 2 `define` là *layout* và *content*
+
 
 ### Executing Templates
 
@@ -126,5 +158,9 @@ Key points to note:
 [3] series golang template: ttps://www.calhoun.io/intro-to-templates-p1-contextual-encoding/
 
 [4] series: [1](https://hackernoon.com/golang-template-1-bcb690165663), [2](https://hackernoon.com/golang-template-2-template-composition-and-how-to-organize-template-files-4cb40bcdf8f6)
+
+[5] https://curtisvermeeren.github.io/2017/09/14/Golang-Templates-Cheatsheet
+
+[6] http://goinbigdata.com/example-of-using-templates-in-golang/
 
 
