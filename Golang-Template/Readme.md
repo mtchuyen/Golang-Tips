@@ -35,14 +35,14 @@ if t == nil {
 
 ### Parsing Templates
 
-- ***template.Parse()***: để parse string
+- ***template.Parse()***  để parse string
 ```
 t, _ = t.Parse(tmpl) // parsing of template string: tmpl is a string
 ```
 
-- ***template.ParseFiles()***: Giúp parser nhiều file, với các filename được chỉ định (tham số truyền vào) (nó là 1 `variadic function`)
+- ***template.ParseFiles()***  Giúp parser nhiều file, với các filename được chỉ định (tham số truyền vào) (nó là 1 `variadic function`)
 
-- ***template.ParseGlob()***:  sử dụng `pattern matching` giúp parser tất cả các file có cùng định dạng.
+- ***template.ParseGlob()***   sử dụng `pattern matching` giúp parser tất cả các file có cùng định dạng.
 
 Cả 3 phương thức trên đều có thể dùng hàm `Execute` để render 1 template, ngoài ra phương thức ***ParseFiles*** còn có thể dùng hàm `ExecuteTemplate` để render.
 
@@ -62,13 +62,13 @@ Return:
 
 ### Executing Templates
 
-- ***template.Execute()***:
+- ***template.Execute()***
 
 ```
 t.Execute(w, "Asit") // --> luôn lấy template name đầu tiên của t để parser và print ra biến w
 ```
 
-- ***template.ExecuteTemplate()***:
+- ***template.ExecuteTemplate()***
 
 ```
 t.ExecuteTemplate(w, "t2.html", "Golang") // --> Lấy template name có tên là t2.html của t để parser và print
