@@ -1,6 +1,7 @@
 package main
 
 import (
+  "fmt"
   "html/template"
   "net/http"
 )
@@ -20,10 +21,27 @@ func handlerView(w http.ResponseWriter, r *http.Request) {
   t.Execute(w, "Hello World!")
 }
 
+func handlerT1(w http.ResponseWriter, r *http.Request) {
+	t, _ := template.ParseFiles("t1.html", "t2.html")
+	tpName := t.Name()
+	fmt.Println(tpName)
+	t.Execute(w, "Asit")
+}
+
+func handlerT2(w http.ResponseWriter, r *http.Request) {
+	t, _ := template.ParseFiles("t1.html", "t2.html")
+	tpName := "t2.html"
+	fmt.Println(tpName)
+	t.ExecuteTemplate(w, tpName, "Golang")
+}
+
 func main() {
   server := http.Server{
     Addr: "127.0.0.1:8080",
   }
   http.HandleFunc("/view", handlerView)
+  http.HandleFunc("/t1", handlerT1)
+	http.HandleFunc("/t2", handlerT2)
+  
   server.ListenAndServe()
 }
