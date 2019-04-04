@@ -5,6 +5,8 @@ Các web service thường phản hồi lại 1 request với dữ liệu (data)
 
 Trong Golang, thư viện ***template*** và các phương thức `Parse`, `ParseFile`, `Execute` để  lấy nội dung 1 template từ 1 chuỗi hoặc files, sau đó thực hiện merge các nội dung với nhau.
 
+Đọc [2] (hoặc [link](http://golang-examples.tumblr.com/post/87553422434/template-and-associated-templates)) để hiểu về cách thức hoạt động của template.
+
 ### template packages
 
 Có 2 thư viện quan trọng:
@@ -12,6 +14,22 @@ Có 2 thư viện quan trọng:
 - https://golang.org/pkg/html/template/
 
 Các rules, schema sử dụng trong template (có thể được trình bày ở các phần dưới) đều được mô tả ở đây
+
+### Template Names
+
+Tất cả các template đều phải có ***name***
+
+- Template name được định nghĩa bằng `template.New()`
+```
+ t := template.New("main1") //name of the template is main1
+```
+- Templates có thể được tìm kiếm bởi ***Name*** khi sử dụng func `template.Lookup()`.
+```
+t = t.Lookup("ROOT") // <-- here
+if t == nil {
+    return fmt.Errorf("ROOT template not found in %v", set)
+}
+```
 
 ### Các phương thức
 - ***Parse***
@@ -66,5 +84,7 @@ Key points to note:
 
 [1] http://golangtutorials.blogspot.com/2011/06/go-templates.html
 
-[2] series golang template: ttps://www.calhoun.io/intro-to-templates-p1-contextual-encoding/
+[2] Một bài viết giải thích hoạt động của template: http://golang-examples.tumblr.com/post/87553422434/template-and-associated-templates
+
+[3] series golang template: ttps://www.calhoun.io/intro-to-templates-p1-contextual-encoding/
 
