@@ -34,6 +34,14 @@ Hàm `http.Error` gửi một mã phản hồi HTTP được chỉ định (tron
 
 Trong nghiệp vụ `saveHandler`, sau khi xử lý dữ liệu và thực hiện việc lưu dữ liệu, cần chuyển hướng về page có nội dung vừa `save`, bằng cách thực hiện chỉ hướng `http.Redirect`.
 
+#### Assets and Files (Static files)
+
+```
+	fs := http.FileServer(http.Dir("assets/"))
+	http.Handle("/static/", http.StripPrefix("/static/", fs))
+```
+Ví dụ: Nếu có query: `example.com/static/soha.gif` vào thư mục `assets/` lấy file `soha.gif`.
+
 #### Form action
 
 ```
