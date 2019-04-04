@@ -30,14 +30,51 @@ if t == nil {
     return fmt.Errorf("ROOT template not found in %v", set)
 }
 ```
+- Template name can be queried(`template.Name()`)
+- 
 
-### Các phương thức
-- ***Parse***
-- ***ParseFiles***: Giúp parser nhiều file, với các filename được chỉ định (tham số truyền vào)
-- ***ParseGlob***: Giúp parser tất cả các file có cùng định dạng
+### Parsing Templates
 
-Cả 3 phương thức trên đều có thể dùng hàm `Execute` để render 1 template, ngoài ra phương thức ParseFiles còn có thể dùng hàm `ExecuteTemplate` để render.
+- ***template.Parse()***: để parse string
+```
+t, _ = t.Parse(tmpl) // parsing of template string: tmpl is a string
+```
 
+- ***template.ParseFiles()***: Giúp parser nhiều file, với các filename được chỉ định (tham số truyền vào) (nó là 1 `variadic function`)
+
+- ***template.ParseGlob()***:  sử dụng `pattern matching` giúp parser tất cả các file có cùng định dạng.
+
+Cả 3 phương thức trên đều có thể dùng hàm `Execute` để render 1 template, ngoài ra phương thức ***ParseFiles*** còn có thể dùng hàm `ExecuteTemplate` để render.
+
+2 phương thức `PraseFiles` và `ParseGlob` luôn trả về `tempale name` đầu tiên, nên nếu muốn dùng `template name` về sau thì cần dùng phương thức `ExecuteTemplate`. Xem ví dụ `helloworld.go` để hiểu chi tiết hơn.
+
+> The returned `template name` will be the first file in PraseFiles() and the first file matched in the regular expression in ParseGlob().
+
+```
+t, _ := template.ParseFiles("t1.html", "t2.html")
+fmt.Println(t.Name())
+```
+
+Return:
+
+> t1.html
+
+
+### Executing Templates
+
+- ***template.Execute()***:
+
+```
+t.Execute(w, "Asit") // --> luôn lấy template name đầu tiên của t để parser và print ra biến w
+```
+
+- ***template.ExecuteTemplate()***:
+
+```
+t.ExecuteTemplate(w, "t2.html", "Golang") // --> Lấy template name có tên là t2.html của t để parser và print
+```
+
+`template.ExecuteTemplate()` calls `template.Execute()` internally. It basically looks for the named template and executes that one.
 
 ### Field substitution - {{.FieldName}}
 Để đưa nội dung của 1 field vào trong template thì Golang định nghĩa 1 giá trị gọi là `trường thay thế (Field substitution)` được định nghĩa gồm:
@@ -87,4 +124,7 @@ Key points to note:
 [2] Một bài viết giải thích hoạt động của template: http://golang-examples.tumblr.com/post/87553422434/template-and-associated-templates
 
 [3] series golang template: ttps://www.calhoun.io/intro-to-templates-p1-contextual-encoding/
+
+[4] series: [1](https://hackernoon.com/golang-template-1-bcb690165663), [2](https://hackernoon.com/golang-template-2-template-composition-and-how-to-organize-template-files-4cb40bcdf8f6)
+
 
