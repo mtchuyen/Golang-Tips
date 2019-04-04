@@ -14,4 +14,10 @@
 
 [Implementing gRPC service in Golang](https://toolbox.kurio.co.id/implementing-grpc-service-in-golang-afb9e05c0064)
 
+https://medium.com/@dismetacar/protocol-buffers-grpc-d8935a8480f7
+
+https://medium.com/pantomath/how-we-use-grpc-to-build-a-client-server-system-in-go-dd20045fa1c2
+
+https://velotio.com/blog/2019/3/25/server-side-stack-golang-protobuf-grpc
+
 
