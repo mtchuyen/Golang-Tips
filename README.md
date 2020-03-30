@@ -83,6 +83,10 @@ Chi tiết bài viết ở đây: [Golang embedded type - Kế thừa trong Go](
 
 ***sync.Pool***:
 
+### package `signal`
+
+https://medium.com/a-journey-with-go/go-gsignal-master-of-signals-329f7ff39391
+
 
 # Golang Concepts
 
@@ -116,6 +120,7 @@ https://deferpanic.com/blog/understanding-golang-memory-usage/
 
 ## Integration of a Go service with systemd
 [1](https://vincent.bernat.im/en/blog/2017-systemd-golang), [2](https://vincent.bernat.im/en/blog/2018-systemd-golang-socket-activation)
+
 
 # Golang Powered Robotics
 https://gobot.io/: Gobot is a framework for robots, drones, and the Internet of Things (IoT), written in the Go programming language
