@@ -119,5 +119,7 @@ func (cg CountWG) Done() {
   cg.WaitGroup.Done()
 }
 ```
+## Managing Groups of Goroutines in Go
+[Managing Groups of Goroutines in Go](https://medium.com/swlh/managing-groups-of-gorutines-in-go-ee7523e3eaca)
 # Referral:
 - Lê Ngọc Thạch, [Concurrency trong Go Lang](https://devblog.dwarvesf.com/post/concurrency/)
