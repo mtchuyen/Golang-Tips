@@ -20,4 +20,5 @@ https://medium.com/pantomath/how-we-use-grpc-to-build-a-client-server-system-in-
 
 https://velotio.com/blog/2019/3/25/server-side-stack-golang-protobuf-grpc
 
+[Structuring repositories with protocol buffers](https://dev.to/davidsbond/golang-structuring-repositories-with-protocol-buffers-3012)
 
