@@ -24,6 +24,9 @@ parts = map[int]int{...}
 fmt.Printf("%T: %s\n", str, reflect.TypeOf(str).Kind())
 ```
 
+## Interface
+https://research.swtch.com/interfaces
+
 
 ## Slice
 
