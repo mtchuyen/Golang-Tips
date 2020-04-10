@@ -9,7 +9,7 @@
 ***Advance***:
 - https://yourbasic.org/golang/maps-explained/: bài viết có tính học thuật liên quan tới [kỹ thuật hash](https://yourbasic.org/algorithms/hash-tables-explained/)
 - [Golang Maps: Not safe for concurrent use](https://golangbyexample.com/go-maps-concurrency/)
-- [SOLVED: Golang fatal error: concurrent map writes]
+- [SOLVED: Golang fatal error: concurrent map writes](https://ashish.one/blogs/fatal-error-concurrent-map-writes/)
 
 #### Check type of map:
 ***Lib***:
