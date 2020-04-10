@@ -5,6 +5,7 @@
 - https://www.callicoder.com/golang-maps/
 - https://www.geeksforgeeks.org/golang-maps/
 - https://www.golangprograms.com/go-language/golang-maps.html
+- [Go: Concurrency Access with Maps — Part III](https://medium.com/a-journey-with-go/go-concurrency-access-with-maps-part-iii-8c0a0e4eb27e)
 
 ***Advance***:
 - https://yourbasic.org/golang/maps-explained/: bài viết có tính học thuật liên quan tới [kỹ thuật hash](https://yourbasic.org/algorithms/hash-tables-explained/)
