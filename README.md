@@ -1,7 +1,9 @@
 # Golang-Tips
 Tips in Golang programming
-### https://go.googlesource.com/proposal/+/master/design
+### Go design
+
 https://go.googlesource.com/proposal/+/master/design
+
 
 ### Golang embedded type
 ***Embedded Type*** là khai báo một type nằm trong một type khác nhưng ***không khai báo tên***, trường mà không khai báo tên còn được gọi là ***embedded field***. 
