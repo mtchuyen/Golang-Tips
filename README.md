@@ -37,6 +37,9 @@ type AbstractFactory interface {
 
 https://dzone.com/articles/auto-scaling-and-self-defensive-services-in-golang-1
 
+### Server-Side Tracking Without Cookies In Go
+https://medium.com/dev-genius/server-side-tracking-without-cookies-in-go-44f3703331ba
+
 ## Understanding Go Lang Memory Usage
 
 https://deferpanic.com/blog/understanding-golang-memory-usage/
