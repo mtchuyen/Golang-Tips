@@ -53,6 +53,12 @@ Ví dụ: Nếu có query: `example.com/static/soha.gif` vào thư mục `assets
 
 Thuộc tính `action="/save/{{.Title}}"` có nghĩa là khi bấm nút `submit` (với tên là `Save`) thì sẽ gọi đến handler *`save/<<title>>`*
 
+### Benchmark
+
+#### hey is a tiny program that sends some load to a web application.
+
+Link: https://github.com/rakyll/hey/
+
 
 ### Serving up HTML with Go
 
