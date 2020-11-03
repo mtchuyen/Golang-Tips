@@ -1,5 +1,18 @@
 ## interface
 
+### Type: đại diện cho kiểu giá trị mà chúng ta sử dụng. 
+
+***Tác dụng:***
+
+- Nhờ có Type mà các compiler có thể xác định được một số lỗi trong quá trình compile.
+
+***Type assertion:***
+
+- assertion: sự xác nhận
+- là một cách để thông báo cho compiler biết kiểu của đối tượng mà mình sử dụng.
+- Nói ngắn gọn là ép kiểu cho đối tượng.
+
+
 ### Type assertions
 
 ***Type assertion*** cung cấp tính năng kiểm tra kiểu dữ liệu.
