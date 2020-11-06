@@ -56,6 +56,10 @@ https://gobot.io/: Gobot is a framework for robots, drones, and the Internet of 
 https://vicrypto.org/
 
 # Best Golang Books
+
+### [Awesome Go Books](https://github.com/dariubs/GoBooks)
+
+
 - The Go Programming Language (advanced programmers)
 > This is maybe one of the most complete books about go language. It covers the basics and then goes deeper in lower levels. The downside of this book is that it don’t cover the higher level of the language, like web.
 If you want to master this language it’s a good choice to buy.
@@ -74,6 +78,40 @@ If you want to master concurrency go for this one.
 
 - Go Programming Blueprints — Second Edition
 > For me this is the go programming bible. If you read this book, you will have the necessary tool to build massive applications with go. Besides that, Mat Ryer is one of the most enthusiastic voices in go community.
+
+# awesomeness
+
+## Generated awesomeness
+
+[Collection of useful resources on Bioinformatics, data science, machine learning, programming language (Python, Golang, R, Perl, etc.) and miscellaneous stuff.] (https://github.com/shenwei356/awesome)
+
+## Awesome Go
+
+https://github.com/avelino/awesome-go
+
+## Golang Libraries
+
+https://github.com/dreadl0ck/golang-libs
+
+## Awesome Go performance
+
+https://github.com/cristaloleg/awesome-go-perf
+
+## Awesome Go Tools
+
+https://github.com/gobuild/awesome-go-tools
+
+## Golang Web Scraping
+
+https://github.com/lorien/awesome-web-scraping
+
+## algorithms with golang solution
+
+https://github.com/kylesliu/awesome-golang-algorithm
+
+## awesome libraries for golang, packages and resources for Quants (Quantitative Finance)
+
+https://github.com/goex-top/awesome-go-quant
 
 # Dạy Golang bằng tiếng Việt
 - Lập trình Go: https://phocode.com/blog/2016/08/26/go-con-tro/
