@@ -39,5 +39,8 @@
 
 [1] [How to Consume Kafka Efficiently in Golang?](https://medium.com/swlh/how-to-consume-kafka-efficiently-in-golang-264f7fe2155b)
 
+[2] [How to parallelise Kafka consumers](https://medium.com/@jhansireddy007/how-to-parallelise-kafka-consumers-59c8b0bbc37a)
+
+
 ## Microservices
 [Microservices in Golang](https://ewanvalentine.io/microservices-in-golang-part-1/)
