@@ -23,7 +23,9 @@ https://youtu.be/KBZlN0izeiY
 Talk description:
 > ***GopherCon 2017: Kavya Joshi - Understanding Channels***
 > Channels provide a simple mechanism for goroutines to communicate, and a powerful construct to build sophisticated concurrency patterns. We will delve into the inner workings of channels and channel operations, including how they're supported by the runtime scheduler and memory management systems
-> v.
+> 
+> ***Sub-title***: [Source code analysis of golang channel](https://laptrinhx.com/source-code-analysis-of-golang-channel-1392165230/)
+> 
 
 #### Channel in Go (Golang)
 
