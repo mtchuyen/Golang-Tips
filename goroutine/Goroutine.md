@@ -23,3 +23,11 @@ Talk description:
 > Channels provide a simple mechanism for goroutines to communicate, and a powerful construct to build sophisticated concurrency patterns. We will delve into the inner workings of channels and channel operations, including how they're supported by the runtime scheduler and memory management systems
 > v.
 
+#### Channel in Go (Golang)
+
+https://golangbyexample.com/channel-golang/
+
+
+#### Diving Deep Into The Golang Channels.
+
+https://codeburst.io/diving-deep-into-the-golang-channels-549fd4ed21a8
