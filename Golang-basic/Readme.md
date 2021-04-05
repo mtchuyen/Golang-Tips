@@ -59,3 +59,9 @@ https://research.swtch.com/interfaces
 
 ### [Further Dangers of Large Heaps in Go](https://syslog.ravelin.com/further-dangers-of-large-heaps-in-go-7a267b57d487)
 
+## Method
+
+### Method declaration
+- Define: https://golang.org/ref/spec#Method_declarations
+- [Method declaration with function receiver in Golang](https://pgillich.medium.com/method-declaration-with-function-receiver-in-golang-7f5531ded97d)
+- 
