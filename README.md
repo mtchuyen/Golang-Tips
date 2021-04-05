@@ -119,3 +119,12 @@ https://github.com/goex-top/awesome-go-quant
 
 # Referral:
 - [Cách sử dụng package `sync` của golang](https://kipalog.com/posts/Cach-su-dung-package--sync--cua-golang)
+
+
+# Secure Coding
+- Basic: https://owasp.org/www-pdf-archive/OWASP_SCP_Quick_Reference_Guide_v2.pdf
+- [5 Secure Coding Tips in Go](https://medium.com/picus-security-engineering/5-secure-coding-tips-in-go-a3e5ec23d7fd)
+- [Hacking with Go](https://github.com/parsiya/Hacking-with-Go)
+- 
+
+ 
