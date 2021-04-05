@@ -28,11 +28,6 @@ type AbstractFactory interface {
 - Interface `AbstractFactory` có method là `CreateMyLove()`
 - `CreateMyLove()` được gọi là 1 ***factory method***.
 
-## finalizers in Go
-- [Go: Finalizers](https://medium.com/a-journey-with-go/go-finalizers-786df8e17687)
-- [An example of the use of a finalizer](https://gist.github.com/deltamobile/6511901)
-- [Mystery of finalizers in Go](https://lk4d4.darth.io/posts/finalizers/)
-
 ## Auto-Scaling and Self-Defensive Services in Golang
 
 https://dzone.com/articles/auto-scaling-and-self-defensive-services-in-golang-1
