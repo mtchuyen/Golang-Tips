@@ -36,11 +36,10 @@ $ : end of string
 ```
 Example:
 ```
- Check validate sponsor_adxgg1.js 
- Check validate iplay-mutex-ssp.js 
- Check validate muachungplaza_rc4.js 
+ Check validate spoxxxx_adxgg1.js 
+ Check validate iplay-mutex-sxx.js 
  Check validate 131.js 
- Check validate admCoreVtvLive.js 
+ 
  Check validate C:\AppServ\www\project\storage\pr.vn.js 
  Filename C:\AppServ\www\project\storage\pr.vn.js is invalid --> (\ signal in path is not in matching regular)
 ```
