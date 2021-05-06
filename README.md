@@ -76,6 +76,8 @@ If you want to master concurrency go for this one.
 
 # awesomeness
 
+[Companies Using Golang by Domain — Golang Use Cases](https://medium.com/@softkraft/companies-using-golang-by-domain-golang-use-cases-6870b9001e82?)
+
 ## Generated awesomeness
 
 [Collection of useful resources on Bioinformatics, data science, machine learning, programming language (Python, Golang, R, Perl, etc.) and miscellaneous stuff.] (https://github.com/shenwei356/awesome)
