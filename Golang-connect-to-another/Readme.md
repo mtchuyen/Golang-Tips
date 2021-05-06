@@ -36,11 +36,11 @@
 [Developing a Go with Couchbase Application](https://blog.couchbase.com/create-continuous-deployment-pipeline-golang-jenkins/)
 
 ### Kafka:
-
-[1] [How to Consume Kafka Efficiently in Golang?](https://medium.com/swlh/how-to-consume-kafka-efficiently-in-golang-264f7fe2155b)
+[1] [Visualizing Kafka](https://timothystepro.medium.com/visualizing-kafka-20bc384803e7)
 
 [2] [How to parallelise Kafka consumers](https://medium.com/@jhansireddy007/how-to-parallelise-kafka-consumers-59c8b0bbc37a)
 
+[3] [How to Consume Kafka Efficiently in Golang?](https://medium.com/swlh/how-to-consume-kafka-efficiently-in-golang-264f7fe2155b)
 
 ## Microservices
 [Microservices in Golang](https://ewanvalentine.io/microservices-in-golang-part-1/)
