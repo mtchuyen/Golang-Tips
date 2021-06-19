@@ -2,6 +2,8 @@
 
 ## Redis
 
+[Scalable event streaming with Redis and Golang](https://ably.com/blog/event-streaming-with-redis-and-golang)
+
 
 ## RabbitMQ
 
