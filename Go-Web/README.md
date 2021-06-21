@@ -99,6 +99,11 @@ https://mycodesmells.com/post/building-wasm-applications-in-go-1-11
 ### Streaming Images from MongoDB using Golang
 https://medium.com/adam-on-software-engineering/streaming-images-from-mongodb-using-golang-651fc2b8384e
 
+### Frameworks
+
+- [Golang: Beego vs Revel. How to Choose?](https://levelup.gitconnected.com/golang-beego-vs-revel-how-to-choose-63ee8f081bc3)
+
+
 ### Referral
 [1] https://gowebexamples.com/http-server/
 
