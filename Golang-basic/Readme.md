@@ -10,6 +10,16 @@
 
 - [Implementing testing in Golang](https://dev.to/lucasnevespereira/implementing-testing-in-golang-4mcp)
 
+- [Unit Testing in Go](https://www.pullrequest.com/blog/unit-testing-in-go/)
+
+- [An Introduction to Testing in Go](https://tutorialedge.net/golang/intro-testing-in-go/)
+
+- [Viết Unit Test trong project với Golang](https://viblo.asia/p/viet-unit-test-trong-project-voi-golang-bWrZnXv95xw)
+
+- [Một số framework dùng cho viết Unit Test cho Golang](https://www.tma.vn/Hoi-dap/Cam-nang-nghe-nghiep/Golang-va-Unit-test/25459)
+
+- [Step bHow To Write Unit Tests in Go](https://www.digitalocean.com/community/tutorials/how-to-write-unit-tests-in-go-using-go-test-and-the-testing-package)
+
 
 ## benchmarks
 
