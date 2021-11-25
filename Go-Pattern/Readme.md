@@ -5,6 +5,7 @@
 https://anonystick.com/blog-developer/9-mau-thiet-ke-ma-moi-lap-trinh-vien-deu-phai-biet-phan-1-builder-pattern-2020103194916615
 
 ***Phần 2: Factory pattern***
+
 https://anonystick.com/blog-developer/phan-2-factory-pattern-cach-ma-toi-trien-khai-trong-nha-may-vinfast-fresher-va-junior-nen-bo-qua-phan-3-2020110554662242
 
 ### golang-design-pattern
@@ -13,10 +14,12 @@ https://anonystick.com/blog-developer/phan-2-factory-pattern-cach-ma-toi-trien-k
 - https://refactoring.guru/design-patterns/go
 
 ### Builder Pattern trong golang
+
 - https://techmaster.vn/posts/36713/builder-pattern-trong-golang
 
 
 ### Factory Pattern trong golang
+
 - https://techmaster.vn/posts/36708/factory-pattern-trong-golang
 - 
 
