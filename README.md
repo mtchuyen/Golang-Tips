@@ -104,7 +104,8 @@ https://github.com/lorien/awesome-web-scraping
 
 ## algorithms with golang solution
 
-https://github.com/kylesliu/awesome-golang-algorithm
+https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-Algorithms/Readme.md
+
 
 ## awesome libraries for golang, packages and resources for Quants (Quantitative Finance)
 
