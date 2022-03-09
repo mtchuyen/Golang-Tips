@@ -13,3 +13,5 @@
 
 See: https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-with-protocol/grpc.md
 
+### Go gRPC vs REST
+https://helios04.medium.com/go-grpc-vs-rest-2c6a2428edbd
