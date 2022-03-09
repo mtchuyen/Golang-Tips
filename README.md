@@ -118,9 +118,13 @@ https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-Algorithms/Readme.md
 
 https://github.com/goex-top/awesome-go-quant
 
-# Dạy Golang bằng tiếng Việt
+# Golang Courses
+[9 Best Golang Programming Courses for Beginners to Learn in 2022](https://medium.com/javarevisited/what-is-go-or-golang-programming-language-why-learn-go-in-2020-1cbf0afc71db)
+
+## Dạy Golang bằng tiếng Việt
 - Lập trình Go: https://phocode.com/blog/2016/08/26/go-con-tro/
 - https://techblog.vn/tags/golang
+
 
 # Referral:
 - [Cách sử dụng package `sync` của golang](https://kipalog.com/posts/Cach-su-dung-package--sync--cua-golang)
