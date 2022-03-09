@@ -42,8 +42,15 @@ https://deferpanic.com/blog/understanding-golang-memory-usage/
 ## Integration of a Go service with systemd
 [1](https://vincent.bernat.im/en/blog/2017-systemd-golang), [2](https://vincent.bernat.im/en/blog/2018-systemd-golang-socket-activation)
 
+# Internet of Things (IoT)
+## Simple IoT Messages Delivery With GoLang
 
-# Golang Powered Robotics
+https://ralvescosta.medium.com/simple-iot-messages-delivery-with-golang-1-b1ea64d7d3ae
+
+https://ralvescosta.medium.com/simple-iot-messages-delivery-with-golang-2-9d9ebfb75fd4
+
+
+## Golang Powered Robotics
 https://gobot.io/: Gobot is a framework for robots, drones, and the Internet of Things (IoT), written in the Go programming language
 
 # Tiền điện tử
