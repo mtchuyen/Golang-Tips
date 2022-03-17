@@ -10,6 +10,6 @@
 
 [Building REST API with Gin P1](https://medium.com/@wattanai.tha/go-tutorial-series-ep-2-persisting-api-data-with-gorm-c89103cd266b)
 
-[]()
+[Making a RESTful JSON API in Go](https://thenewstack.io/make-a-restful-json-api-go/)
 
 [Restful API with Go (Gin)](https://kuzeykose.medium.com/restful-api-with-go-gin-80abb49a226c)
