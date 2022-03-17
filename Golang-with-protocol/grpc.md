@@ -25,6 +25,13 @@ https://velotio.com/blog/2019/3/25/server-side-stack-golang-protobuf-grpc
 
 Links: https://github.com/fullstorydev/grpcurl
 
+https://www.fullstory.com/blog/tale-of-grpcurl/
+
+#### gRPCui: gRPC Interface Web
+
+Link: https://www.fullstory.com/blog/grpcui-dont-grpc-without-it/
+
+
 ### benchmarking
 
 #### ghz: Simple gRPC benchmarking and load testing tool inspired by hey and grpcurl.
