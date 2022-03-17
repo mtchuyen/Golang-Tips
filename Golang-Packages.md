@@ -26,6 +26,11 @@ Mỗi package nên được để bên trong 1 thư mục, ví dụ: package có
 
 [Go: What is the Unsafe Package?](https://medium.com/a-journey-with-go/go-what-is-the-unsafe-package-d2443da36350)
 
+### Package Model: Three Approaches to Structuring Go Code
+
+https://www.perimeterx.com/tech-blog/2019/ok-lets-go/
+
+[How I investigated memory leaks in Go using pprof on a large codebase](https://www.freecodecamp.org/news/how-i-investigated-memory-leaks-in-go-using-pprof-on-a-large-codebase-4bec4325e192/)
 
 ### Referrel:
 [1] [Everything you need to know about Packages in Go](https://medium.com/rungo/everything-you-need-to-know-about-packages-in-go-b8bac62b74cc)
