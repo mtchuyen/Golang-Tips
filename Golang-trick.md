@@ -121,6 +121,9 @@ https://segment.com/blog/5-advanced-testing-techniques-in-go/
 
 https://www.robustperception.io/optimising-go-allocations-using-pprof/
 
+[How I investigated memory leaks in Go using pprof on a large codebase](https://www.freecodecamp.org/news/how-i-investigated-memory-leaks-in-go-using-pprof-on-a-large-codebase-4bec4325e192/)
+
+
 ## A Makefile for your Go project
 
 https://vincent.bernat.im/en/blog/2017-makefile-build-golang
