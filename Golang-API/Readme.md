@@ -13,3 +13,16 @@
 [Making a RESTful JSON API in Go](https://thenewstack.io/make-a-restful-json-api-go/)
 
 [Restful API with Go (Gin)](https://kuzeykose.medium.com/restful-api-with-go-gin-80abb49a226c)
+
+## Benchmarking API
+
+### Realtime Limited
+
+Realtime Limited: API with latency of ***30ms or less***.
+
+[Test Its Latency with the rtapi Tool from NGINX](https://www.nginx.com/blog/api-real-time-test-latency-responsiveness-nginx-rtapi-tool/)
+
+- https://jirak.net/wp/is-your-api-real-time-test-its-latency-and-responsiveness-with-the-rtapi-tool-from-nginx/
+- https://github.com/orubel/beapi-bench
+- https://www.nginx.com/blog/tag/real-time-api/
+
