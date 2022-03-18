@@ -25,4 +25,6 @@ Realtime Limited: API with latency of ***30ms or less***.
 - https://jirak.net/wp/is-your-api-real-time-test-its-latency-and-responsiveness-with-the-rtapi-tool-from-nginx/
 - https://github.com/orubel/beapi-bench
 - https://www.nginx.com/blog/tag/real-time-api/
+- https://www.nginx.com/blog/benchmarking-api-management-solutions-nginx-kong-amazon-real-time-apis/
+- 
 
