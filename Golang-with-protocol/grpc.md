@@ -18,6 +18,8 @@ https://velotio.com/blog/2019/3/25/server-side-stack-golang-protobuf-grpc
 
 [Build gRPC with Go (golang): Unary API](https://bangadam-dev.medium.com/build-grpc-with-go-golang-unary-api-df6c6a38c30a)
 
+[Load Balancing for gRPC](https://medium.com/devops-deepdive/load-balancing-for-grpc-8fe2d9b7c262)
+
 
 ### interact with gRPC servers. 
 
