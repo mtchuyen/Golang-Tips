@@ -80,4 +80,11 @@ https://research.swtch.com/interfaces
 ### Method declaration
 - Define: https://golang.org/ref/spec#Method_declarations
 - [Method declaration with function receiver in Golang](https://pgillich.medium.com/method-declaration-with-function-receiver-in-golang-7f5531ded97d)
+
+## Pipeline
+- [Go Pipeline for a layman](https://anupamgogoi.medium.com/go-pipeline-for-a-layman-4791fb4f1e2d)
+- 
+
+## Mutex
+- [Mutex Examples in Go](https://levelup.gitconnected.com/mutex-examples-in-go-ad7c440461a4)
 - 
