@@ -19,3 +19,8 @@ https://medium.com/geekculture/sorting-algorithms-merge-sort-in-golang-2ae73ff07
 ### Dijkstra’s algorithm in Go
 
 https://go-recipes.dev/dijkstras-algorithm-in-go-e1129b2f5c9e
+
+### binary search algorithm
+
+https://medium.com/@alissakhall/binary-search-with-go-7d6291fb551e?
+
