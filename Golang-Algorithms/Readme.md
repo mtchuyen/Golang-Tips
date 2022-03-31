@@ -15,3 +15,7 @@ https://agupta97.medium.com/sorting-algorithms-insertion-sort-in-golang-c014e8e3
 ### Merge Sort in Golang
 
 https://medium.com/geekculture/sorting-algorithms-merge-sort-in-golang-2ae73ff07906
+
+### Dijkstra’s algorithm in Go
+
+https://go-recipes.dev/dijkstras-algorithm-in-go-e1129b2f5c9e
