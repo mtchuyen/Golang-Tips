@@ -135,6 +135,12 @@ https://github.com/goex-top/awesome-go-quant
 - [Introduction to secure coding in Golang](https://mykparmar007.medium.com/introduction-to-secure-coding-in-golang-f229c6668c25)
 - [5 Secure Coding Tips in Go](https://medium.com/picus-security-engineering/5-secure-coding-tips-in-go-a3e5ec23d7fd)
 - [Hacking with Go](https://github.com/parsiya/Hacking-with-Go)
-- 
+
+
+## vulnerabilities
+- [Scanning Go dependencies for vulnerabilities](https://jcdan3.medium.com/scanning-go-dependencies-for-vulnerabilities-b82db3d56b27)
+- [Scanning Go source for vulnerabilities with gosec](https://systemweakness.com/scanning-go-source-for-vulnerabilities-5f29773ecc9d)
+
+
 
  
