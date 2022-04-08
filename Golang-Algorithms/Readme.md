@@ -10,13 +10,23 @@ https://github.com/kylesliu/awesome-golang-algorithm
 
 ### Base16 to Decimal
 
+***Encode***:
+
 ```go
 ecid, erD := strconv.ParseUint(stringid, 16, 64)
 ```
 
 - `stringid=fffffffffffffffa` --> `ecid=18446744073709551610`
-- stringid = `regex:[a-f0-9]`, length <= `16`
+- stringid = `regex:[a-f0-9]`, length <= `2x`
 - ecid = `uint64`
+
+***Decode***:
+
+```go
+ma, err := strconv.ParseInt(i, 10, 64)
+```
+- raw: `ad:02:03:fc:14:ee` --> encode: `190224168391918` --> decode: `ad0203fc14ee`.
+
 
 
 ## Hash Algorithms
