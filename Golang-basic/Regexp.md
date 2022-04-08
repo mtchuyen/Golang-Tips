@@ -22,6 +22,11 @@ https://viblo.asia/p/regular-expressions-regex-khong-he-kho-nhu-nhung-gi-ban-tha
 
 https://gpcoder.com/2222-huong-dan-su-dung-bieu-thuc-chinh-quy-regular-expression-trong-java/
 
+https://topdev.vn/blog/regex-la-gi/
+
+https://freetuts.net/cac-quy-tac-regular-expression-can-ban-tiep-theo-66.html
+
+https://quantrimang.com/regex-trong-python-165471
 
 #### Text boundary anchors
 
