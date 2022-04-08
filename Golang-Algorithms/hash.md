@@ -30,7 +30,7 @@ String ***"ad-02-03-fc-14-ee"*** (MAC address) encoded to other algorithms:
  | TIGER128,4 | 748342bedccffc4caa6bfe9c718abdbc | 
  | TIGER160,4 | 748342bedccffc4caa6bfe9c718abdbc5ae131f7 | 
  | TIGER192,4 | 748342bedccffc4caa6bfe9c718abdbc5ae131f7c25e7744 | 
- | SNEFRU | 7747d519352eee0ba7fde826b4ac3a9f5040fcd9e5fa05278095f0e41530d028 | 
+ | SNEFRU | d5cae8cb27bdf09ec77f83667b37d385 | 
  | SNEFRU256 | 7747d519352eee0ba7fde826b4ac3a9f5040fcd9e5fa05278095f0e41530d028 | 
  | GOST | caacc2002c6a41f1afefd9d1e10415ae541399a8565a18305b39f1d2a7c524c3 | 
  | GOST-CRYPTO | d87fe432a2f62ce8bcae60ceb807bcc9ec039689c2049b17b3e278aa9565bcad | 
@@ -57,4 +57,9 @@ String ***"ad-02-03-fc-14-ee"*** (MAC address) encoded to other algorithms:
  | HAVAL192,5 | b7db0d3a8d2c8656291c2fb898675a9760c909e6ce5ace64 | 
  | HAVAL224,5 | 8bdb4d48bf72a4e5b2a3edfcb51f8f4aa1267ab6576e9ea9c4ad62c7 | 
  | HAVAL256,5 | e46e869e81a3e0c50133f20f50f1ebf05d09d060d17f8fc4ddcc5ac88d46ac23 | 
- 
+ | Djb2 | 43e6cea8 | 
+ | Sdbm | 827d4bcd | 
+ | Loselose | 483 | 
+ | Pearson | 7a | 
+ | Farm hash fingerprint32 | 4c7493a4 | 
+ | Farm hash fingerprint64 | 96e454a6af226302 |
