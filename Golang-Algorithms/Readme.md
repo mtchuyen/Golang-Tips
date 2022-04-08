@@ -2,6 +2,32 @@
 
 https://github.com/kylesliu/awesome-golang-algorithm
 
+
+## Hash Algorithms
+
+[See all contents](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-Algorithms/hash.md)
+
+***List:***
+- md: md5, md6
+- SHA
+- RIPEMD
+- WHIRLPOOL
+- TIGER
+- SNEFRU
+- GOST
+- ADLER
+- CRC
+- FNV
+- JOAAT
+- HAVAL
+- murmur3
+- DJB2
+- SDBM
+- Farm hash fingerprint32, fingerprint64
+- Pearson
+- Loselose
+
+
 ## Sorting Algorithms: 
 
 ### Quick Sort in Golang
