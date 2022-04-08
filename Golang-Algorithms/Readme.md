@@ -2,6 +2,22 @@
 
 https://github.com/kylesliu/awesome-golang-algorithm
 
+## Encode & Decode
+### Base64
+
+- `ad-02-03-fc-14-ee` --> `YWQtMDItMDMtZmMtMTQtZWU=`
+
+
+### Base16 to Decimal
+
+```go
+ecid, erD := strconv.ParseUint(stringid, 16, 64)
+```
+
+- `stringid=fffffffffffffffa` --> `ecid=18446744073709551610`
+- stringid = `regex:[a-f0-9]`, length <= `16`
+- ecid = `uint64`
+
 
 ## Hash Algorithms
 
