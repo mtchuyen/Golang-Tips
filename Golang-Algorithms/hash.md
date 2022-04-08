@@ -1,7 +1,7 @@
 
 ### Example:
 
-String ***"ad-02-03-fc-14-ee"*** encoded to other algorithms:
+String ***"ad-02-03-fc-14-ee"*** (MAC address) encoded to other algorithms:
 
  | Algorithm | hash value | 
  | --- | --- | 
