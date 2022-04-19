@@ -20,5 +20,8 @@ https://mipsmonsta.medium.com/remote-procedure-call-rpc-briefly-explained-958842
 
 See: https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-with-protocol/grpc.md
 
+### What is Protobuf and Why You Should Use It
+https://betterprogramming.pub/what-is-protobuf-and-why-you-should-use-it-14d52646f2a7
+
 ### Go gRPC vs REST
 https://helios04.medium.com/go-grpc-vs-rest-2c6a2428edbd
