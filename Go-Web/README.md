@@ -20,6 +20,7 @@ Link: https://github.com/rakyll/hey/
 
 https://blog.meshstudio.io/serving-up-html-with-go-92f767856daf
 
+[Implementing a Basic HTTP Server Using Go](https://betterprogramming.pub/implementing-a-basic-http-server-using-go-a59b1888359b)
 
 ### Automagical HTTPS with Docker and Go
 
