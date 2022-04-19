@@ -15,6 +15,7 @@ Những nguyên lý thiết kế app trên ngôn ngữ Golang:
 
 Nên tuân thủ 1 số Pattern:
 - [Patterns in Go applications](https://medium.com/@tranngoclam/patterns-in-go-applications-42dcd10fd0e5)
+- [Practical SOLID in Golang: Interface Segregation Principle](https://levelup.gitconnected.com/practical-solid-in-golang-interface-segregation-principle-f272c2a9a270)
 
 
 # Golang Concepts
