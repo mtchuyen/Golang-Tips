@@ -14,6 +14,8 @@
 
 [Restful API with Go (Gin)](https://kuzeykose.medium.com/restful-api-with-go-gin-80abb49a226c)
 
+[The important matters need attention when developing API in GoLang](https://medium.com/@fratatmaca_20644/the-important-matters-need-attention-when-developing-api-in-golang-4e4c209cfdcd)
+
 ## Benchmarking API
 
 ### Realtime Limited
