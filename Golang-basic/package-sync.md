@@ -21,5 +21,8 @@
 
 ***sync.Pool***:
 
+### Explore Go sync.Pool as Cache
+https://medium.com/geekculture/go-sync-pool-as-cache-in-kubernetes-4e247c52e732
+
 ## Ref:
 - [A Closer Look at Go’s sync Package](https://medium.com/@teivah/a-closer-look-at-go-sync-package-9f4e4a28c35a)
