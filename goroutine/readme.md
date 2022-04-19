@@ -125,5 +125,9 @@ func (cg CountWG) Done() {
 ### Detecting Goroutine Leaks with Test Cases
 https://engineering.razorpay.com/detecting-goroutine-leaks-with-test-cases-b0f8f8a88648
 
+### Common Goroutine Leaks that You Should Avoid
+https://betterprogramming.pub/common-goroutine-leaks-that-you-should-avoid-fe12d12d6ee
+
+
 # Referral:
 - Lê Ngọc Thạch, [Concurrency trong Go Lang](https://devblog.dwarvesf.com/post/concurrency/)
