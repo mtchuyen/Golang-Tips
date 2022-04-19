@@ -109,6 +109,9 @@ https://github.com/gobuild/awesome-go-tools
 
 https://github.com/lorien/awesome-web-scraping
 
+[How Golang is Used for Web Scraping with Concurrency?](https://iweb-scraping-services.medium.com/how-golang-is-used-for-web-scraping-with-concurrency-e9873cfd935a)
+
+
 ## algorithms with golang solution
 
 https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-Algorithms/Readme.md
