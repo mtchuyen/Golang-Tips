@@ -10,6 +10,13 @@ Note: tại sao phải đưa bài viết này vào github, bởi vì medium hạ
 - Stats statistics
 - Standalone
 
+Có được tiêu chí so sánh này thì sẽ biết lựa chọn các cache-lib phù hợp với dự án
+- UC1: Dự án cần cache không bị out-of-date thì cần có `ttl`
+- UC2: Dự án cần số lượng cache lớn thì cần capacity.
+- UC3: Dự án có cache-item phức tạp thì cần data-structure tổ chức tốt
+- ...
+
+
 ### 1. High concurrency
 
 Generally, the cache uses ***locking*** in concurrency control. Assuming that there are 100 elements and only one read-write lock, then you have to do it one by one when two elements are to be written at the same time. Low efficiency, right?
@@ -42,6 +49,14 @@ Capacity của 1 cache là lượng item có thể lưu trữ trong cache đư�
 Capacity phụ thuộc vào yếu tố `kích thước data` của item. Vì vậy với sự giới hạn của memory app, thì Capacity của các thư viện cache cần được đánh giá thêm với các điều kiện:
 - Cache item có trong memory
 - Khả năng flush data từ memory xuống disk
+
+Để đảm bảo app có thể chạy tốt (không bị tràn memory) khi cache overload, thì `Capacity` và `evict policy` cần được cân bằng với nhau
+- Nếu `Capacity` là `unlimited` thì cần có `evict policy` (time-to-live)
+- Nếu `Capacity` là `limited` thì KHÔNG cần có `evict policy`, vì bản thân `length-of-cache` luôn cố định rồi.
+
+### 4. Time-to-live
+
+***ttl***, a feature pursued by many cache users, can save the users from worrying about cache explosion in many cases. And you need to adjust its value according to statistics only when performance issues occur.
 
 
 ## So sánh 4 thư viện cache: `go-cache`, `bigcache`, `golang-lru`, & `groupcache`.
@@ -78,6 +93,21 @@ As we all know, neither ***go-cache*** nor ***bigcache*** sets limits on the num
 ***golang-lru***, only supports a fixed number of keys and the LRU algorithm to eliminate old data. It saves the old data by a double-linked list, and each time it deletes the oldest.
 
 ***groupcache*** provides the code for limiting the number of keys, but without a default number, and sets a limit to the total data size, which means the number is unlimited if size allows. Meanwhile, groupcache also eliminates the old data with the double-linked list of the `container/list` package and the LRU algorithm combined.
+
+### 4. Time-to-live
+
+***golang-lru*** and ***groupcache*** are *not* `ttl` supportive, so you have to clear the data manually, or expect the automatic delete of the earliest data when the cache is full. But cache miss will be caused once the cache is inserted frequently.
+
+Trong bảng trên ta thấy ***golang-lru*** & ***groupcache*** đều có có `capacity-limited` nên tính năng `ttl` với lived-of-item không cần thiết. Item sẽ bị loại bỏ (evict) khi `size of cache` tới hạn (limited). Cơ chế loại bỏ (evict policy) đã nói ở trên. Nếu sử dụng thư viện nào thì cần check xem thư viện đó sử dụng hỗ trợ policy nào, hoặc app cấu hình với policy đó theo nhu cầu.
+
+***bigcache*** supports all keys to be with a unified `ttl`, which is 10 minutes by default. There are two ways to remove the expired keys.
+- Start a 5-minute timer to clean up periodically.
+- Determine whether the `oldest` key needs to be deleted every time when `Set` is called.
+
+Do đó cũng có 2 phương thức để xóa expire item:
+- `Janitor`, automatically triggers the cleaning method with `timer`, monitors each key’s expiration time circularly, and deletes the key when it expires.
+- Check if the key is expired when calling `Get`, if so, return nil and delete.
+
 
 ## generics-cache
 `Go generic cache` được cho là sẽ cải thiện performance của Cache, và support đầy đủ các tính năng (so với 4 thư viện cache đã so sánh ở trên)
