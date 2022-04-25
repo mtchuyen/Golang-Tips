@@ -1,5 +1,6 @@
 # Introduce
 Phần này sẽ tập trung vào ***Object Oriented Design*** 
+
 (Ref.4)Ngày xửa ngày xưa, người ta nói rằng:
 
 > Proper Object Oriented Design makes a developer's life easy, whereas bad design makes it a disaster
@@ -27,6 +28,37 @@ Chung quy lại vẫn là để KHÔNG bị ***Bad code***.
 - ***Complex***. Is there code for the sake of having code, are things over-engineered?
 - ***Verbose***. Is it just exhausting to use the code? When you look at it, can you even tell what this code is trying to do?
 
+## Design Principles có liên quan gì đến Design Patterns không ???
+Câu trả lời là có, nhưng có chút khác biệt.
+- ***Principles***: là các hướng dẫn, mang tính trừu tượng nhiều hơn.
+- ***Patterns***: là những ví dụ cụ thể hóa, cung cấp các giải pháp tái sử dụng đến các vấn đề thực tế. Patterns tốt nên tuân thủ tốt Principles.
+
+## Các nhóm Design Principles
+Trong cuốn "Agile Software Development: Principles, Patterns, and Practices", Uncle Bob đã tổng hợp lại 11 nguyên lý và chia chúng làm 3 nhóm:
+
+***Class Design principles – bao gồm 5 nguyên lý***
+
+- (SRP) Single Responsibility Principle
+- (OCP) Open Closed Principle
+- (LSP) Liskov Substitution Principle
+- (DIP) Dependency Inversion Principle
+- (ISP) Interface Segregation Principle
+***Package Cohesion Principles - bao gổm 3 nguyên lý***
+
+- (REP) Reuse-Release Equivalence Principle
+- (CRP) Common Reuse Principle
+- (CCP) Common Closure Principle
+
+
+***Package Coupling principle - bao gồm 3 nguyên lý***
+- (ADP) Acyclic Dependencies Principle
+- (SDP) Stable Dependencies Principle
+- (SAP) Stable Abstractions Principle
+
+***Ngoài ra còn có các nguyên lý khác như***
+- (DRY) Don't Repeat Yourself
+- (KISS) Keep It Simple Stupid ...
+
 
 # SOLID
 
@@ -37,7 +69,7 @@ Chung quy lại vẫn là để KHÔNG bị ***Bad code***.
 - ***I***: Interface Segregation Principle
 - ***D***: Dependency Inversion Principle
 
-Để hiểu về 5 nguyên tắc của SOLID, trước hết xem qua giải thích bằng hình ảnh ở (Ref.3).
+Để hiểu về 5 nguyên tắc của SOLID, trước hết xem qua giải thích bằng hình ảnh ở (Ref.3) và (Ref.4).
 
 ## Tác dụng của SOLID
 - Các nguyên tắc SOLID có thể giúp chúng ta thiết kế các ứng dụng tốt hơn (Ref.1). 
@@ -62,6 +94,8 @@ Nguyên tắc đầu tiên của ngăn xếp SOLID là Nguyên tắc Single Resp
 
 (Ref.6) nói chi tiết về nguyên tắc ***SRP***
 
+## 2. Open/Closed principle
+Phần [Open/Closed principle](https://viblo.asia/p/lap-trinh-huong-doi-tuong-trong-phpphan-3-Az45bb1O5xY) có hình ảnh mô tả cho dễ hiểu.
 
 ## Ref: 
 - [5: Writing SOLID Go code](https://bitek.dev/blog/go_solid/)
@@ -70,3 +104,8 @@ Nguyên tắc đầu tiên của ngăn xếp SOLID là Nguyên tắc Single Resp
 ## Code tham khảo
 - [10: SOLID principles in Golang](https://github.com/ammorteza/SOLID-principles-in-Golang)
 - [11: SOLID Principle in Golang](https://github.com/mcholismalik/solid-in-golang)
+
+## Ref
+- [20](https://viblo.asia/p/cac-phuong-phap-thiet-ke-huong-doi-tuong-solid-DZrGNDgrkVB)
+- [21](https://viblo.asia/p/dependency-inversion-inversion-of-control-and-dependency-injection-qzakzNYBkyO)
+- 
