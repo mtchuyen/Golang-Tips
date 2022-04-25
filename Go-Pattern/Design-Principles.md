@@ -156,6 +156,13 @@ Phần [Open/Closed principle](https://viblo.asia/p/lap-trinh-huong-doi-tuong-tr
 ## Code tham khảo
 - [10: SOLID principles in Golang](https://github.com/ammorteza/SOLID-principles-in-Golang)
 - [11: SOLID Principle in Golang](https://github.com/mcholismalik/solid-in-golang)
+- [12:Practical SOLID in Golang: Interface Segregation Principle](https://levelup.gitconnected.com/practical-solid-in-golang-interface-segregation-principle-f272c2a9a270)
+- [13:SOLID principle in GO](https://s8sg.medium.com/solid-principle-in-go-e1a624290346)
+- [14:SOLID Principles in Golang Explained with Examples](https://levelup.gitconnected.com/solid-principles-in-golang-explained-by-examples-4a4cccf47388)
+- [15:SOLID principles in Golang](http://thepedestrian.in/posts/2017-03-23-solid-principals/)
+- [16:The advantages of go language in solid principle](https://developpaper.com/the-advantages-of-go-language-in-solid-principle/)
+- 
+
 
 ## Ref
 - [20](https://viblo.asia/p/cac-phuong-phap-thiet-ke-huong-doi-tuong-solid-DZrGNDgrkVB)
