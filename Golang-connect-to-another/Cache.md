@@ -59,13 +59,45 @@ Capacity phụ thuộc vào yếu tố `kích thước data` của item. Vì v�
 ***ttl***, a feature pursued by many cache users, can save the users from worrying about cache explosion in many cases. And you need to adjust its value according to statistics only when performance issues occur.
 
 
+### 5. Statistics
+Whether the stats, including the number of cache hits and the number of requests, are exposed is also what we should consider when evaluating caches.
+
+Các chỉ số thống kê này khá quan trọng với bước đầu sử dụng cache-lib, ví dụ:
+- nếu có chỉ số này sẽ biết được tỉ lệ hit/miss để quyết định kích thước cache, loại cache,...
+- biết được delmiss, delhits để tăng kích thước `ttl`, customize các chỉ số khởi tạo cache phù hợp
+
+### 6. Standalone
+
+If a cache can support separate deployment, then its tuning, deployment, and performance monitoring become easier.
+
+Có thể nói về tiêu chí này:
+- Triển khai độc lập (không tích hợp vào app)
+- Mở rộng nhiều cổng giao tiếp (interface)
+
+Thực sự thì tiêu chí này đưa vào cũng không thể đánh giá được sự tiện lợi của cache-lib, cái này được nói là tính năng của cache-lib thì đúng hơn. Việc đánh giá sử dụng tiêu chí này còn phụ thuộc vào mục tiêu của ứng dụng.
+> Nhiều tính năng quá nhiều khi (dùng không hết) khiến app nặng nề, hoạt động chậm chạp.
+
+
+
 ## So sánh 4 thư viện cache: `go-cache`, `bigcache`, `golang-lru`, & `groupcache`.
 
 https://medium.com/codex/our-go-cache-library-choices-406f2662d6b
 
 Note: Bảng so sánh này chủ yếu dùng với các ***version < 1.18***. 
 
+***Bảng so sánh dựa trên các tiêu chí***
+
 ![cachelib-compare](https://github.com/mtchuyen/Golang-Tips/blob/master/statics/cache_1_5cBSAXhaw9LCv76DIdIeuQ.png)
+
+***Bảng so sánh benchmark***
+
+![cache-benchmark](https://github.com/mtchuyen/Golang-Tips/blob/master/statics/cache_4_4WBVLam17EBz1Kya.png)
+
+- ***bigcache*** shows no advantages in either `Get` or `Put`. Its GC effect is even worse than ***go-cache*** and ***groupcache***.
+- ***groupcache*** and ***golang-lru*** don’t support sharding, but they are the most efficient.
+
+Kết quả này có thể gây ra sự xung đột (hiểu nhầm), tranh cãi về việc cache-lib nào hiệu quả. Nhưng nhìn vào cách benchmark có thể thấy đây chỉ là 1 kết quả nhất định với 1 dạng `key-value` nhất định, thực tế (production environment) triển khai app mới đánh giá đúng hiệu năng của từng loại cache-lib.
+
 
 ### 1. High concurrency
 
@@ -107,6 +139,20 @@ Trong bảng trên ta thấy ***golang-lru*** & ***groupcache*** đều có có 
 Do đó cũng có 2 phương thức để xóa expire item:
 - `Janitor`, automatically triggers the cleaning method with `timer`, monitors each key’s expiration time circularly, and deletes the key when it expires.
 - Check if the key is expired when calling `Get`, if so, return nil and delete.
+
+### 5. Statistics
+
+Both ***groupcache*** and ***bigcache*** support stats statistics, while the other two don’t.
+As to implementation, ***groupcache*** only needs a CacheStats to count hits or gets each time `Get` is called, since it does not support bucketing. But ***bigcache*** needs a `hashmapStats` map for statistics in each cache, and exposes hits and misses data through a Stats. 
+
+
+### 6. Standalone
+
+Only ***groupcache*** and ***bigcache*** support separate deployment and provide related HTTP interfaces for external access.
+
+***bigcache*** can expose methods like `GET`, `PUT`, and `DELETE` by starting an httpServer.
+
+***groupcache*** claims to be the replacement of `memcached`, supporting the requests through the ***proto buffer protocol*** as well as httpServer.
 
 
 ## generics-cache
