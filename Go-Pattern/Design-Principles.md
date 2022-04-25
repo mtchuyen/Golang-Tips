@@ -140,7 +140,7 @@ Nguyên tắc này có thể được hiểu rằng: các class hoặc hàm nên
 
 # SOLID in Golang
 
-(Ref.6) nói chi tiết về nguyên lý SOLID với các ví dụ bằng ngôn ngữ Go.
+(Ref.5) nói chi tiết về nguyên lý SOLID với các ví dụ bằng ngôn ngữ Go.
 
 ## 1. Single Responsibility Principle
 
