@@ -32,6 +32,11 @@ https://github.com/eko/gocache
 ### MariaDB
 
 ### Postgre
+https://viblo.asia/p/kien-truc-cua-postgresql-E375zAB1lGW
+
+https://viblo.asia/p/8-diem-so-sanh-giua-mysql-va-postgresql-de-chon-lua-cai-nao-phu-hop-hon-OeVKB4NElkW
+
+http://sqladvice.com/postgresql-la-gi-so-sanh-mysql-va-postgresql/
 
 ### MongoDB
 
