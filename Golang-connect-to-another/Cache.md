@@ -1,5 +1,5 @@
 
-Note: tại sao phải đưa bài viết này vào github, bởi vì medium hạn chế lượng đọc bài viết, khiến cho việc re-read gặp khó khăn.
+***Note***: tại sao phải đưa bài viết này vào github, bởi vì medium hạn chế lượng đọc bài viết, khiến cho việc re-read gặp khó khăn.
 
 ## Các tiêu chí so sánh thư viện cache:
 
@@ -177,3 +177,8 @@ Only ***groupcache*** and ***bigcache*** support separate deployment and provide
 
 
 Note: Những thư viện này dùng `generic` của Go, nên phải dùng các version ***> 1.18***.
+
+## Ref
+- https://dgraph.io/blog/post/caching-in-go/
+- https://medium.com/codex/our-go-cache-library-choices-406f2662d6b
+
