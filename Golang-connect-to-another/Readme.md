@@ -58,3 +58,10 @@ http://sqladvice.com/postgresql-la-gi-so-sanh-mysql-va-postgresql/
 
 ## Microservices
 [Microservices in Golang](https://ewanvalentine.io/microservices-in-golang-part-1/)
+
+[Golang Microservices Challenge: Designing an extensible, easy-to-use, and testable HTTP client](https://medium.com/augury-research-and-development/golang-microservices-challenge-designing-an-extensible-easy-to-use-and-testable-http-client-faf43e7e5d45)
+
+[Golang, Microservices and Twirp](https://itnext.io/golang-microservices-and-twirp-5ef495278ddf)
+
+[Building Go Microservices Focused on Testability](https://medium.com/@rholcombe30/building-go-microservices-focused-on-testability-d6164751275d)
+
