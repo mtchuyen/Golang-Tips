@@ -34,3 +34,8 @@ https://anonystick.com/blog-developer/phan-2-factory-pattern-cach-ma-toi-trien-k
 - https://gpcoder.com/4483-huong-dan-java-design-pattern-adapter/
 - https://devhoi.com/threads/adapter-pattern-la-gi-series-design-pattern.33/
 - https://levelup.gitconnected.com/adapter-design-pattern-in-golang-template-example-5fcd2165c44
+
+## Clean architecture
+
+[Golang and clean architecture](https://itnext.io/golang-and-clean-architecture-19ae9aae5683)
+
