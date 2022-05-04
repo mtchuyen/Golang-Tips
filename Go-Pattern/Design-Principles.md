@@ -37,7 +37,6 @@ Nguyên tắc này có thể được hiểu rằng: các class hoặc hàm nên
 - [1:Nguyên lý SOLID là gì...](https://viblo.asia/p/nguyen-ly-solid-la-gi-dependency-injection-la-gi-bWrZnX4b5xw)
 - [2:SOLID Go Design](https://dave.cheney.net/2016/08/20/solid-go-design)
 - [3:Phương pháp thiết kế hướng đối tượng S.O.L.I.D qua hình ảnh](https://viblo.asia/p/phuong-phap-thiet-ke-huong-doi-tuong-solid-qua-hinh-anh-WAyK82jelxX)
-- [4:Sơ lược Object Oriented Design Principles](https://viblo.asia/p/so-luoc-object-oriented-design-principles-MdZGAQODGox)
 - [7:Nguyên tắc thiết kế SOLID - Open/Closed Principle](https://viblo.asia/p/nguyen-tac-thiet-ke-solid-openclosed-principle-eW65GezJZDO)
 
 
