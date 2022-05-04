@@ -70,4 +70,6 @@ Phần [Open/Closed principle](https://viblo.asia/p/lap-trinh-huong-doi-tuong-tr
 ## Ref
 - [20](https://viblo.asia/p/cac-phuong-phap-thiet-ke-huong-doi-tuong-solid-DZrGNDgrkVB)
 - [21](https://viblo.asia/p/dependency-inversion-inversion-of-control-and-dependency-injection-qzakzNYBkyO)
-- 
+- [22](https://medium.com/@lucapelosi/5-design-principles-from-a-software-architecture-guru-8762a304fb3b)
+
+
