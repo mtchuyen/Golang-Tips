@@ -59,10 +59,6 @@ parts = map[int]int{...}
 fmt.Printf("%T: %s\n", str, reflect.TypeOf(str).Kind())
 ```
 
-## Interface
-https://research.swtch.com/interfaces
-
-
 ## Slice
 
 [Go: Slice and Memory Management](https://medium.com/a-journey-with-go/go-slice-and-memory-management-670498bb52be)
@@ -75,11 +71,65 @@ https://research.swtch.com/interfaces
 
 ### [Further Dangers of Large Heaps in Go](https://syslog.ravelin.com/further-dangers-of-large-heaps-in-go-7a267b57d487)
 
+## Structure
+***Struct*** (structure) là một `user-defined` data ***type***.
+
+Define một Structure:
+
+```
+type StructName struct {
+    field1 fieldType1
+    field2 fieldType2
+}
+```
+
+Sau khi `struct` được define, ta có thể khai báo giá trị với syntax:
+
+```
+variable_name := structure_variable_type {value1, value2...value_n}
+```
+Go không support mô hình hướng đối tượng nhưng `structure` gần giống với `class` architecture. Và có thể gọi `Method` (nói ở phần ngay dưới đây) cũng chính là `function`
+
+Ref:
+- https://medium.com/@anh.nt094/golang-eb65bfe1a8bb
+
+
 ## Method
+
+***Method*** cũng chính là ***function***, nhưng nó thuộc về 1 ***type*** nhất định. Cách define của method hơi ***khác*** với function. Khác ở chỗ nó cần thêm một parameter gọi là ***receiver*** — chính là ***type*** được nhắc tới ở trên. Với cách define này, method có thể access vào các properties của receiver (các field của struct).
+
+Syntax:
+```
+func (r Type) methodName() [return_type]{
+   /* method body*/
+}
+```
+- ***(r Type)*** là parameter khác biệt so với khai báo 1 method với 1 function, parameter này được gọi là ***receiver***.
+- Trong một package, có thể có nhiều method trùng tên, function KHÔNG thể trùng tên. Ta có thể tạo nhiều method trùng tên nhưng phải khác ***receiver***. Ví dụ như cùng là method `DienTich` (để tính diện tích), có thể tên giống nhau ở 2 ***receiver***: Circle & HinhVuong.
+
+Ví dụ:
+
+```go
+type Circle struct {
+	bankinh float64
+}
+
+func (c Circle) DienTich() float64 {
+	return math.Pi * c.bankinh * c.bankinh
+}
+
+```
+- ***Circle*** là 1 type.
+- `bankinh` là 1 property của type ***Circle***.
+- `DienTich()` là một `method` của `type` ***Circle***, và `receiver` khai báo là `c Circle`  trong khai báo của method.
+
 
 ### Method declaration
 - Define: https://golang.org/ref/spec#Method_declarations
 - [Method declaration with function receiver in Golang](https://pgillich.medium.com/method-declaration-with-function-receiver-in-golang-7f5531ded97d)
+
+
+## [Interface](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/interface.md)
 
 ## Pipeline
 - [Go Pipeline for a layman](https://anupamgogoi.medium.com/go-pipeline-for-a-layman-4791fb4f1e2d)
