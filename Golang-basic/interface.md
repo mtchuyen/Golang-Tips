@@ -1,5 +1,7 @@
 ## interface
 
+***Note***: trước khi đọc `Interface` cần nằm được `struct` (structure) và `method` (function của struct)
+
 ### Type: đại diện cho kiểu giá trị mà chúng ta sử dụng. 
 
 ***Tác dụng:***
