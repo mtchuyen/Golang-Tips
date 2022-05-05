@@ -1,6 +1,6 @@
 ## interface
 
-***Note***: trước khi đọc `Interface` cần nằm được `struct` (structure) và `method` (function của struct)
+***Note***: trước khi đọc `Interface` cần nằm được `struct` (structure) và `method` (function của struct) ở [phần đầu](https://github.com/mtchuyen/Golang-Tips/tree/master/Golang-basic#method)
 
 ### Type: đại diện cho kiểu giá trị mà chúng ta sử dụng. 
 
@@ -42,3 +42,6 @@ t, ok := i.(T)
 [2] https://backend.vn/bai-viet/golang-interface-1541487108.html
 
 [3] https://medium.com/@anh.nt094/golang-eb65bfe1a8bb
+
+[4] https://research.swtch.com/interfaces
+
