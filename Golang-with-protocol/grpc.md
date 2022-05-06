@@ -33,6 +33,9 @@ https://www.fullstory.com/blog/tale-of-grpcurl/
 
 Link: https://www.fullstory.com/blog/grpcui-dont-grpc-without-it/
 
+### Building Microapps with gRPC-Web
+
+https://medium.com/alva-labs/building-microapps-with-grpc-web-64b7cdf50313
 
 ### benchmarking
 
