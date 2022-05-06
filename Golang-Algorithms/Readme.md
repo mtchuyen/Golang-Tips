@@ -76,3 +76,10 @@ https://go-recipes.dev/dijkstras-algorithm-in-go-e1129b2f5c9e
 
 https://medium.com/@alissakhall/binary-search-with-go-7d6291fb551e?
 
+### Skip List 
+https://lmsang1986.violet.vn/entry/show/entry_id/7018749
+
+https://medium.com/codex/skiplist-in-go-267bb81e51cd
+
+
+
