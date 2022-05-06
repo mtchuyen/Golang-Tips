@@ -20,6 +20,7 @@
 
 - [Step by step How To Write Unit Tests in Go](https://www.digitalocean.com/community/tutorials/how-to-write-unit-tests-in-go-using-go-test-and-the-testing-package)
 
+- [Golang — basic unit testing and benchmarking](https://sherryalex29.medium.com/golang-basic-unit-testing-and-benchmarking-10ce064f1081)
 
 ## benchmarks
 
@@ -138,3 +139,11 @@ func (c Circle) DienTich() float64 {
 ## Mutex
 - [Mutex Examples in Go](https://levelup.gitconnected.com/mutex-examples-in-go-ad7c440461a4)
 - 
+
+## Pointers
+
+[The Fundamentals of Pointers in Go](https://betterprogramming.pub/pointers-in-go-9aa5c0682a)
+
+[When and Where to Use Pointers in Go](https://towardsdev.com/when-and-where-to-use-pointers-in-go-7e89643a2c9)
+
+
