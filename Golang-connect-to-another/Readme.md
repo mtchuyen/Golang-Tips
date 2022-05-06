@@ -27,6 +27,9 @@ https://github.com/eko/gocache
 
 ## Database
 
+[Understanding Go and Databases at Scale: Connection Pooling](https://koho.dev/understanding-go-and-databases-at-scale-connection-pooling-f301e56fa73)
+
+
 ### MysQL
 
 ### MariaDB
