@@ -31,6 +31,21 @@
 - [Real Life Go Benchmarking](https://www.cloudbees.com/blog/real-life-go-benchmarking/)
 - [Overview of Benchmark Testing in Golang](https://www.geeksforgeeks.org/overview-of-benchmark-testing-in-golang/)
 
+## Các data Type trong Go
+Golang có các data ***Type***:
+- ***Basic*** (Cơ bản) Types: Numbers (int32, int64, float,...), Booleans (true or false), Strings
+- ***Aggregate*** (Tổng hợp) Types: Structs, Arrays
+- ***Reference*** (Tham chiếu) Types: Pointers, Slices, Maps, Functions, Channels
+- ***Interface*** Type:
+
+https://kyxey.medium.com/lets-go-part-6-basic-types-5d66208a63c9
+https://kyxey.medium.com/lets-go-part-7-aggregate-types-1-structs-406a7d81c813
+https://kyxey.medium.com/lets-go-part-9-reference-types-1-pointers-8ffc5ad69b7e
+https://kyxey.medium.com/lets-go-part-10-reference-types-2-slices-18224077c1aa
+https://kyxey.medium.com/lets-go-part-11-reference-types-3-maps-849f4e3c91bb
+https://kyxey.medium.com/lets-go-part-12-reference-types-4-channels-555c2aad4c28
+
+
 ## Map
 
 ***Basic and sample:***
@@ -68,9 +83,6 @@ fmt.Printf("%T: %s\n", str, reflect.TypeOf(str).Kind())
 
 [Bad Go: not sizing slices](https://medium.com/swlh/bad-go-not-sizing-slices-aed1b01cff83)
 
-## Heap
-
-### [Further Dangers of Large Heaps in Go](https://syslog.ravelin.com/further-dangers-of-large-heaps-in-go-7a267b57d487)
 
 ## Structure
 ***Struct*** (structure) là một `user-defined` data ***type***.
@@ -132,6 +144,13 @@ func (c Circle) DienTich() float64 {
 
 ## [Interface](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/interface.md)
 
+## Pointers
+
+[The Fundamentals of Pointers in Go](https://betterprogramming.pub/pointers-in-go-9aa5c0682a)
+
+[When and Where to Use Pointers in Go](https://towardsdev.com/when-and-where-to-use-pointers-in-go-7e89643a2c9)
+
+
 ## Pipeline
 - [Go Pipeline for a layman](https://anupamgogoi.medium.com/go-pipeline-for-a-layman-4791fb4f1e2d)
 - 
@@ -140,10 +159,7 @@ func (c Circle) DienTich() float64 {
 - [Mutex Examples in Go](https://levelup.gitconnected.com/mutex-examples-in-go-ad7c440461a4)
 - 
 
-## Pointers
+## Heap
 
-[The Fundamentals of Pointers in Go](https://betterprogramming.pub/pointers-in-go-9aa5c0682a)
-
-[When and Where to Use Pointers in Go](https://towardsdev.com/when-and-where-to-use-pointers-in-go-7e89643a2c9)
-
+### [Further Dangers of Large Heaps in Go](https://syslog.ravelin.com/further-dangers-of-large-heaps-in-go-7a267b57d487)
 
