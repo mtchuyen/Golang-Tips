@@ -54,6 +54,8 @@ https://kyxey.medium.com/lets-go-part-12-reference-types-4-channels-555c2aad4c28
 - https://www.geeksforgeeks.org/golang-maps/
 - https://www.golangprograms.com/go-language/golang-maps.html
 - [Go: Concurrency Access with Maps — Part III](https://medium.com/a-journey-with-go/go-concurrency-access-with-maps-part-iii-8c0a0e4eb27e)
+- [Avoid The Three Mistakes When Using a Map in Go](https://levelup.gitconnected.com/avoid-the-three-mistakes-when-using-a-map-in-go-699435db226c)
+
 
 ***Advance***:
 - https://yourbasic.org/golang/maps-explained/: bài viết có tính học thuật liên quan tới [kỹ thuật hash](https://yourbasic.org/algorithms/hash-tables-explained/)
