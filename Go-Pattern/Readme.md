@@ -37,8 +37,9 @@ https://anonystick.com/blog-developer/phan-2-factory-pattern-cach-ma-toi-trien-k
 
 ### options pattern ingolang
 
-https://levelup.gitconnected.com/options-pattern-in-golang-9a0384a9d8db
+See : `Options-Pattern.md`
 
+https://levelup.gitconnected.com/options-pattern-in-golang-9a0384a9d8db
 
 ## Clean architecture
 
