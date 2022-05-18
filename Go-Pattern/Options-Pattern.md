@@ -40,10 +40,16 @@ Trong [Ref.2] có nói tới những ưu điểm của Options Pattern:
 
 Vậy nên, có những ý kiến trái chiều về loại ***Options Pattern*** này  trong [Ref.4].
 
+## Ref
 [Ref.1] https://golang.cafe/blog/golang-functional-options-pattern.html
+
 [Ref.2] https://www.sohamkamani.com/golang/options-pattern/
+
 [Ref.3] https://medium.com/@anar_py/option-pattern-in-go-944eda01677a
+
 [Ref.4] https://www.reddit.com/r/golang/comments/pwjrjq/functional_option_pattern_is_terrible_in_practice/
+
 [Ref.5] https://medium.com/@anar_py/option-pattern-in-go-944eda01677a
+
 [Ref.6] https://levelup.gitconnected.com/options-pattern-in-golang-9a0384a9d8db
 
