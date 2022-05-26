@@ -1,5 +1,8 @@
 # Algorithms in Golang
 
+Basic: 
+https://github.com/go-awesome/Data-Structures-and-Algorithms
+
 https://github.com/kylesliu/awesome-golang-algorithm
 
 ## Encode & Decode
