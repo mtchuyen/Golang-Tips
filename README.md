@@ -9,15 +9,12 @@ https://go.googlesource.com/proposal/+/master/design
 ### Go Architecture
 Những nguyên lý thiết kế app trên ngôn ngữ Golang:
 
-#### [Hexagonal Architecture in Go](https://medium.com/hexagonal-architecture-in-go/hexagonal-architecture-in-go-94f4ed15392a)
+#### Hexagonal Architecture in Go
 
-[Tất tần tật về KIẾN TRÚC LỤC GIÁC trong phát triển ứng dụng](https://www.goccuachung.com/tat-tan-tat-ve-kien-truc-luc-giac-trong-phat-trien-ung-dung/)
+[Hexagonal Architecture in Go](https://medium.com/hexagonal-architecture-in-go/hexagonal-architecture-in-go-94f4ed15392a)
 
-[PORTS & ADAPTERS ARCHITECTURE](https://edwardthienhoang.wordpress.com/2018/01/18/ports-adapters-architecture/)
+[Hexagonal Architecture in Go](https://blog.devops.dev/hexagonal-architecture-in-go-58dd2386dea7)
 
-***Kiến trúc lục giác (Hexagonal Architecture)*** hay còn gọi là ***kiến trúc cổng và bộ điều hợp (ports and adapters)*** để mô tả (tạo ra) kết nối lỏng lẻo (loose coupling) giữa các thành phần của hệ thống.
-
-Việc đặt lấy hình lục giác là biểu tượng của kiến trúc không có nghĩa là khi áp dụng kiến trúc này, chúng ta đều phải triển khai hết 6 và chỉ có 6 cổng. Hình lục giác chỉ mang ý nghĩa phác thảo vì giúp cho người triển khai dễ hình dung và dễ vẽ các interface, port (cổng), cũng như thành phần trong kiến trúc.
 
 #### [Clean Architecture with Go](https://medium.com/@martinezdelariva/clean-architecture-with-go-60feb7aac3f8)
 
