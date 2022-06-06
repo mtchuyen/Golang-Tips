@@ -11,6 +11,9 @@ Những nguyên lý thiết kế app trên ngôn ngữ Golang:
 
 #### Hexagonal Architecture in Go
 
+Đọc cơ bản về kiến trúc ***lục giác (Hexagonal)***, còn gọi là kiến trúc ***Ports and Adapter*** trong [link](https://github.com/mtchuyen/back-end/blob/master/Hexagonal-Architecture.md)
+
+
 [Hexagonal Architecture in Go](https://medium.com/hexagonal-architecture-in-go/hexagonal-architecture-in-go-94f4ed15392a)
 
 [Hexagonal Architecture in Go](https://blog.devops.dev/hexagonal-architecture-in-go-58dd2386dea7)
