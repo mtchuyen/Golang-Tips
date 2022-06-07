@@ -157,6 +157,8 @@ https://github.com/goex-top/awesome-go-quant
 - [Introduction to secure coding in Golang](https://mykparmar007.medium.com/introduction-to-secure-coding-in-golang-f229c6668c25)
 - [5 Secure Coding Tips in Go](https://medium.com/picus-security-engineering/5-secure-coding-tips-in-go-a3e5ec23d7fd)
 - [Hacking with Go](https://github.com/parsiya/Hacking-with-Go)
+- [Top 6 security best practices for Go](https://blog.sqreen.com/top-6-security-best-practices-for-go/)
+- [TLS validation: implement OCSP and CRL verifiers in Go](https://www.cossacklabs.com/blog/tls-validation-implementing-ocsp-and-crl-in-go/)
 
 
 ## vulnerabilities
