@@ -86,14 +86,14 @@ cleanString := reg.ReplaceAllString(orginString, "0")
 
 Giải thích:
 - `[...]`: group các ký tự cần tìm kiếm (để thay thế)
-- `[^...]`: có dấu `^` để chỉ rằng các group ký tự bên trong là hợp lệ (chấp nhận)
-- không có dấu `$` như ở phần ***Check***
+- `[^...]`: có dấu `^` để chỉ rằng các group ký tự bên trong là hợp lệ (chấp nhận). Gồm các ký tự từ 0 đến 9, a đến z, A đến Z, `_` (underscore), `-` (hyphen), `.` (dot)
+- không có dấu `$` ở cuối như ở phần ***Check***
 
-***Kết quả:*** 1`0`27-alert`0`document.cookie`0`-027
+***Kết quả:*** 1`0`27-rt`0`doc.co`0`-027
 - Dấu `%` bị thay thế bởi (số) `0`.
 - Dấu `(`, `)` bị thay thế bởi (số) `0`.
 
 | Origin | Result |
 | --- | ---
-| `1&27-alert*document.cookie#-%27` | 1`0`27-alert`0`document.cookie`0`-027
-| `1%27-alert!document@.cookie#-%27` | 1`0`27-alert`0`document`0`.cookie`0`-`0`27
+| `1&27-alert*doc.co#-%27` | 1`0`27-alert`0`doc.co`0`-027
+| `1%27-alert!doc@.co#-%27` | 1`0`27-alert`0`doc`0`.co`0`-`0`27
