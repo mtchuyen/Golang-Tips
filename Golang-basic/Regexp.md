@@ -74,3 +74,26 @@ $ : end of string
  Check validate C:\AppServ\www\project\storage\pr.vn.js 
  Filename C:\AppServ\www\project\storage\pr.vn.js is invalid --> (\ signal in path is not in matching regular)
 ```
+#### Replace match char
+
+***Ex:*** `1%27-rt(doc.co)-%27`
+
+Cần loại bỏ các dấu (ký tự) đặc biệt: `%`,...
+```
+reg, err := regexp.Compile("[^a-zA-Z0-9_\\-\\.]")
+cleanString := reg.ReplaceAllString(orginString, "0")
+```
+
+Giải thích:
+- `[...]`: group các ký tự cần tìm kiếm (để thay thế)
+- `[^...]`: có dấu `^` để chỉ rằng các group ký tự bên trong là hợp lệ (chấp nhận)
+- không có dấu `$` như ở phần ***Check***
+
+***Kết quả:*** 1`0`27-alert`0`document.cookie`0`-027
+- Dấu `%` bị thay thế bởi (số) `0`.
+- Dấu `(`, `)` bị thay thế bởi (số) `0`.
+
+| Origin | Result |
+| --- | ---
+| `1&27-alert*document.cookie#-%27` | 1`0`27-alert`0`document.cookie`0`-027
+| `1%27-alert!document@.cookie#-%27` | 1`0`27-alert`0`document`0`.cookie`0`-`0`27
