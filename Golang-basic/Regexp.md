@@ -1,4 +1,12 @@
-## regular expressions
+## Regular Expressions (RegEx) 
+
+****Regular Expression (RegEx)*** hay còn gọi là ***Biểu thức chính quy*** là một đoạn các ký tự đặc biệt theo những khuôn mẫu (pattern) nhất định, đại diện cho chuỗi hoặc một tập các chuỗi.
+
+Ví dụ: `^a...s$`
+
+Đoạn code trên xác định quy tắc RegEx: bất kỳ chuỗi nào có: bắt đầu bằng `a` và kết thúc bằng `s`.
+- Phù hợp: alias, abyss
+- Không phù hợp: An, abacus
 
 https://zetcode.com/golang/regex/
 
@@ -27,6 +35,9 @@ https://topdev.vn/blog/regex-la-gi/
 https://freetuts.net/cac-quy-tac-regular-expression-can-ban-tiep-theo-66.html
 
 https://quantrimang.com/regex-trong-python-165471
+
+***Các mẫu regex trong golang*** : [regex101.com](https://regex101.com/library?filterFlavors=golang&orderBy=MOST_RECENT&search=)
+
 
 #### Text boundary anchors
 
@@ -74,6 +85,23 @@ $ : end of string
  Check validate C:\AppServ\www\project\storage\pr.vn.js 
  Filename C:\AppServ\www\project\storage\pr.vn.js is invalid --> (\ signal in path is not in matching regular)
 ```
+
+***Ex2:***
+
+***```^[\d\s]+```***
+
+Breaking that down:
+
+- `^` match the start of the string
+- `[]` consider characters as a group
+- `\d` any decimal digit
+- `\s` any white space character
+- `+` match preceding character/group one or more times
+
+`from the start of the string, match any sequence of digits and/or whitespace characters`
+
+***Example:*** `2021 Competition Name` --> `Competition Name` (remove `2021 ` - has space at end)
+
 #### Replace match char
 
 ***Ex:*** `1%27-rt(doc.co)-%27`
