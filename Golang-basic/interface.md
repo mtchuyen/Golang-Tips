@@ -27,6 +27,88 @@ Giải thích:
 - `Shape` được khai báo (define) với 2 hành vi (method), nhưng không mô tả rõ hành động (declare)
 - `Shape` là một kiểu dữ liệu (Type), được khai báo như các kiểu dữ liệu thông thường khác (string, int,...)
 
+
+### Công dụng thực tế của interface
+- nguồn: [1:techmaster.vn] (note: đưa vào đây vì sợ rằng có 1 ngày techmaster.vn change link/domain)
+
+Thực tế là 1 interface được `define`, nhưng các hoạt động lại cần thiết ở `declare`, mà `declare` lại được khai báo ở `struct` và `method`. Vậy câu hỏi đặt ra là tại sao lại không sử dụng luôn `struct` và `method`?
+
+Ở ví dụ sau đây, chúng ta sẽ thấy tác dụng của `interface`.
+
+Chúng ta viết một chương trình đơn giản tính tổng chi phí của một công ty dựa trên mức lương của từng nhân viên. Giả định tất cả các chi phí tính bằng USD.
+
+
+```go
+package main
+
+import (  
+    "fmt"
+)
+
+type SalaryCalculator interface {  
+    CalculateSalary() int
+}
+
+type Permanent struct {  //nhân viên chính thức
+    empId    int
+    basicpay int
+    pf       int
+}
+
+type Contract struct {  //nhân viên hợp đồng
+    empId  int
+    basicpay int
+}
+
+//tiền lương của nhân viên permanent bằng tổng của basic pay và pf
+func (p Permanent) CalculateSalary() int {  
+    return p.basicpay + p.pf
+}
+
+//tiền lương của nhân viên contract chỉ là basic pay
+func (c Contract) CalculateSalary() int {  
+    return c.basicpay
+}
+
+//Có 2 method có khai báo tên giống nhau: CalculateSalary()
+
+/*
+tổng chi phí được tính bằng cách duyệt qua từng phần tử của slice SalaryCalculator
+và tính tổng mức lương của từng nhân viên
+*/
+func totalExpense(s []SalaryCalculator) {  
+    expense := 0
+    for _, v := range s {
+        expense = expense + v.CalculateSalary()
+    }
+    fmt.Printf("Total Expense Per Month $%d", expense)
+}
+
+func main() {  
+    pemp1 := Permanent{1, 5000, 20}
+    pemp2 := Permanent{2, 6000, 30}
+    cemp1 := Contract{3, 3000}
+    employees := []SalaryCalculator{pemp1, pemp2, cemp1}
+    totalExpense(employees)
+
+}
+```
+Ta thấy:
+- Có 2 method có khai báo tên giống nhau: `CalculateSalary()`, nhưng lại của 2 `struct` khác nhau.
+- hai báo một `interface` tên là `SalaryCalculator` có một phương thức là `CalculateSalary()` return `int`.
+
+Chúng ta có 2 loại nhân viên trong công ty là `Permanent` (nhân viên chính thức) và `Contract` (nhân viên hợp đồng) được định nghĩa bằng kiểu `struct`.
+- Mức lương của nhân viên `Permanent` là tổng của `basicpay` và `pf` còn đối với nhân viên Contract thì chỉ là basicpay. 
+- Điều này được thể hiện trong các phương thức `CalculateSalary` tương ứng. Bằng cách khai báo phương thức này, cả 2 struct `Permanent` và `Contract` đều đang ***implement*** interface `SalaryCalculator`.
+
+Hàm `totalExpense` được khai báo bên dưới ***thể hiện sự tiện ích của việc sử dụng interface.***: Hàm này nhận một slice các interface `SalaryCalculator []SalaryCalculator` làm tham số. 
+
+Trong hàm main() chúng ta truyền một slice với các phần tử gồm cả 2 kiểu `Permanent` và `Contract` vào hàm `totalExpense`. Hàm totalExpense tính toán chi phí bằng cách gọi đến phương thức (method) `CalculateSalary` của kiểu tương ứng, điều này được thực hiện ở câu lệnh expense = expense + v.CalculateSalary().
+
+Ưu điểm lớn nhất của hàm totalExpense này là nó *có thể được mở rộng đến bất kỳ loại nhân viên mới nào* mà không cần phải thay đổi code. Giả sử công ty bổ sung một loại nhân viên mới là `Freelancer` với cách tính lương khác. Freelancer này chỉ việc truyền vào đối số slice của hàm totalExpense mà không phải thay đổi bất kỳ 1 dòng code nào trong hàm totalExpense. Freelancer cũng implement interface SalaryCalculator.
+
+Output của chương trình trên là: Total Expense Per Month $14050
+
 ### Type: đại diện cho kiểu giá trị mà chúng ta sử dụng. 
 
 ***Tác dụng:***
