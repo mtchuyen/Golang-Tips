@@ -27,6 +27,74 @@ Giải thích:
 - `Shape` được khai báo (define) với 2 hành vi (method), nhưng không mô tả rõ hành động (declare)
 - `Shape` là một kiểu dữ liệu (Type), được khai báo như các kiểu dữ liệu thông thường khác (string, int,...)
 
+### Nguyên lý/cách thực thi (implement) của Interface
+
+`Interface trong Go` tuân theo khái niệm về `concept` [Duck test](https://en.wikipedia.org/wiki/Duck_test) như sau:
+
+```If it looks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck.```
+
+Nghĩa là : ```nếu con nào trông giống con vịt, bơi như vịt, quạc quạc như vịt thì con đó đích thực là con vịt```.
+
+Đọc thêm về bài viết ***Nhận dạng vịt***:
+- [wikipedia](https://vi.wikipedia.org/wiki/Nh%E1%BA%ADn_d%E1%BA%A1ng_v%E1%BB%8Bt)
+
+Qua đó ta có 1 cách hiểu dữ liệu gọi là ***Duck type***:
+- Nếu 1 con vật mà ta thấy nó giống như vịt, đi như vịt, kêu như vịt, thì đó phải là con vịt.
+- Nếu con chó bị chủ trang điểm thành có hình dáng giống vịt, chó lại biết kêu như vịt, đi như vịt. Thì con chó này vẫn bị gọi là vịt.
+
+Qua ví dụ trên, ta thấy rằng `con chó` mà có các hành vi như vịt, sẽ hiểu như struct có các hành vi của interface. Ta gọi `con chó` đang thực thi (implement) nhiệm vụ của vịt, hay `type` đang thực thi (impletment) của interface.
+
+Vậy nên quy định trong Golang là: nếu có một kiểu dữ liệu chứa tất cả các phương thức được khai báo trong interface đó, thì lúc này Interface đã được implement.
+
+***Ví dụ:*** trích từ [3:medium.com]
+
+```go
+package main
+
+import "fmt"
+
+type Shape interface {
+	Area() float64
+	Perimeter() float64
+}
+type Rect struct {
+	width  float64
+	height float64
+}
+
+func (r Rect) Area() float64 {
+	return r.width * r.height
+}
+func (r Rect) Perimeter() float64 {
+	return 2 * (r.width + r.height)
+}
+func main() {
+	var s Shape
+	s = Rect{5.0, 4.0}
+	r := Rect{5.0, 4.0}
+	fmt.Printf("type of s is %T\n", s)
+	fmt.Printf("value of s is %v\n", s)
+	fmt.Println("area of rectange s", s.Area())
+	fmt.Println("s == r is", s == r)
+}
+
+```
+
+Trong ví dụ trên, ta có ***interface*** `Shape` và ***struct*** `Rect`. Sau đó ta define các ***method*** `Area`, `Perimeter` thuộc về receiver `Rect`. Vì vậy, Rect implement các method Area, Perimeter.
+
+Vì 2 method này được define trong interface `Shape`, nên struct Rect ***implement*** interface Shape, việc này xảy ra tự động.
+
+Điều này có nghĩa là gì:
+- `s` có type là `Shape`, `r` có type là `Rect`, nhưng vì `Rect` thực thi `Shape` nên lúc này `s==r` và kết quả của dòng cuối cùng sẽ in ra là: `s == r is true`.
+- việc này xảy ra tự động, nên khi lập trình chúng ta không cần check kiểu (type) và ép kiểu.
+
+
+
+***Tại sao lại phải quy định như thế?***
+
+1. Để cho tiện khai báo, gán dữ liệu:
+
+Ví dụ: Xem phần `[Công dụng thực tế của interface]` ở phía dưới, ta thấy các đối tượng pemp1, cemp1 có `type` khác nhau, nhưng đều chung 1 interface `SalaryCalculator`, nên có thể cho chung vào 1 slice được.
 
 ### Công dụng thực tế của interface
 - nguồn: [1:techmaster.vn] (note: đưa vào đây vì sợ rằng có 1 ngày techmaster.vn change link/domain)
