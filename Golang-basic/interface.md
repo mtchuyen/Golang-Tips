@@ -223,3 +223,8 @@ t, ok := i.(T)
 [4] https://research.swtch.com/interfaces
 
 [5] https://medium.com/@mbinjamil/using-interfaces-in-go-the-right-way-99384bc69d39
+
+[6] https://codetoanbug.com/cach-su-dung-interfaces-trong-golangphan-1/
+
+[7] https://codetoanbug.com/cach-su-dung-interfaces-trong-golangphan-2/
+
