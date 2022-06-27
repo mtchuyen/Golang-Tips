@@ -2,11 +2,36 @@
 
 ***Note***: trước khi đọc `Interface` cần nằm được `struct` (structure) và `method` (function của struct) ở [phần đầu](https://github.com/mtchuyen/Golang-Tips/tree/master/Golang-basic#method)
 
+### Định nghĩa về Interface
+
+Định nghĩa chung về ***interface*** trong thế giới `Hướng đối tượng` đó là `Interface xác định CÁC hành vi của một đối tượng`. Nó chỉ xác định những gì đối tượng phải làm. 
+
+An ***interface*** is a collection of ***method signatures*** that a ***Type*** can implement (using methods). So interface defines (*not declares*) the behavior of the object (of the type `Type`).
+- `Method signatures`: Thông tin cần thiết để gọi method.
+- `defines`: Interface sẽ xác định các hành vi.
+- `declares`: quá trình hoạt động của 1 hành vi.
+
+***Ví dụ***: Trích từ [1-medium]
+
+```go
+type Shape interface {
+	Area() float64
+	Perimeter() float64
+}
+func main() {
+	var newS Shape 
+}
+```
+Giải thích:
+- `Shape` là một interface, có 2 method: `Area` và `Perimeter`
+- `Shape` được khai báo (define) với 2 hành vi (method), nhưng không mô tả rõ hành động (declare)
+- `Shape` là một kiểu dữ liệu (Type), được khai báo như các kiểu dữ liệu thông thường khác (string, int,...)
+
 ### Type: đại diện cho kiểu giá trị mà chúng ta sử dụng. 
 
 ***Tác dụng:***
 
-- Nhờ có Type mà các compiler có thể xác định được một số lỗi trong quá trình compile.
+- Nhờ có `Type` mà các compiler có thể xác định được một số lỗi trong quá trình compile.
 
 ***Type assertion:***
 
