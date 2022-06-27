@@ -88,6 +88,8 @@ Vì 2 method này được define trong interface `Shape`, nên struct Rect ***i
 - `s` có type là `Shape`, `r` có type là `Rect`, nhưng vì `Rect` thực thi `Shape` nên lúc này `s==r` và kết quả của dòng cuối cùng sẽ in ra là: `s == r is true`.
 - việc này xảy ra tự động, nên khi lập trình chúng ta không cần check kiểu (type) và ép kiểu.
 
+*Lưu ý:* Để `struct` có thể `implement` một interface, struct đó phải implement ***tất cả method*** có trong interface đó.
+
 
 
 ***Tại sao lại phải quy định như thế?***
