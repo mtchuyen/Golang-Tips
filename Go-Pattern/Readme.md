@@ -82,7 +82,10 @@ Observer Pattern được áp dụng khi:
 - [Observer Design Pattern in Golang with an Example](https://levelup.gitconnected.com/observer-design-pattern-in-golang-with-an-example-6c24898059b1)
 - https://viblo.asia/p/gioi-thieu-ve-observer-design-pattern-Ljy5V4j9Zra
 - https://viblo.asia/p/design-pattern-observer-V3m5WO8W5O7
-
+- https://codelearn.io/sharing/observer-pattern-va-ung-dung
+- https://viblo.asia/p/gioi-thieu-ve-observer-design-pattern-Ljy5V4j9Zra
+- https://topdev.vn/blog/observer-pattern-la-gi-nhat-tru-kinh-thien/
+- [rất dài]: https://toihocdesignpattern.com/head-first-design-patterns-tieng-viet-chuong-2-observer-pattern.html
 
 ## Clean architecture
 
