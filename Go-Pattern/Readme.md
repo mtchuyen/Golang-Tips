@@ -23,7 +23,7 @@ https://anonystick.com/blog-developer/phan-2-factory-pattern-cach-ma-toi-trien-k
 - https://techmaster.vn/posts/36713/builder-pattern-trong-golang
 
 
-### [Factory Pattern trong golang](https://github.com/mtchuyen/Golang-Tips/blob/ffcecfb9d33e82cbc6818d0381d87ecb8cfd23c2/Go-Pattern/Factory-Pattern.md)
+### [Factory Pattern trong golang](https://github.com/mtchuyen/Golang-Tips/blob/master/Go-Pattern/Factory-Pattern.md)
 
 
 ### Singleton
