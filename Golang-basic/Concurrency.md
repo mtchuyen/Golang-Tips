@@ -18,6 +18,40 @@ http://runikitkat.com/post/go-routine-under-the-hood/
 - Về cơ bản, concept của channel là “typed pipes”. Nó tạo một đường ống liên kết giữa 2 goroutines, chúng ta có thể gửi các object phức tạp qua channel.
 - Channel có thể dùng cho synchronization.
 
+### Why doesn’t Go Support Map Concurrency at the Language Level?
+
+https://medium.com/@ClaytonXia/why-doesnt-go-support-map-concurrency-at-the-language-level-17b715587163
+
+#### Why is it not natively supported? The official answer is listed below:
+- ***Typical usage scenario:** A typical usage scenario for map is that safe access from multiple goroutines is not required.
+- ***Atypical scenarios:*** The map may be part of some larger data structure or an already synchronized computation.
+- ***Performance scenario considerations:*** If only a few programs are added to the security, all operations of the map have to deal with mutex, which will reduce the performance of most programs.
+
+So after a long discussion, the Go team believes that native maps should be more suitable for typical usage scenarios.
+
+If it is for a small number of cases, it will cause most programs to pay an extra performance cost , and it is decided not to support native concurrent map reading and writing. And since Go1.6, a detection mechanism has been added , and concurrency will lead to exceptions.
+
+#### Why crash
+As mentioned earlier, the concurrency detection of native maps will be performed since Go1.6, which is a “nightmare” for some people. Some people may complain: “It’s okay to return a mistake, why simply make my program crash”.
+
+Let’s assume that the concurrent read and write of map goes into the following two scenarios:
+
+***Generate panic:*** program panic -> leads to recover -> does not process concurrent map -> map has dirty data -> program uses dirty data -> generates unknown risks
+
+***Generate crash:*** program crash -> crash directly -> save data (data is normal) -> generate known risks
+
+Which option would you choose? Go officials chose the second one after assessing the cost.
+
+#### Let it crash
+
+The method chosen by the Go official team is the classic “let it crash” behavior in the industry, which is adopted as a design philosophy in many programming languages.
+
+‘Let it crash’ lets engineers don’t have to worry too much about unknown bugs and instead do comprehensive defensive coding. Erlang is well known for this concept.
+
+The reason of inability to read and write the map concurrently directly is the consideration of “let it crash”. If you want to avoid this situation in your own project, you can add race detection (-race) to tool chains such as linter, and you can also avoid such risks.
+
+How do you like the design considerations for Go? Comment or discussions welcomed~
+
 ## Goroutine:
 ### Khai báo:
 
