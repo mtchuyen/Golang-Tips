@@ -5,6 +5,8 @@ https://github.com/go-awesome/Data-Structures-and-Algorithms
 
 https://github.com/kylesliu/awesome-golang-algorithm
 
+[Dynamic Programming in Go](https://medium.com/@kayahuseyin/dynamic-programming-in-go-a87e0b3c5ae0)
+
 ## Encode & Decode
 ### Base64
 
