@@ -39,9 +39,17 @@ type AbstractFactory interface {
 - Interface `AbstractFactory` có method là `CreateMyLove()`
 - `CreateMyLove()` được gọi là 1 ***factory method***.
 
+
 ## Tham khảo:
 [1] https://techmaster.vn/posts/36708/factory-pattern-trong-golang
 
 [2] https://anonystick.com/blog-developer/phan-2-factory-pattern-cach-ma-toi-trien-khai-trong-nha-may-vinfast-fresher-va-junior-nen-bo-qua-phan-3-2020110554662242
 
 [3] https://matthewbrown.io/2016/01/23/factory-pattern-in-golang/
+
+#### Series bài viết `Factory Pattern` của Pravand Katyare:
+[U.1] https://medium.com/@katyare.pravand/factory-design-pattern-in-go-63a9b423976f
+
+[U.2] https://towardsdev.com/interface-factory-design-pattern-in-go-3eb6f97f20c4
+
+[U.3] https://medium.com/@katyare.pravand/factory-generator-pattern-in-go-ca6e9af12a1b
