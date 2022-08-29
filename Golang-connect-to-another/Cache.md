@@ -1,7 +1,7 @@
 
 ***Note***: tại sao phải đưa bài viết này vào github, bởi vì medium hạn chế lượng đọc bài viết, khiến cho việc re-read gặp khó khăn.
 
-## Các tiêu chí so sánh thư viện cache:
+## I. Các tiêu chí so sánh thư viện cache:
 
 - High concurrency
 - Data structure
@@ -155,7 +155,7 @@ Only ***groupcache*** and ***bigcache*** support separate deployment and provide
 ***groupcache*** claims to be the replacement of `memcached`, supporting the requests through the ***proto buffer protocol*** as well as httpServer.
 
 
-## generics-cache
+## III. Generics-cache
 `Go generic cache` được cho là sẽ cải thiện performance của Cache, và support đầy đủ các tính năng (so với 4 thư viện cache đã so sánh ở trên)
 
 ***generic-cache*** uses ***comparable*** interface as key type, and supports all kinds of cache algorithms, e.g. FIFO, LRU, LFU, MRU, etc.
@@ -177,6 +177,15 @@ Only ***groupcache*** and ***bigcache*** support separate deployment and provide
 
 
 Note: Những thư viện này dùng `generic` của Go, nên phải dùng các version ***> 1.18***.
+
+## Distribtured Cache
+
+https://github.com/iwanbk/bcache
+
+https://github.com/viney-shih/go-cache
+
+### sharding
+https://github.com/kailask/sharded-kvs
 
 ## Ref
 - https://dgraph.io/blog/post/caching-in-go/
