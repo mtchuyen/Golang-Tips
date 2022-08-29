@@ -87,4 +87,37 @@ https://lmsang1986.violet.vn/entry/show/entry_id/7018749
 https://medium.com/codex/skiplist-in-go-267bb81e51cd
 
 
+## Data Structures and Algorithms
+
+### Linked Lists
+Linked Lists là một cấu trúc dữ liệu dạng collection, nó là tập họp của nhiều object được gọi là node, và các node này được nối với nhau thông qua một liên kết được gọi là `link`.
+
+`Linked Lists` cũng tương tự như Array, nhưng ở một số ngôn ngữ khi ta làm việc với Array, thì ta thường phải đối mặt với một số vấn đề về độ dài của Array. `Linked Lists` sẽ giúp ta giải quyết các vấn đề đó.
+
+#### Real World Example
+Vậy Linked Lists sẽ được sử dụng ở đâu trong thực tế và nó giúp ta giải quyết những vấn đề gì?
+
+Linked Lists được sử dụng cho khá nhiều ứng dụng trong khoa học máy tính (Computer Science), ví dụ:
+
+- Dynamic memory allocation : We use linked list of free blocks.
+- Maintaining directory of names.
+- Performing arithmetic operations on long integers.
+- Manipulation of polynomials by storing constants in the node of linked list.
+- Representing sparse matrices.
+
+
+Còn trong thực tế ta có thể sử dụng Linked Lists cho các ứng dụng như:
+- Image viewer.
+- Previous and next page in web browser.
+- Music Player.
+
+Các ứng dụng trên thì ta không thể dùng Linked Lists bình thường được, mà ta cần dùng ***Doubly Linked Lists***, các bạn có thể đọc để biết rõ hơn.
+
+
+
+#### Ref:
+
+https://viblo.asia/p/golang-data-structures-and-algorithms-linked-lists-0gdJz07vVz5
+
+
 
