@@ -224,6 +224,8 @@ Go không support mô hình hướng đối tượng nhưng `structure` gần gi
 Ref:
 - https://medium.com/@anh.nt094/golang-eb65bfe1a8bb
 
+### Struct Composition in Go
+https://medium.com/@muhammadarifineffendi/struct-composition-in-go-80492bd447bd
 
 ## Method
 
