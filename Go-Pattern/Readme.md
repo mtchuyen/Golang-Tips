@@ -93,3 +93,5 @@ Observer Pattern được áp dụng khi:
 
 [Clean Architecture with Go](https://medium.com/@martinezdelariva/clean-architecture-with-go-60feb7aac3f8)
 
+[Applying Clean Architecture in Go](https://medium.com/@geisonbiazus/applying-clean-architecture-in-go-2c233a96bd47)
+
