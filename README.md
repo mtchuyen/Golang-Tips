@@ -19,7 +19,7 @@ Những nguyên lý thiết kế app trên ngôn ngữ Golang:
 [Hexagonal Architecture in Go](https://blog.devops.dev/hexagonal-architecture-in-go-58dd2386dea7)
 
 
-#### [Clean Architecture with Go](https://medium.com/@martinezdelariva/clean-architecture-with-go-60feb7aac3f8)
+#### [Clean Architecture with Go](https://github.com/mtchuyen/Golang-Tips/blob/master/Go-Pattern/Readme.md#clean-architecture)
 
 #### Nên tuân thủ 1 số Pattern:
 - [Patterns in Go applications](https://medium.com/@tranngoclam/patterns-in-go-applications-42dcd10fd0e5)
