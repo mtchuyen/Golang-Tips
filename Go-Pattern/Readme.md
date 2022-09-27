@@ -29,6 +29,8 @@ https://anonystick.com/blog-developer/phan-2-factory-pattern-cach-ma-toi-trien-k
 ### Singleton
 - https://viblo.asia/p/go-design-pattern-singleton-3P0lPeYm5ox
 - https://locphamtan.medium.com/singleton-pattern-trong-golang-dbe81b93b41a
+- https://towardsdev.com/singleton-design-pattern-in-go-333e15669711
+- https://medium.com/@rahul-yr/how-to-implement-singleton-design-pattern-in-go-2ca060d478e5
 
 
 ### Adapter Design Pattern
