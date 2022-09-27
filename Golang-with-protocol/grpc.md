@@ -18,8 +18,23 @@ https://velotio.com/blog/2019/3/25/server-side-stack-golang-protobuf-grpc
 
 [Build gRPC with Go (golang): Unary API](https://bangadam-dev.medium.com/build-grpc-with-go-golang-unary-api-df6c6a38c30a)
 
+[Build gRPC with Go (golang): Server Streaming API](https://towardsdev.com/build-grpc-with-go-golang-server-streaming-api-83113e8627dc)
+
 [Load Balancing for gRPC](https://medium.com/devops-deepdive/load-balancing-for-grpc-8fe2d9b7c262)
 
+[Go API Design With Protocol Buffers and gRPC](https://betterprogramming.pub/go-api-design-with-protocol-buffers-and-grpc-991838e4852b)
+
+***Series: Microservices in Go with gRPC, API Gateway, and Authentication:***
+- [part-1](https://levelup.gitconnected.com/microservices-with-go-grpc-api-gateway-and-authentication-part-1-2-393ad9fc9d30), 
+- [part-2](https://levelup.gitconnected.com/microservices-in-go-with-grpc-api-gateway-and-authentication-ba36cc32d167)
+
+[Building Event-Driven Distributed Systems in Go with gRPC, NATS JetStream and CockroachDB](https://shijuvar.medium.com/building-event-driven-distributed-systems-in-go-with-grpc-nats-jetstream-and-cockroachdb-c4b899c8636d)
+
+[Build Super Fast gRPC APIs With Go and Java: FieldMask](https://betterprogramming.pub/grpc-fieldmask-only-request-for-needed-data-build-super-fast-apis-example-with-golang-and-8953089e88a3)
+
+***Series: Build unary gRPC***:
+- [Build unary gRPC, verify it using grpcui and unit tests! 5 articles become a gRPC expert(2)](https://medium.com/@ramseyjiang_22278/unary-grpc-implement-using-golang-and-unit-tests-5-posts-learn-grpc-from-scratch-2-607fe74e7922)
+- 
 
 ### interact with gRPC servers. 
 
@@ -42,4 +57,12 @@ https://medium.com/alva-labs/building-microapps-with-grpc-web-64b7cdf50313
 #### ghz: Simple gRPC benchmarking and load testing tool inspired by hey and grpcurl.
 
 Link: https://github.com/bojand/ghz
+
+## GUI
+
+Build unary gRPC, verify it using grpcui and unit tests! 5 articles become a gRPC expert(2)
+
+[ptg: a GUI gRPC client](https://medium.com/@crossoverjie/ptg-a-gui-grpc-client-fcade3bfc902)
+
+
 
