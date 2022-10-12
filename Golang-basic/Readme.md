@@ -171,12 +171,15 @@ fmt.Println(sum)
 - https://www.golangprograms.com/go-language/golang-maps.html
 - [Go: Concurrency Access with Maps — Part III](https://medium.com/a-journey-with-go/go-concurrency-access-with-maps-part-iii-8c0a0e4eb27e)
 - [Avoid The Three Mistakes When Using a Map in Go](https://levelup.gitconnected.com/avoid-the-three-mistakes-when-using-a-map-in-go-699435db226c)
-
+- [Go maps: declaring and initializing](https://bitfieldconsulting.com/golang/map-declaring-initializing)
 
 ***Advance***:
 - https://yourbasic.org/golang/maps-explained/: bài viết có tính học thuật liên quan tới [kỹ thuật hash](https://yourbasic.org/algorithms/hash-tables-explained/)
 - [Golang Maps: Not safe for concurrent use](https://golangbyexample.com/go-maps-concurrency/)
 - [SOLVED: Golang fatal error: concurrent map writes](https://ashish.one/blogs/fatal-error-concurrent-map-writes/)
+- [map[string]interface{} in Go](https://bitfieldconsulting.com/golang/map-string-interface)
+- [Finding whether a Go map key exists](https://bitfieldconsulting.com/golang/map-key-exists)
+
 
 #### Check type of map:
 ***Lib***:
