@@ -7,6 +7,8 @@ The ***unit test*** is the first level of software test and followed by integrat
 - Unit testing aids in the discovery and elimination of issues early in the development cycle, as well as the prevention of regressions during refactoring. 
 - A decent unit test may also act as documentation for new developers on the project.
 
+[Test-Pyramid-UnitTest](https://github.com/mtchuyen/Golang-Tips/blob/44c79ef3287c8b44a8aff00c0266bcdaaeedadd5/statics/Test-Pyramid1_9sF9aGdGXWPm28Q8.png)
+
 ## Lần đầu tạo Unit Test in Go project
 
 [Ref.4]
