@@ -9,6 +9,11 @@ The ***unit test*** is the first level of software test and followed by integrat
 
 ![Test-Pyramid-UnitTest](https://github.com/mtchuyen/Golang-Tips/blob/44c79ef3287c8b44a8aff00c0266bcdaaeedadd5/statics/Test-Pyramid1_9sF9aGdGXWPm28Q8.png)
 
+### Một số loại test được support trong Golang
+- Test Suites: is a group of test cases on a particular feature or component. Use `Test Suites` to organize your test cases.
+- Table Tests:  allow us to cover all the edge cases we expect to encounter. Use `Table Tests` to cover all your program's edge cases and avoid run-time crashes.
+
+
 ## Lần đầu tạo Unit Test in Go project
 
 [Ref.4]
@@ -88,6 +93,7 @@ Run the following command
 > $ go test -v
 
 ## Ref
+- [2: Unit Testing in Go (Golang)](https://medium.com/@snassr/unit-testing-in-go-golang-3a856ee3b9ba)
 - [3: How to Write Unit Test in Go](https://medium.com/yemeksepeti-teknoloji/how-to-write-unit-test-in-go-1df2b98ad510)
 - [4: writing unit test in golang easily](https://towardsdev.com/writing-unit-test-in-golang-easily-5fee03c653bb)
 - [9: Testing in golang](https://medium.com/@jhyoocoderusa/testing-in-golang-ab89930a40f6) -Sơ sài
