@@ -289,9 +289,8 @@ func (c Circle) DienTich() float64 {
 - [Go Pipeline for a layman](https://anupamgogoi.medium.com/go-pipeline-for-a-layman-4791fb4f1e2d)
 - 
 
-## Mutex
-- [Mutex Examples in Go](https://levelup.gitconnected.com/mutex-examples-in-go-ad7c440461a4)
-- 
+## [Mutex](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/Mutex.md)
+
 
 ## Heap
 
