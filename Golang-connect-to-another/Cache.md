@@ -42,13 +42,15 @@ There are usually several methods.
 
 ### 3. Capacity & evict policy
 
-The scalability of the cache’s capacity determines the evict policies. The common evict policy algorithms include FIFO, LRU, etc.
-
 Capacity của 1 cache là lượng item có thể lưu trữ trong cache được.
 
 Capacity phụ thuộc vào yếu tố `kích thước data` của item. Vì vậy với sự giới hạn của memory app, thì Capacity của các thư viện cache cần được đánh giá thêm với các điều kiện:
 - Cache item có trong memory
 - Khả năng flush data từ memory xuống disk
+
+The scalability of the cache’s capacity determines the evict policies (`Khả năng mở rộng của Cache phụ thuộc vào chính sách làm sạch`). 
+- `evict policies`: chính sách loại bỏ (bỏ các item đã không còn đúng `luật`), hiểu là làm sạch cache store.
+- The common evict policy algorithms include FIFO, LRU, etc.
 
 Để đảm bảo app có thể chạy tốt (không bị tràn memory) khi cache overload, thì `Capacity` và `evict policy` cần được cân bằng với nhau
 - Nếu `Capacity` là `unlimited` thì cần có `evict policy` (time-to-live)
