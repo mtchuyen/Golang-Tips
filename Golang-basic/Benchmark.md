@@ -36,7 +36,7 @@ Ex: `go test -run=Bench -bench=GenGUIDbyTime`
 ```
 goos: linux
 goarch: amd64
-pkg: first_Go/logrustet
+pkg: first_Go/logtetbench
 cpu: Intel(R) Core(TM) i5-8400 CPU @ 2.80GHz
 BenchmarkGenGUIDbyTime-6   	 2892226	       405.6 ns/op
 PASS
