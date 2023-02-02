@@ -19,6 +19,11 @@ The ***unit test*** is the first level of software test and followed by integrat
 
 Test case are placed inside ***_test.go*** files
 
+Ex:
+- math_test.go
+- ulti_comm_test.go
+
+
 ### Syntax for Func
 
 `func TestXyy (t *testing.T)`
