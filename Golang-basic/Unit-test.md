@@ -29,7 +29,7 @@ Ex:
 `func TestXyy (t *testing.T)`
 
 - `Test` is prefix
-- X is upper-case char
+- `X` is upper-case char in ***Xyy*** func name
 
 Ex: 
 ```
