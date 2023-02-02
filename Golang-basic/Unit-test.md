@@ -13,6 +13,35 @@ The ***unit test*** is the first level of software test and followed by integrat
 - Test Suites: is a group of test cases on a particular feature or component. Use `Test Suites` to organize your test cases.
 - Table Tests:  allow us to cover all the edge cases we expect to encounter. Use `Table Tests` to cover all your program's edge cases and avoid run-time crashes.
 
+## Syntax
+
+### Syntax for File
+
+Test case are placed inside ***_test.go*** files
+
+### Syntax for Func
+
+`func TestXyy (t *testing.T)`
+
+- `Test` is prefix
+- X is upper-case char
+
+Ex: 
+```
+func TestGenGUID()(t *testing.T) {
+
+}
+```
+### Syntax for Command
+
+go test -run ***Func-name:Xyy***
+
+Ex: `go test -run GenGUID`
+
+
+***Run all Test func***
+- `go test -v`
+
 
 ## Lần đầu tạo Unit Test in Go project
 
