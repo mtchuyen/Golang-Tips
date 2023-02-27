@@ -14,10 +14,29 @@ Context is a data that carries ***value, cancel signal, timeout signal, & Deadli
 ### Why Context is Important ?
 With context, when we want to cancel all of the process we just need to send a signal to context. So Automatically all process will be cancelled. Almost every part of GO-lang is using context such as database, http server, http client, etc. Even in Google, when develop using Go, Context is required and always send to every function.
 
+#### Why Do We Need the Context Module?
+
+[Ref4: Understanding Context in Golang](https://betterprogramming.pub/understanding-context-in-golang-7f574d9d94e0)
+
+Imagine being the person taking orders in a restaurant.
+
+When an order arrives, you *delegate* it to one of your many chefs.
+
+What would you do if the customer *suddenly* decides to walk away?
+
+Without a doubt, you will *stop* your chef from further processing the order to prevent any waste of ingredients!
+
+That’s what the ***context*** module does!
+
+It’s an argument passed to your functions and Goroutines and allows you to stop them promptly should you not require them anymore.
+
+
 ### How Context Work ?
 
 For example if you want to cancel some process from Process A and send to another Process, All of another process will detect the signal which send from Process A and cancel the process.
-[img](image-here)
+
+![example of Context work](https://github.com/mtchuyen/Golang-Tips/blob/master/statics/Context-example-of-Context-work.png)
+
 
 Và chúng ta sẽ quan tâm:
 - how to create the contexts `(Background and TODO) `
@@ -46,11 +65,12 @@ Create empty context like Background(), but usually used when we are not clear o
 ```
 This is the example to initiate ***empty*** context in go. 
 
-## Context Tree
-https://btree.dev/golang-context
-
 ### derived contexts
 derived được hiểu là dẫn xuất - được tạo ra, sinh ra từ một cái khác.
+
+Quá trình derived sẽ tạo ra một Context Tree (hay còn gọi là cây phả hệ Parent-Child-Subchild...)
+
+https://btree.dev/golang-context
 
 Việc dẫn xuất này giúp chúng ta:
 - When a Context is canceled, all Contexts derived from it are also canceled.
@@ -61,15 +81,17 @@ derived contexts được hiểu là *childs* của ***Root-context***.
 - Mỗi *child* sẽ được thêm các thông tin khác và được xử lý ở 1 layer khác.
 ---> đó chính là mối quan hệ ***Parent and Child Context***
 
-### how to derive contexts
+#### how to derive contexts
 Có vài phương thức hay sử dụng: WithValue, WithCancel, Deadline, and Timeout.
 
-### Parent and Child Context
+#### Parent and Child Context
 Context is adopted ***Parent and Child*** concept. It’s means, when you are create a context you can create a child context from the existing context. Parent context is possible to have many child context, but child context is only allowed to have one parent context. This concept is similar to inheritance concept in Object Oriented Programming.
 
 ***Relation between Parent and Child Context***
 
-[img](image-here)
+
+![Relation between Parent and Child Context](https://github.com/mtchuyen/Golang-Tips/blob/master/statics/Context-Relation-between-Parent-and-Child-Context.png)
+
 
 Parent & Child context will always be connected to each other. When you do something to Context A, all of Child and Sub child of context A will be impacted, but it wouldn’t impacted to Context B which in different inheritance path. You can access your data in parent Context from their own Child & Sub child context. but is not allowed to access data from another inheritance path context.
 
