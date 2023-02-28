@@ -1,4 +1,4 @@
-## First step
+## 1. First step
 
 Đọc trong tài liệu này: 
 [Ref1]: https://www.practical-go-lessons.com/chap-37-context
@@ -95,7 +95,7 @@ Context is adopted ***Parent and Child*** concept. It’s means, when you are cr
 
 Parent & Child context will always be connected to each other. When you do something to Context A, all of Child and Sub child of context A will be impacted, but it wouldn’t impacted to Context B which in different inheritance path. You can access your data in parent Context from their own Child & Sub child context. but is not allowed to access data from another inheritance path context.
 
-## Context is Immutable
+## 2. Context is Immutable
 
 - ***Immutable*** hiểu nôm na là không thể thay đổi còn ***mutable*** là có thể thay đổi.
 - 2 khái niệm Immutable và mutable thường được dùng class, object.
@@ -158,3 +158,197 @@ fmt.Println(contextD.Value("b"))
 
 - The first line of code is try to access its own value, exactly you can access value from its own context.
 - The second line of code is try to access its own parent context, this method is still allowed, you can access its own parent value.
+
+## 3. Context method
+
+Phần này sẽ tập trung vào nội dung của [Ref4: Understanding Context in Golang](https://betterprogramming.pub/understanding-context-in-golang-7f574d9d94e0)
+
+Cơ bản:
+- https://www.sohamkamani.com/golang/context-cancellation-and-values/
+- https://www.prakharsrivastav.com/posts/golang-context-and-cancellation/
+
+
+#### 0.1. Context module được sử dụng trong ngữ cảnh nào?
+
+Xử lý các vấn đề when a client terminates the connection with a server.
+
+|--> Điều gì sẽ xảy ra if the termination occurs while the server is in the middle of some heavy lifting work or database query?
+
+|--> |--> The context module allows these processes to be stopped instantly as soon as they are not further in need.
+
+Điều này cũng được mô tả qua ví dụ cụ thể của [Ref5: Go Context timeouts can be harmful](https://uptrace.dev/blog/golang-context-timeout.html)
+
+The usage of the context module boils down to three primary parts:
+1. Nhận sự kiện (thụ động): Listening to a cancellation event
+2. Phát sự kiện (chủ động): Emitting a cancellation event
+3. Passing request scope data: [Method: WithValue](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/Context.md#method-withvalue)
+
+#### 0.2. Cấu trúc Context interface
+
+Trước khi đi vào các phần trên, ta xem cấu trúc của một `Context interface`
+```
+type Context interface {
+    Done() <- chan struct{}
+    Err() error
+	
+    Deadline() (deadline time.Time, ok bool)
+    Value(key interface{}) interface{}
+}
+```
+- The Done() function returns a channel that receives an `empty struct` when a context is cancelled.
+
+- The Err() function returns a non-nil error in the `event of cancellation` otherwise, it returns a nil value.
+
+
+### 1. Listening to a Cancellation Event
+
+Có 2 cách để thực hiện Listening
+- Cxt.Done()
+- Cxt.Err()
+
+#### 1.1 Listening to the Done() channel
+
+```
+func main() {
+	http.ListenAndServe(":8000", http.HandlerFunc(handler))
+}
+
+func handler(
+	w http.ResponseWriter,
+	r *http.Request,
+) {
+	ctx := r.Context()
+	select {
+	case <-time.After(2 * time.Second):
+		timnw := time.Now().String()
+		w.Write([]byte("request processed: " + timnw))
+
+	case <- ctx.Done():
+		fmt.Println("request cancelled")
+		return
+	}
+}
+```
+In the example above, we simulated a web service handler.
+
+We used `time.After()` to simulate a function that takes two seconds to process a request.
+- Khi client gửi request tới, server sẽ delay 2 second rồi mới trả về giá trị `request processed: 2021-02-27 15:04:14.0...` cho client
+- Khi client gửi request tới và bấm hủy (chưa tới 2 second) thì server sẽ in ra `request cancelled` ở màn hình log của server.
+
+Khi client hủy lệnh, `ctx.Done()` channel sẽ nhận được một `empty struct` để Go biết rằng context này đã hủy và tự động thực hiện đoạn lệnh bên trong (print... & return)
+
+#### 1.2. Checking the Error From Err()
+
+You can ***check for errors*** from `ctx.Err()` before executing some critical logic.
+
+Ở ví dụ trên, thay vì ta thực hiện `fmt.Println("request cancelled")`, không có thông tin gì, ta sẽ làm cụ thể hơn (print ra nhiều thông tin hơn: lý do tại sao context bị cancel)
+
+```
+	case <- ctx.Done():
+                fmt.Println(ctx.Err().Error())
+                return
+```
+
+
+### 2. Emitting a Cancellation Event
+Có 3 cách (method) hay được sử dụng (***WithXYZ***):
+
+```
+func WithCancel(parent Context) (ctx Context, cancel CancelFunc)
+
+func WithTimeout(parent Context, timeout time.Duration) (Context, CancelFunc)
+
+func WithDeadline(parent Context, d time.Time) (Context, CancelFunc)
+```
+
+Calling the ***cancelFunc*** emits an empty struct to the `ctx.Done()` channel and notifies downstream functions that are listening to it.
+
+As you call the `WithXYZ` functions, they accept a parent context and return a new copy of the parent with a new `.Done()` channel.
+
+```
+rootCtx := context.Background()
+
+child1Ctx, cancelFunc1 := context.WithCancel(rootCtx)
+child2Ctx, cancelFunc2 := context.WithCancel(rootCtx)
+
+child3Ctx, cancelFunc3 := context.WithCancel(child1Ctx)
+```
+When we call `cancelFunc1`, we will cancel `child1Ctx` and `child3Ctx`, while leaving `child2Ctx` unaffected.
+
+***Different between WithTimeout and WithCancel***
+
+- `WithTimeout`: query runs long time.
+- `WithCancel`:  application is crashed/stopped/cancelled (no matter how long the query runs for).
+
+***Different between WithTimeout and WithCancel***
+- `WithTimeout`: `context.WithTimeout(ctx, time.Second*2)` --> 2 second wait
+- `WithDeadline`: `context.WithDeadline(ctx, time.Now().Add(time.Second*20))`, current is `2021-02-28 16:02:06.206` and wait to `2021-02-28 16:02:26.206`
+
+See: 
+- http://www.inanzzz.com/index.php/post/olfs/cancelling-database-queries-with-context-withtimeout-and-withcancel-in-golang
+- https://stackoverflow.com/questions/56721676/different-about-withcancel-and-withtimeout-in-golangs-context
+
+#### 2.1. WithCancel
+
+Source: 
+- https://www.sohamkamani.com/golang/context-cancellation-and-values/
+- https://viblo.asia/p/golang-context-cancel-va-cach-su-dung-gGJ59rVDKX2
+
+```
+func func1(ctx context.Context) error {
+	time.Sleep(100 * time.Millisecond)
+	return errors.New("=func1=: failed")
+}
+
+func func2(ctx context.Context) {
+	fmt.Println("func2: exe operation2")
+	select {
+	case <-time.After(50 * time.Millisecond):
+		fmt.Println("func2: done")
+	case <-ctx.Done():
+		fmt.Println("func2: halted operation2")
+	}
+}
+
+func main() {
+	ctx, cancel := context.WithCancel(context.Background())
+	go func() {
+		err := func1(ctx)
+		fmt.Println("operation1 err:", err)
+		if err != nil {
+			cancel()
+		}
+	}()
+
+	func2(ctx)
+}
+```
+Case này, ở `func2` sẽ delay 50ms `case <-time.After(50 * time.Millisecond):` nên `func1` không được call
+
+Khi tăng lên 500ms `case <-time.After(500 * time.Millisecond):` thì `func1` sẽ hoàn thành trước `func2`. Khi đó `cancel()` sẽ được gọi, nó sẽ truyền 1 signal (`empty struct`) để đoạn này `case <-ctx.Done():` sẽ được xử lý.
+
+### Note
+#### note 1: 
+Always ***Defer Cancel Function***
+
+```
+    ctx := context.Background()
+
+    ctx, cancel := context.WithTimeout(
+        ctx, 
+        3*time.Second,
+    )
+    defer cancel()
+```
+
+#### note 2:
+A child ***can't and shouldn't*** cancel a context, it's the parent's call. 
+
+See: https://stackoverflow.com/questions/66679577/cancel-context-from-child?rq=1
+
+> you can use a channel to communicate, parent can listen to the channel, once there is an error, parent can cancel all children task.
+
+Sometimes, calling `parentCancel()` doesn't mean ***everything will stop***. 
+
+See: https://stackoverflow.com/questions/53009084/parent-child-context-cancelling-order-in-go
+
