@@ -1,3 +1,45 @@
+## Tables:
+
+[1. First step](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/Context.md#1-first-step)
+
+[1.1. what-is-context](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/Context.md#what-is-context-)
+
+[1.2. why-context-is-important](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/Context.md#why-context-is-important-)
+
+[1.3. why-do-we-need-the-context-module](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/Context.md#why-do-we-need-the-context-module)
+
+[1.4. how-context-work](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/Context.md#how-context-work-)
+
+[1.5. how-to-create-a-context](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/Context.md#how-to-create-a-context-)
+
+[1.6. derived-contexts](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/Context.md#derived-contexts)
+
+
+[2. Context-is-immutable](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/Context.md#2-context-is-immutable)
+
+[2.1. method-withvalue](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/Context.md#method-withvalue)
+
+[2.2. access-parent-context-value](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/Context.md#access-parent-context-value)
+
+
+[3. Context-method](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/Context.md#3-context-method)
+
+[3.0.1. Context module được sử dụng trong ngữ cảnh nào?](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/Context.md#01-context-module-%C4%91%C6%B0%E1%BB%A3c-s%E1%BB%AD-d%E1%BB%A5ng-trong-ng%E1%BB%AF-c%E1%BA%A3nh-n%C3%A0o)
+
+[3.0.2. Cấu trúc Context interface](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/Context.md#02-c%E1%BA%A5u-tr%C3%BAc-context-interface)
+
+[3.1. Listening to a Cancellation Event](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/Context.md#1-listening-to-a-cancellation-event)
+
+[3.1.1 Listening to the Done() channel](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/Context.md#11-listening-to-the-done-channel)
+
+[3.1.2. Checking the Error From Err()](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/Context.md#12-checking-the-error-from-err)
+
+[3.2. Emitting a Cancellation Event](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/Context.md#21-withcancel)
+
+[3.2.1. Method: WithCancel](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/Context.md#21-withcancel)
+
+[3.3. Note](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/Context.md#note)
+
 ## 1. First step
 
 Đọc trong tài liệu này: 
