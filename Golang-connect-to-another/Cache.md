@@ -180,7 +180,18 @@ Only ***groupcache*** and ***bigcache*** support separate deployment and provide
 
 Note: Những thư viện này dùng `generic` của Go, nên phải dùng các version ***> 1.18***.
 
-## Distribtured Cache
+
+## 3. Một số ví dụ
+- Simple and Easy in-memory cache in Golang https://dev.to/franciscomendes10866/easy-and-simple-in-memory-cache-in-golang-1lpb
+- In-Memory Caching in Golang by @vgukasov https://hackernoon.com/in-memory-caching-in-golang
+- How To Use In Memory Caching In Your Golang App https://blog.devgenius.io/how-to-use-in-memory-caching-in-your-golang-app-3340918c6f9
+- Implementing robust in-memory cache with Go https://dev.to/vearutop/implementing-robust-in-memory-cache-with-go-196e
+
+
+
+
+
+## 4. Distributed cache
 
 https://github.com/iwanbk/bcache
 
