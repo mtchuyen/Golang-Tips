@@ -59,6 +59,10 @@ http://sqladvice.com/postgresql-la-gi-so-sanh-mysql-va-postgresql/
 
 [3] [How to Consume Kafka Efficiently in Golang?](https://medium.com/swlh/how-to-consume-kafka-efficiently-in-golang-264f7fe2155b)
 
+### DuckDB:
+
+https://betterprogramming.pub/duckdb-whats-the-hype-about-5d46aaa73196
+
 ## Microservices
 [Microservices in Golang](https://ewanvalentine.io/microservices-in-golang-part-1/)
 
