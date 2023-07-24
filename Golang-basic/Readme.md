@@ -234,6 +234,8 @@ https://medium.com/@muhammadarifineffendi/struct-composition-in-go-80492bd447bd
 
 ***Method*** cũng chính là ***function***, nhưng nó thuộc về 1 ***type*** nhất định. Cách define của method hơi ***khác*** với function. Khác ở chỗ nó cần thêm một parameter gọi là ***receiver*** — chính là ***type*** được nhắc tới ở trên. Với cách define này, method có thể access vào các properties của receiver (các field của struct).
 
+[See more here](Golang-basic/Method.md)
+
 Syntax:
 ```
 func (r Type) methodName() [return_type]{
@@ -258,11 +260,6 @@ func (c Circle) DienTich() float64 {
 - ***Circle*** là 1 type.
 - `bankinh` là 1 property của type ***Circle***.
 - `DienTich()` là một `method` của `type` ***Circle***, và `receiver` khai báo là `c Circle`  trong khai báo của method.
-
-
-### Method declaration
-- Define: https://golang.org/ref/spec#Method_declarations
-- [Method declaration with function receiver in Golang](https://pgillich.medium.com/method-declaration-with-function-receiver-in-golang-7f5531ded97d)
 
 
 ## [Interface](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/interface.md)
