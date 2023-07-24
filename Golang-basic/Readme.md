@@ -234,7 +234,7 @@ https://medium.com/@muhammadarifineffendi/struct-composition-in-go-80492bd447bd
 
 ***Method*** cũng chính là ***function***, nhưng nó thuộc về 1 ***type*** nhất định. Cách define của method hơi ***khác*** với function. Khác ở chỗ nó cần thêm một parameter gọi là ***receiver*** — chính là ***type*** được nhắc tới ở trên. Với cách define này, method có thể access vào các properties của receiver (các field của struct).
 
-[See more here](Golang-basic/Method.md)
+[See more here](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/Method.md)
 
 Syntax:
 ```
