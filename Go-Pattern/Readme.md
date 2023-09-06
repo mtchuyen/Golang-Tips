@@ -14,6 +14,7 @@ https://anonystick.com/blog-developer/9-mau-thiet-ke-ma-moi-lap-trinh-vien-deu-p
 https://anonystick.com/blog-developer/phan-2-factory-pattern-cach-ma-toi-trien-khai-trong-nha-may-vinfast-fresher-va-junior-nen-bo-qua-phan-3-2020110554662242
 
 ### Các pattern cần biết trong Golang
+
 - Creational
 - Structural
 - Behavioral
