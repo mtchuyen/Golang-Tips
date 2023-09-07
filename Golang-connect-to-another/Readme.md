@@ -1,5 +1,21 @@
 # Go ecosystem
 
+## Message Queue System/Platform
+- NSQ 
+- NATS 
+
+NSQ is an open source realtime distributed messaging platform which is a successor from simplequeue.
+
+NSQ is an open source real-time distributed messaging platform that handles millions of messages every day. It delivers reliable messages with no fault tolerance and high availability.
+
+NSQ and Kafka are both message queuing services. NSQ is a simpler to configure and more easy to deploy message queue platform while Kafka ensures strict guarantees and reliability with no data loss.
+
+https://medium0.com/@philipfeng/modern-open-source-messaging-apache-kafka-rabbitmq-nats-pulsar-and-nsq-ca3bf7422db5
+
+https://www.quora.com/What-is-the-difference-between-Apache-Kafka-and-NATS
+
+https://blog.containerize.com/nsq-vs-kafka-what-are-the-key-differences/
+
 ## Cache
 
 ### Chain cache:
