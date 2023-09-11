@@ -193,6 +193,8 @@ Note: Những thư viện này dùng `generic` của Go, nên phải dùng các 
 
 ## VI. Distributed cache
 
+https://blog.ntechdevelopers.com/distributed-caching-mot-su-lua-chon-hoan-hao-ve-caching-cho-microservice/
+
 https://github.com/iwanbk/bcache
 
 https://github.com/viney-shih/go-cache
