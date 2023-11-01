@@ -187,6 +187,8 @@ Note: Những thư viện này dùng `generic` của Go, nên phải dùng các 
 - How To Use In Memory Caching In Your Golang App https://blog.devgenius.io/how-to-use-in-memory-caching-in-your-golang-app-3340918c6f9
 - Implementing robust in-memory cache with Go https://dev.to/vearutop/implementing-robust-in-memory-cache-with-go-196e
 
+### BEST PRACTICES
+- [In-process Caching In Go: Scaling lakeFS to 100k Requests/Second](https://lakefs.io/blog/in-process-caching-in-go-scaling-lakefs-to-100k-requests-second/)
 
 
 
