@@ -26,8 +26,8 @@ https://github.com/eko/gocache
 
 ## Redis
 
-[Scalable event streaming with Redis and Golang](https://ably.com/blog/event-streaming-with-redis-and-golang)
-
+- [Scalable event streaming with Redis and Golang](https://ably.com/blog/event-streaming-with-redis-and-golang)
+- [Redis Bitmaps: Storing State in Small Places](https://www.improving.com/thoughts/redis-bitmaps-storing-state-in-small-places/)
 ## RabbitMQ
 
 [Work queue with Go and RabbitMQ](https://medium.com/@masnun/work-queue-with-go-and-rabbitmq-b8c295cde861)
