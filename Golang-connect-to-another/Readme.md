@@ -17,6 +17,39 @@ https://www.quora.com/What-is-the-difference-between-Apache-Kafka-and-NATS
 https://blog.containerize.com/nsq-vs-kafka-what-are-the-key-differences/
 
 ## Cache
+Trong [Golang-connect-to-another: Cache](https://github.com/mtchuyen/Golang-Tips/edit/master/Golang-connect-to-another/Cache.md) đã nói tới các tiêu chí để đánh giá 1 Local Cache. Link dưới cũng trình bày tiêu chí về cache và ưu nhược điểm của các Local-Cache phổ biến hiện nay (bằng Golang):
+- https://hackernoon.com/in-memory-caching-in-golang
+- https://dgraph.io/blog/post/caching-in-go/
+
+***Requirements for the cache***: 5 tiêu chí để đánh giá 1 thư viện (giải thuật) cache
+1. Concurrent.
+2. Memory-bounded (limit to configurable max memory usage).
+3. Scale well as the number of cores and goroutines increase.
+4. Scale well under non-random key access distribution (e.g. Zipf).
+5. High cache hit ratio
+
+Trong ***tiêu chí số 4***, DGRAPH sử dụng phân phối Zipflian, theo định luật Zipf (Zipf's Law)
+> Typical access patterns follow a Zipfian distribution. The most frequently accessed keys are accessed exponentially more times than others.
+
+***Ví dụ về 4 tiêu chí***:
+- Use Go map with sync.Mutex: `Fails on requirements 2,4.`
+- Use lock striping with Go maps: `Fails on requirements 2,4.`
+- LRU cache: `Fails on requirement 3-4.`
+- Striped LRU cache: `Would fail on requirement 4`.
+
+Đọc thêm về `HashMap and ConcurrentHashMap in Golang`
+
+***Popular Cache Implementations & Performance***
+- BigCache
+- FreeCache
+- GroupCache
+
+Trong [In-Memory Caching in Golang](https://hackernoon.com/in-memory-caching-in-golang) nêu quan điểm cá nhân về ưu/nhược điểm của từng loại cache
+
+### Striping Cache - sharding Cache
+- splits keys using a fingerprint into many smaller Go map shards protected by mutex locks
+- it would only be an incremental improvement and WOULD not SCALE well.
+
 
 ### Chain cache:
 
