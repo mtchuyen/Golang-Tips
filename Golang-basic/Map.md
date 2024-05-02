@@ -5,6 +5,11 @@
 - HashMap
 - EnumMap
 - SynchronizedMap
+#### Một số thư viện Map
+- concurrent map: https://github.com/orcaman/concurrent-map
+- concurrentHashMap: https://github.com/hfdpx/concurrentHashMap
+- https://groups.google.com/g/golang-nuts/c/jjjvXG4HdUw?pli=1
+- https://www.tutorialspoint.com/golang-program-to-implement-a-concurrent-hash-map
 
 ### HashMap
 Dùng giải thích từ ngôn ngữ Java trong link: https://www.geeksforgeeks.org/difference-hashmap-concurrenthashmap/
@@ -37,3 +42,6 @@ HashMap in Java stores the data in (Key, Value) pairs, and you can access them b
 ConcurrentHashMap and SynchronizedHashMap both are thread-safe and can be used in multithreaded and concurrent
 
 [Link](https://www.geeksforgeeks.org/difference-between-concurrenthashmap-and-synchronizedhashmap/)
+
+### Một số thư viện HashMap
+- HaxMap: https://github.com/alphadose/haxmap
