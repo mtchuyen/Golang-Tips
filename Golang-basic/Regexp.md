@@ -10,6 +10,13 @@ Ví dụ: `^a...s$`
 
 ***Các mẫu regex trong golang*** : [regex101.com](https://regex101.com/library?filterFlavors=golang&orderBy=MOST_RECENT&search=)
 
+#### cú pháp trong REGEX của Go
+- các ký tự như `.` (chấm) đại diện cho bất kỳ ký tự nào ngoại trừ ký tự xuống dòng mới (newline)
+- `*` (asterisk) cho biết mẫu trước đó có thể xuất hiện không hoặc nhiều lần
+- `+` (cộng) chỉ ra rằng mẫu trước đó xuất hiện ít nhất một lần.
+- Các cặp dấu ngoặc `()` được sử dụng để nhóm các mẫu
+- ký tự `^` và `$ `đánh dấu bắt đầu và kết thúc của một chuỗi tương ứng.
+
 
 #### Text boundary anchors
 
@@ -22,7 +29,7 @@ Ví dụ: `^a...s$`
 | \b	| 	at ASCII word boundary
 | \B	| 	not at ASCII word boundary
 
-### 3.Example: 
+### 3. Example: 
 - `^[a-z]+$`: Kiểm tra một chuỗi là các ký tự thường.
 - `^[0-9]+$`: Kiểm tra một chuỗi là số (bắt đầu `^` là số, chỉ có số, kết thúc chuỗi `$`cũng là số)
 - 
@@ -74,7 +81,7 @@ Breaking that down:
 
 ***Example:*** `2021 Competition Name` --> `Competition Name` (remove `2021 ` - has space at end)
 
-### 4.Replace match char
+### 4. Replace match char
 
 ***Ex:*** `1%27-rt(doc.co)-%27`
 
@@ -98,7 +105,33 @@ Giải thích:
 | `1&27-alert*doc.co#-%27` | 1`0`27-alert`0`doc.co`0`-027
 | `1%27-alert!doc@.co#-%27` | 1`0`27-alert`0`doc`0`.co`0`-`0`27
 
+### 5. Vấn đề string trong regexp.Compile
+***String literals*** có 2 loại: ***raw string literals*** and ***interpreted string literals***.
+- interpolation (nội suy).
 
+| raw string literals | interpreted string literals |
+| --------------------| ----------------------------|
+| quoted by (`) backtick characters | A string quoted with `"` double-quote characters | 
+| không xử lý các escape sequences | hỗ trợ escape sequences như (`\n`-newline, `\t`-tab) | 
+
+- dấu ` (back-tick) hai đầu chuỗi ký tự được thông dịch thành string literal
+
+***VD:***
+- s1 := "hello\nworld"  // interpreted string literal, xuống dòng
+- s2 := `hello\nworld`  // raw string literal, không xuống dòng
+Hoặc:
+- Khai báo thế này (giá trị string đóng gói trong double-quote) sẽ bị lỗi
+```
+text := "Now is the time for all good men
+to come to the aid of their
+country!"
+```
+- Cần chuyển sang khai báo backtick, lúc print ra sẽ giữ nguyên cấu trúc như khai báo
+```
+text := "Now is the time for all good men
+to come to the aid of their
+country!"
+```
 ### Ref
 https://zetcode.com/golang/regex/
 
