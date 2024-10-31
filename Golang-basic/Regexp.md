@@ -8,34 +8,6 @@ Ví dụ: `^a...s$`
 - Phù hợp: alias, abyss
 - Không phù hợp: An, abacus
 
-https://zetcode.com/golang/regex/
-
-https://yourbasic.org/golang/regexp-cheat-sheet/
-
-https://www.golangprograms.com/find-dns-records-programmatically.html
-
-https://geekflare.com/regular-expression-tester/
-
-https://code.tutsplus.com/tutorials/8-regular-expressions-you-should-know--net-6149
-
-https://code.tutsplus.com/tutorials/regular-expressions-with-go-part-1--cms-30403
-
-https://stackoverflow.com/questions/9363145/regex-for-extracting-filename-from-path
-
-https://stackoverflow.com/questions/47131996/go-how-to-check-if-a-string-contains-multiple-substrings/47133055
-
-https://howkteam.vn/course/Gioi-thieu-cau-truc-vong-lap-trong-C/Regular-Expression-trong-C-1427
-
-https://viblo.asia/p/regular-expressions-regex-khong-he-kho-nhu-nhung-gi-ban-thay-i-GrLZDAXOlk0
-
-https://gpcoder.com/2222-huong-dan-su-dung-bieu-thuc-chinh-quy-regular-expression-trong-java/
-
-https://topdev.vn/blog/regex-la-gi/
-
-https://freetuts.net/cac-quy-tac-regular-expression-can-ban-tiep-theo-66.html
-
-https://quantrimang.com/regex-trong-python-165471
-
 ***Các mẫu regex trong golang*** : [regex101.com](https://regex101.com/library?filterFlavors=golang&orderBy=MOST_RECENT&search=)
 
 
@@ -50,7 +22,7 @@ https://quantrimang.com/regex-trong-python-165471
 | \b	| 	at ASCII word boundary
 | \B	| 	not at ASCII word boundary
 
-### Example: 
+### 3.Example: 
 - `^[a-z]+$`: Kiểm tra một chuỗi là các ký tự thường.
 - `^[0-9]+$`: Kiểm tra một chuỗi là số (bắt đầu `^` là số, chỉ có số, kết thúc chuỗi `$`cũng là số)
 - 
@@ -102,7 +74,7 @@ Breaking that down:
 
 ***Example:*** `2021 Competition Name` --> `Competition Name` (remove `2021 ` - has space at end)
 
-#### Replace match char
+### 4.Replace match char
 
 ***Ex:*** `1%27-rt(doc.co)-%27`
 
@@ -125,3 +97,33 @@ Giải thích:
 | --- | ---
 | `1&27-alert*doc.co#-%27` | 1`0`27-alert`0`doc.co`0`-027
 | `1%27-alert!doc@.co#-%27` | 1`0`27-alert`0`doc`0`.co`0`-`0`27
+
+
+### Ref
+https://zetcode.com/golang/regex/
+
+https://yourbasic.org/golang/regexp-cheat-sheet/
+
+https://www.golangprograms.com/find-dns-records-programmatically.html
+
+https://geekflare.com/regular-expression-tester/
+
+https://code.tutsplus.com/tutorials/8-regular-expressions-you-should-know--net-6149
+
+https://code.tutsplus.com/tutorials/regular-expressions-with-go-part-1--cms-30403
+
+https://stackoverflow.com/questions/9363145/regex-for-extracting-filename-from-path
+
+https://stackoverflow.com/questions/47131996/go-how-to-check-if-a-string-contains-multiple-substrings/47133055
+
+https://howkteam.vn/course/Gioi-thieu-cau-truc-vong-lap-trong-C/Regular-Expression-trong-C-1427
+
+https://viblo.asia/p/regular-expressions-regex-khong-he-kho-nhu-nhung-gi-ban-thay-i-GrLZDAXOlk0
+
+https://gpcoder.com/2222-huong-dan-su-dung-bieu-thuc-chinh-quy-regular-expression-trong-java/
+
+https://topdev.vn/blog/regex-la-gi/
+
+https://freetuts.net/cac-quy-tac-regular-expression-can-ban-tiep-theo-66.html
+
+https://quantrimang.com/regex-trong-python-165471
