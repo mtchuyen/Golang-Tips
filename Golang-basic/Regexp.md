@@ -118,7 +118,7 @@ Giải thích:
 
 ***VD:***
 - s1 := "hello\nworld"  // interpreted string literal, xuống dòng
-- s2 := `hello\nworld`  // raw string literal, không xuống dòng
+- s2 := \\`hello\nworld\\`  // raw string literal, không xuống dòng
 Hoặc:
 - Khai báo thế này (giá trị string đóng gói trong double-quote) sẽ bị lỗi
 ```
@@ -128,9 +128,9 @@ country!"
 ```
 - Cần chuyển sang khai báo backtick, lúc print ra sẽ giữ nguyên cấu trúc như khai báo
 ```
-text := "Now is the time for all good men
+text := `Now is the time for all good men
 to come to the aid of their
-country!"
+country!`
 ```
 ### Ref
 https://zetcode.com/golang/regex/
