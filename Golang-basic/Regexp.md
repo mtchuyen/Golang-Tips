@@ -112,9 +112,9 @@ VD ta có biến:
 orginString:= "\"urrentDomain\"\\:\\ \"thanhn"
 --> Có dấu \ (back-slash), và 2 chấm (:)-colon
 ```
-Với regex1:
-```
-reg, err := regexp.Compile("[^a-zA-Z0-9_\\-\\.]")
+Với regex1: ***raw***
+```go
+reg, err := regexp.Compile(`[^a-zA-Z0-9_\\-\\.]`)
 cleanString := reg.ReplaceAllString(orginString, "0")
 ```
 Có kết quả: 
@@ -122,15 +122,15 @@ Có kết quả:
 urrentDomain\\thanhn
 --> Không mất dấu \ (back-slash)
 ```
-Với regex2:
-```
+Với regex2: ***interpreted***
+```go
 reg, err := regexp.Compile("[^a-zA-Z0-9_\\-\\.]")
 cleanString := reg.ReplaceAllString(orginString, "0")
 ```
 Có kết quả: 
 ```go
 urrentDomainthanhn
---> Mất dấu \
+--> Mất dấu \ (back-slash)
 ```
 
 ### 5. Vấn đề string trong regexp.Compile
