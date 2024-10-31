@@ -105,6 +105,34 @@ Giải thích:
 | `1&27-alert*doc.co#-%27` | 1`0`27-alert`0`doc.co`0`-027
 | `1%27-alert!doc@.co#-%27` | 1`0`27-alert`0`doc`0`.co`0`-`0`27
 
+***Chú ý là vấn đề regexp trong string: có 2 loại raw và interpreted***, việc lựa chọn sẽ có kết quả khác nhau
+
+VD ta có biến:
+```go
+orginString:= "\"urrentDomain\"\\:\\ \"thanhn"
+--> Có dấu \ (back-slash), và 2 chấm (:)-colon
+```
+Với regex1:
+```
+reg, err := regexp.Compile("[^a-zA-Z0-9_\\-\\.]")
+cleanString := reg.ReplaceAllString(orginString, "0")
+```
+Có kết quả: 
+```go
+urrentDomain\\thanhn
+--> Không mất dấu \ (back-slash)
+```
+Với regex2:
+```
+reg, err := regexp.Compile("[^a-zA-Z0-9_\\-\\.]")
+cleanString := reg.ReplaceAllString(orginString, "0")
+```
+Có kết quả: 
+```go
+urrentDomainthanhn
+--> Mất dấu \
+```
+
 ### 5. Vấn đề string trong regexp.Compile
 ***String literals*** có 2 loại: ***raw string literals*** and ***interpreted string literals***.
 - interpolation (nội suy).
@@ -119,6 +147,7 @@ Giải thích:
 ***VD:***
 - s1 := "hello\nworld"  // interpreted string literal, xuống dòng
 - s2 := \\`hello\nworld\\`  // raw string literal, không xuống dòng
+
 Hoặc:
 - Khai báo thế này (giá trị string đóng gói trong double-quote) sẽ bị lỗi
 ```
