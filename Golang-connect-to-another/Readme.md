@@ -49,6 +49,7 @@ Trong [In-Memory Caching in Golang](https://hackernoon.com/in-memory-caching-in-
 ### Striping Cache - sharding Cache
 - splits keys using a fingerprint into many smaller Go map shards protected by mutex locks
 - it would only be an incremental improvement and WOULD not SCALE well.
+- Implementing a Sieve cache in Go: https://medium.com/@mehul25/implementing-a-sieve-cache-in-go-9652cfa99278
 
 
 ### Chain cache:
