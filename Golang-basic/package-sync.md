@@ -20,6 +20,54 @@
 ***sync.Cond***: 
 
 ***sync.Pool***:
+## `sync.Pool`
+### Khai báo và sử dụng
+```go
+var bufPool = sync.Pool{
+    New: func() interface{} {
+        return new(bytes.Buffer)  // Chỉ tạo khi pool rỗng
+    },
+}
+
+func HandleRequest() {
+    buf := bufPool.Get().(*bytes.Buffer)  // Lấy buffer cũ từ pool
+    defer bufPool.Put(buf)                // Trả lại pool để reuse
+    buf.Reset()                          // Xóa data cũ
+    // Sử dụng buffer
+}
+```
+
+### Cách hoạt động của `sync.Pool`:
+```go
+// Lần đầu tiên
+buf1 := bufPool.Get()  // Pool rỗng → gọi New() → tạo buffer mới
+
+// Sử dụng xong
+bufPool.Put(buf1)      // Trả buffer vào pool
+
+// Lần thứ 2
+buf2 := bufPool.Get()  // Pool có buffer → lấy buf1 ra dùng lại
+// buf2 thực chất là buf1 (cùng memory address)
+```
+### Lợi ích của sync.Pool là Buffer Memory Reuse
+***1. Giảm Memory Allocation***
+```
+Không reuse: Request1 → Buffer1 → GC
+              Request2 → Buffer2 → GC  
+              Request3 → Buffer3 → GC
+
+Có reuse:     Request1 → Buffer1 ↓
+              Request2 → Buffer1 (reuse) ↓
+              Request3 → Buffer1 (reuse) ↓
+```
+
+***2. Giảm Garbage Collection Pressure***
+- Ít object được tạo mới → ít garbage
+- GC chạy ít hơn → performance tốt hơn
+
+***3. Better Performance***
+- Memory allocation là expensive operation
+- Reuse buffer nhanh hơn tạo mới
 
 ### Explore Go sync.Pool as Cache
 https://medium.com/geekculture/go-sync-pool-as-cache-in-kubernetes-4e247c52e732
