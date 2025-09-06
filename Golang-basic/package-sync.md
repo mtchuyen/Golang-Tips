@@ -32,10 +32,11 @@ var bufPool = sync.Pool{
 func HandleRequest() {
     buf := bufPool.Get().(*bytes.Buffer)  // Lấy buffer cũ từ pool
     defer bufPool.Put(buf)                // Trả lại pool để reuse
-    buf.Reset()                          // Xóa data cũ
+    buf.Reset()                          // Xóa data cũ. Quan trọng!!!
     // Sử dụng buffer
 }
 ```
+- Tại sao cần `buf.Reset()`? Vì buffer được reuse, nên có thể chứa data từ lần sử dụng trước. `Reset()` xóa sạch data cũ để đảm bảo buffer "clean" cho lần sử dụng mới.
 
 ### Cách hoạt động của `sync.Pool`:
 ```go
@@ -61,12 +62,15 @@ Có reuse:     Request1 → Buffer1 ↓
               Request3 → Buffer1 (reuse) ↓
 ```
 
+- Cùng một vùng memory được sử dụng cho nhiều request
+- Không tạo buffer mới mỗi lần → tiết kiệm memory
+
 ***2. Giảm Garbage Collection Pressure***
 - Ít object được tạo mới → ít garbage
 - GC chạy ít hơn → performance tốt hơn
 
 ***3. Better Performance***
-- Memory allocation là expensive operation
+- Tăng performance của application. Memory allocation là expensive operation
 - Reuse buffer nhanh hơn tạo mới
 
 ### Explore Go sync.Pool as Cache
