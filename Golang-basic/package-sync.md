@@ -21,7 +21,17 @@
 
 ***sync.Pool***:
 ## `sync.Pool`
+### Phân tích cấu trúc internal của `sync.Pool`:
+- Cấm copy (noCopy) (forbids copying)
+- Sử dụng queue hai chiều
+- `Padding` để tránh false sharing trong hệ thống đa xử lý. One of the performance concerns that happen in multiprocessor systems.
+
 ### Khai báo và sử dụng
+Ba bước cơ bản:
+1. Khai báo sync.Pool với hàm New (tùy chọn)
+2. Lấy đối tượng từ pool bằng hàm Get
+3. Trả đối tượng về pool bằng hàm Put
+
 ```go
 var bufPool = sync.Pool{
     New: func() interface{} {
@@ -50,6 +60,17 @@ bufPool.Put(buf1)      // Trả buffer vào pool
 buf2 := bufPool.Get()  // Pool có buffer → lấy buf1 ra dùng lại
 // buf2 thực chất là buf1 (cùng memory address)
 ```
+***Workflow của hàm Get:***
+1. Khởi tạo local queue
+2. Ưu tiên lấy private object
+3. Fallback sang shared queue
+4. "Steal" từ pool khác nếu cần
+5. Tạo mới bằng hàm New
+
+***Workflow của hàm Put:***
+1. Ưu tiên set private object
+2. Đưa vào shared queue
+
 ### Lợi ích của sync.Pool là Buffer Memory Reuse
 ***1. Giảm Memory Allocation***
 ```
@@ -72,6 +93,18 @@ Có reuse:     Request1 → Buffer1 ↓
 ***3. Better Performance***
 - Tăng performance của application. Memory allocation là expensive operation
 - Reuse buffer nhanh hơn tạo mới
+
+### Các vấn đề tiềm ẩn
+1. ***Mất dữ liệu khi GC***: Nội dung pool bị xóa mỗi khi Garbage Collection chạy
+2. ***Tăng áp lực GC***: Khi `Put` nhiều hơn `Get`, tạo ra waste. Big pool increases GC pressure.
+3. ***Thread safety***: Có và không có tùy thuộc implementation của hàm New
+4. ***CPU & RAM***: Có hiệu quả memory nhưng có thể chậm hơn về CPU
+
+### sync.Pool best practice
+1. ***Store heavy objects***: Sử dụng cho các đối tượng "nặng", không phải cache dài hạn. Ví dụ để xử lý json trong handle request (nặng và ngắn hạn) hơn là sử dụng thành (in-memory) cache lâu dài.
+2. ***Kết hợp với long-term cache***: `sync.Pool` is ***NOT an option*** for long-term cache, but ***combining it*** with normal cache (ex: real cache) can do good to performance. Ví dụ từ Kubernetes APIServer
+3. ***Chọn đúng scenario***: Phù hợp với objects được sử dụng thường xuyên nhưng không quan trọng khi mất
+
 
 ### Explore Go sync.Pool as Cache
 https://medium.com/geekculture/go-sync-pool-as-cache-in-kubernetes-4e247c52e732
