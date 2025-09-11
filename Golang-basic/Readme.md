@@ -135,6 +135,83 @@ name := first + " " + last
 fmt.Println("My name is ",name)
 ```
 
+#### Tính bất biến (immutability) của Strings
+Strings trong Go gặp vấn đề lớn nhất là ***tính bất biến (immutability)***. Điều này có nghĩa là một khi một chuỗi đã được tạo, bạn không thể thay đổi nội dung của nó.
+
+Khi bạn thực hiện các thao tác tưởng chừng như là "thay đổi" một chuỗi, ví dụ như nối chuỗi (concatenation), Go sẽ không sửa chuỗi ban đầu mà thay vào đó sẽ tạo ra một chuỗi hoàn toàn mới trong bộ nhớ.
+
+***Vấn đề của String bất biến***
+
+Hãy xem xét ví dụ sau:
+
+```Go
+s := "hello"
+s += " world"
+```
+Khi bạn chạy đoạn code trên, Go thực hiện các bước sau:
+```
+1. Tạo chuỗi s với giá trị "hello" trong bộ nhớ.
+
+2. Khi gặp s += " world", Go sẽ không nối " world" vào cuối chuỗi "hello" hiện có.
+
+3. Thay vào đó, Go sẽ cấp phát một vùng bộ nhớ mới đủ lớn để chứa chuỗi mới "hello world".
+
+4. Nó sẽ sao chép nội dung của chuỗi cũ ("hello") và chuỗi mới (" world") vào vùng bộ nhớ mới này.
+
+5. Cuối cùng, nó sẽ gán lại biến s để trỏ đến chuỗi mới.
+```
+
+Nếu bạn lặp lại thao tác này trong một vòng lặp, mỗi lần nối chuỗi sẽ tạo ra một chuỗi mới và sao chép dữ liệu, dẫn đến:
+
+- ***Tiêu tốn bộ nhớ***: Nhiều chuỗi tạm thời được tạo ra, gây lãng phí.
+
+- ***Gây áp lực lên Garbage Collector (GC)***: Trình dọn rác phải làm việc liên tục để thu dọn những chuỗi tạm thời không còn được sử dụng, làm giảm hiệu suất của chương trình.
+
+***Cách giải quyết***
+Giải pháp cho vấn đề này là sử dụng các kiểu dữ liệu có thể thay đổi `(mutable)` để xử lý dữ liệu, sau đó mới chuyển đổi về string khi cần thiết. Trong Go, cách tốt nhất là sử dụng `bytes.Buffer`.
+
+`bytes.Buffer` là một cấu trúc dữ liệu được thiết kế để xây dựng các chuỗi một cách hiệu quả. Nó hoạt động như một "builder" (công cụ xây dựng):
+
+- Nó quản lý một mảng `[]byte` có thể mở rộng.
+
+- Khi bạn thêm dữ liệu vào `bytes.Buffer`, nó sẽ nối dữ liệu đó vào mảng byte nội bộ. Khi mảng này đầy, nó sẽ tự động cấp phát lại bộ nhớ, nhưng theo một cách hiệu quả hơn so với việc nối chuỗi thông thường.
+
+- Sau khi hoàn thành, bạn chỉ cần gọi phương thức `.String()` để lấy chuỗi kết quả cuối cùng.
+
+Ví dụ so sánh:
+
+***Cách không hiệu quả (dùng string):***
+
+```Go
+
+// Nối chuỗi trong vòng lặp - KÉM HIỆU QUẢ
+func inefficientConcat() string {
+    s := ""
+    for i := 0; i < 1000; i++ {
+        s += "a"
+    }
+    return s
+}
+```
+
+***Cách hiệu quả (dùng bytes.Buffer):***
+
+```Go
+// Dùng bytes.Buffer - RẤT HIỆU QUẢ
+import (
+    "bytes"
+)
+
+func efficientConcat() string {
+    var b bytes.Buffer
+    for i := 0; i < 1000; i++ {
+        b.WriteString("a")
+    }
+    return b.String()
+}
+```
+***Kết luận***: Với `bytes.Buffer`, bạn chỉ cần một lần cấp phát bộ nhớ cho chuỗi kết quả cuối cùng (khi gọi `.String()`), thay vì hàng nghìn lần cấp phát và sao chép như khi nối chuỗi trực tiếp. Điều này giúp mã của bạn nhanh hơn và tiết kiệm tài nguyên bộ nhớ hơn rất nhiều.
+
 ### Ép kiểu
 Ngôn ngữ Go rất nghiêm ngặt và chặt chẽ, nên chúng không cho phép tự động chuyển đổi (ép kiểu) kiểu dữ liệu.
 ```golang
