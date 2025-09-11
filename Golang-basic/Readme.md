@@ -124,16 +124,7 @@ fmt.Println("Tích 2 số phức c1 và c2:", cmul)
 - **rune** là tên gọi khác của **int32**
 
 ---
-### Kiểu dữ kiệu chuỗi
-Trong Go, chuỗi là một tập hợp các byte
-
-```golang
-first := "Bùi"
-last := "Hiên"
-
-name := first + " " + last
-fmt.Println("My name is ",name)
-```
+### 3. Kiểu dữ kiệu chuỗi
 
 #### Tính bất biến (immutability) của Strings
 Strings trong Go gặp vấn đề lớn nhất là ***tính bất biến (immutability)***. Điều này có nghĩa là một khi một chuỗi đã được tạo, bạn không thể thay đổi nội dung của nó.
