@@ -161,6 +161,43 @@ https://engineering.razorpay.com/detecting-goroutine-leaks-with-test-cases-b0f8f
 ### Common Goroutine Leaks that You Should Avoid
 https://betterprogramming.pub/common-goroutine-leaks-that-you-should-avoid-fe12d12d6ee
 
+## Concurrency Patterns Should Know
+### 1. Worker Pool
+Real Scenario:
+- A web server handling incoming HTTP requests, where each request is processed by a worker from the pool.
+
+### 2. Fan-Out, Fan-In
+Real Scenario:
+- A data processing pipeline where different processing stages are handled by different sets of workers.
+
+### 3. Pipeline
+Real Scenario:
+- An image processing system where an image goes through several stages such as resizing, filtering and encoding.
+
+### 4. Publish-Subscribe
+Real-world Scenario:
+A messaging system where different services subscribe to certain types of events or messages.
+
+### 5. Select condition Timeout
+```go
+select {
+ case res := <-c:
+  fmt.Println("Received:", res)
+ case <-time.After(1 * time.Second):
+  fmt.Println("Timeout")
+ }
+}
+```
+Real Scenario:
+- A network client attempts to connect to a server and stops if the server does not respond in time.
+
+### 6. Semaphore
+Real Scenario:
+- A database connection pool where a limited number of connections are allowed at a time.
+
+### 7. Rate Limiting
+Real Scenario:
+- An API gateway that limits the number of requests a user can make in a given period of time.
 
 # Referral:
 - Lê Ngọc Thạch, [Concurrency trong Go Lang](https://devblog.dwarvesf.com/post/concurrency/)
