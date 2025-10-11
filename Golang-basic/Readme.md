@@ -206,6 +206,18 @@ Note:
 - **Data structure** = khái niệm logic → mọi `Aggregate` hoặc `Reference` type đều có thể dùng để xây dựng `data structure`.
 - `Function`, `Pointer`, `Channel` là `Reference` type, nhưng **không phải** `data structure` vì không biểu diễn cấu trúc dữ liệu logic (chúng là “cơ chế”, không phải “mô hình dữ liệu”).
 
+| Loại                  | Nhóm theo Go spec | Kiểu truyền                 | Có thể xem là Data Structure? | Giải thích                                    |
+| --------------------- | ----------------- | --------------------------- | ----------------------------- | --------------------------------------------- |
+| **int, string, bool** | Basic             | Value                       | ❌                             | Primitive, không chứa cấu trúc                |
+| **array**             | Aggregate         | Value                       | ✅                             | Tập hợp cố định phần tử                       |
+| **struct**            | Aggregate         | Value                       | ✅                             | Gom nhiều trường dữ liệu                      |
+| **slice**             | Reference         | Reference                   | ✅                             | Trỏ đến vùng mảng thực                        |
+| **map**               | Reference         | Reference                   | ✅                             | Hash table nội bộ                             |
+| **channel**           | Reference         | Reference                   | ⚙️ Gián tiếp                  | Dùng để giao tiếp, không tổ chức dữ liệu      |
+| **pointer**           | Reference         | Reference                   | ❌                             | Trỏ 1 địa chỉ đơn                             |
+| **function**          | Reference         | Reference                   | ❌                             | Lưu hành vi, không lưu dữ liệu                |
+| **interface**         | Interface         | Special (type + value pair) | ⚙️ Không hẳn                  | Trừu tượng hoá hành vi, không tổ chức dữ liệu |
+
 ## [Interface](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/interface.md)
 
 ## Pointers
