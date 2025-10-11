@@ -191,6 +191,21 @@ func (c Circle) DienTich() float64 {
 
 ## [Data Structure](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/DataStructure.md)
 
+Phân biệt  khái niệm “data structure” trong nghĩa ***logic*** và “data type category” trong ***ngữ pháp Go*** (the language spec).
+
+| Khía cạnh       | **Data Structure**                                   | **Data Type Category (theo Go spec)**                                    |
+| --------------- | ---------------------------------------------------- | ------------------------------------------------------------------------ |
+| Mục tiêu        | Mô hình tổ chức và lưu trữ dữ liệu (logic, abstract) | Cách Go **phân loại kiểu dữ liệu** theo **cơ chế lưu trữ và tham chiếu** |
+| Ví dụ           | Stack, Queue, Set, List, Tree, Map...                | Basic, Aggregate, Reference, Interface                                   |
+| Tính trừu tượng | Trừu tượng hoá logic thuật toán                      | Trừu tượng hoá cách hoạt động bộ nhớ                                     |
+| Xuất hiện ở đâu | Thuộc **Computer Science**                           | Được định nghĩa trong **Go Language Specification**                      |
+
+Note:
+- Tất cả *Reference types, Aggregate types* (của `Data Type`) đều là nền tảng để xây dựng `Data Structures`.
+- Go chia loại theo cách ***hoạt động vùng nhớ***, không phải theo công dụng logic.
+- **Data structure** = khái niệm logic → mọi `Aggregate` hoặc `Reference` type đều có thể dùng để xây dựng `data structure`.
+- `Function`, `Pointer`, `Channel` là `Reference` type, nhưng **không phải** `data structure` vì không biểu diễn cấu trúc dữ liệu logic (chúng là “cơ chế”, không phải “mô hình dữ liệu”).
+
 ## [Interface](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/interface.md)
 
 ## Pointers
