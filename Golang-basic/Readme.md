@@ -371,6 +371,8 @@ func (c Circle) DienTich() float64 {
 - `DienTich()` là một `method` của `type` ***Circle***, và `receiver` khai báo là `c Circle`  trong khai báo của method.
 
 
+## [Data Structure](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/DataStructure.md)
+
 ## [Interface](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/interface.md)
 
 ## Pointers
