@@ -1,26 +1,5 @@
 ## Unit Tests
-
-- [5 Testing Tips in Go](https://medium0.com/star-gazers/5-testing-tips-in-go-3b7f79a546da)
-
-- [How To Write Unit Tests in Go](https://www.digitalocean.com/community/tutorials/how-to-write-unit-tests-in-go-using-go-test-and-the-testing-package)
-
-- [Unit Testing CLI Programs in Go](https://medium.com/swlh/unit-testing-cli-programs-in-go-6275c85af2e7)
-
-- [Advanced Testing Tips in Go](https://medium0.com/@mert-akkaya/advanced-testing-tips-in-go-1b4d8eec82a0)
-
-- [Implementing testing in Golang](https://dev.to/lucasnevespereira/implementing-testing-in-golang-4mcp)
-
-- [Unit Testing in Go](https://www.pullrequest.com/blog/unit-testing-in-go/)
-
-- [An Introduction to Testing in Go](https://tutorialedge.net/golang/intro-testing-in-go/)
-
-- [Viết Unit Test trong project với Golang](https://viblo.asia/p/viet-unit-test-trong-project-voi-golang-bWrZnXv95xw)
-
-- [Một số framework dùng cho viết Unit Test cho Golang](https://www.tma.vn/Hoi-dap/Cam-nang-nghe-nghiep/Golang-va-Unit-test/25459)
-
-- [Step by step How To Write Unit Tests in Go](https://www.digitalocean.com/community/tutorials/how-to-write-unit-tests-in-go-using-go-test-and-the-testing-package)
-
-- [Golang — basic unit testing and benchmarking](https://sherryalex29.medium.com/golang-basic-unit-testing-and-benchmarking-10ce064f1081)
+- https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/Unit-test.md
 
 ## benchmarks
 
