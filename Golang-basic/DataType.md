@@ -213,15 +213,127 @@ fmt.Println(sum)
 
 
 # 3. Aggregate Types (Kiểu tập hợp)
+- **Aggregate** nghĩa là “tập hợp nhiều giá trị cố định vào một đơn vị duy nhất”.
+- Chúng **lưu trực tiếp** các giá trị (by value), không trỏ đến vùng nhớ khác.
+- Khi gán cho biến khác hoặc truyền vào hàm → copy toàn bộ nội dung.
+VD:
+```go 
+a := [3]int{1, 2, 3}
+b := a
+b[0] = 9
+fmt.Println(a) // [1 2 3]
+→ a và b là hai bản sao độc lập.
+```
+- ***Không*** có vùng nhớ chung ⇒ không phải reference type.
+
+  
 ## 3.1. Array
 ## 3.2. Struct
+***Struct*** (structure) là một `user-defined` data ***type***.
+
+Define một Structure:
+
+```
+type StructName struct {
+    field1 fieldType1
+    field2 fieldType2
+}
+```
+
+Sau khi `struct` được define, ta có thể khai báo giá trị với syntax:
+
+```
+variable_name := structure_variable_type {value1, value2...value_n}
+```
+Go không support mô hình hướng đối tượng nhưng `structure` gần giống với `class` architecture. Và có thể gọi `Method` (nói ở phần ngay dưới đây) cũng chính là `function`
+
+Ref:
+- https://medium.com/@anh.nt094/golang-eb65bfe1a8bb
+
+#### Struct Composition in Go
+https://medium.com/@muhammadarifineffendi/struct-composition-in-go-80492bd447bd
+
+
+## Kết luận:
+- `array` và `struct` “aggregate” (tập hợp) nhiều giá trị primitive thành một giá trị lớn hơn, nhưng vẫn là giá trị (value) chứ không phải tham chiếu → nằm trong nhóm Aggregate.
 
 # 4. Reference Types (Kiểu tham chiếu)
 Các biến thuộc nhóm này ***không*** lưu trực tiếp giá trị, mà lưu địa chỉ tham chiếu đến vùng nhớ chứa dữ liệu thực.
 
 ==> Vì vậy, khi gán hoặc truyền vào hàm, chúng ***chia sẻ cùng một dữ liệu gốc (không copy).***
-
+- `Slice` và `Map` là Reference Types: Cả hai đều chỉ gián tiếp trỏ tới vùng dữ liệu thật trong heap
+- 
 ## 4.1. Slice
+
+[Go: Slice and Memory Management](https://medium.com/a-journey-with-go/go-slice-and-memory-management-670498bb52be)
+
+[Bad Go: slices of pointers](https://medium.com/@philpearl/bad-go-slices-of-pointers-ed3c06b8bb41)
+
+[Bad Go: not sizing slices](https://medium.com/swlh/bad-go-not-sizing-slices-aed1b01cff83)
+
+### Cấu trúc của slice trong Go
+Một slice không phải là một mảng, mà là một cấu trúc dữ liệu gồm ***ba trường***: một con trỏ trỏ đến mảng underlying (mảng cơ sở), độ dài (length) và dung lượng (capacity).
+
+- ***Length***: Số lượng phần tử hiện có trong slice.
+
+- ***Capacity***: Số lượng phần tử tối đa mà mảng underlying có thể chứa.
+
+Khi bạn sử dụng ***append*** để thêm một phần tử vào slice, Go sẽ kiểm tra xem *length* có bằng *capacity* hay không.
+
+- Nếu *length* < *capacity*, Go chỉ đơn giản là thêm phần tử vào vị trí tiếp theo của mảng underlying. Việc này rất nhanh.
+
+- Nếu *length* == *capacity*, lúc này mảng underlying đã đầy. Go sẽ phải làm một việc tốn kém:
+```
+1. Tạo một mảng underlying mới với dung lượng lớn hơn (thường là gấp đôi dung lượng cũ).
+
+2. Sao chép tất cả các phần tử từ mảng cũ sang mảng mới.
+
+3. Thêm phần tử mới vào mảng mới.
+
+4. Cập nhật con trỏ của slice để trỏ đến mảng mới.
+```
+
+Đây chính là quá trình cấp phát lại bộ nhớ (***reallocation***). Việc này tốn kém về thời gian và tài nguyên, đặc biệt là khi slice chứa nhiều dữ liệu.
+
+#### Mẹo: Sử dụng make để cấp phát trước
+Việc ***preallocate*** (cấp phát trước) slice với *make* khi bạn có thể ***ước tính*** hoặc biết trước số lượng phần tử. Đây là cách giải quyết vấn đề cấp phát lại bộ nhớ một cách hiệu quả nhất.
+
+Hãy cùng xem lại ví dụ trong tài liệu để thấy rõ sự khác biệt:
+
+***1. Cách thông thường (có thể gây cấp phát lại)***
+
+```
+func BuildSlice(n int) []int {
+    var s []int // Slice được khởi tạo rỗng, length = 0, capacity = 0
+    for i := 0; i < n; i++ {
+        s = append(s, i) // Mỗi lần append sẽ kiểm tra và có thể cấp phát lại
+    }
+    return s
+}
+```
+
+Khi bạn chạy vòng lặp này, slice sẽ phải cấp phát lại nhiều lần. Ví dụ, khi `i=1`, capacity có thể tăng lên 2. Khi `i=2`, nó có thể tăng lên 4, rồi 8, 16... cứ như vậy. Mỗi lần cấp phát lại đều tốn chi phí.
+
+***2. Cách dùng make để tối ưu (được khuyến khích)***
+```Go
+func BuildSlice(n int) []int {
+    // Khởi tạo slice với length = 0 và capacity = n
+    s := make([]int, 0, n)
+    for i := 0; i < n; i++ {
+        s = append(s, i) // Thao tác append sẽ không gây cấp phát lại cho đến khi đủ n phần tử
+    }
+    return s
+}
+```
+
+Ở đây, chúng ta dùng make([]int, 0, n) để tạo một slice có:
+
+- ***Length = 0***: Slice ban đầu trống, sẵn sàng để thêm phần tử.
+
+- ***Capacity = n***: Dung lượng của mảng underlying ngay từ đầu đã đủ để chứa n phần tử.
+
+Khi bạn chạy vòng lặp `for`, các thao tác `append` sẽ diễn ra cực kỳ nhanh chóng vì chúng không cần phải cấp phát lại bộ nhớ cho đến khi đạt đủ `n` phần tử. Điều này giúp loại bỏ hoàn toàn chi phí "ngầm" của việc cấp phát lại, làm cho code của bạn nhanh hơn và hiệu quả hơn về bộ nhớ, đặc biệt là với các slice lớn.
+
 ## 4.2. Map
 ## 4.3. Channel
 ## 4.4. Pointer
