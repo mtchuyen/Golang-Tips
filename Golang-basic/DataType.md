@@ -113,7 +113,7 @@ fmt.Println("Tích 2 số phức c1 và c2:", cmul)
 - **rune** là tên gọi khác của **int32**
 
 ---
-### 2.3. Kiểu dữ kiệu chuỗi
+## 2.3. Kiểu dữ kiệu chuỗi
 
 #### Tính bất biến (immutability) của Strings
 Strings trong Go gặp vấn đề lớn nhất là ***tính bất biến (immutability)***. Điều này có nghĩa là một khi một chuỗi đã được tạo, bạn không thể thay đổi nội dung của nó.
@@ -192,7 +192,7 @@ func efficientConcat() string {
 ```
 ***Kết luận***: Với `bytes.Buffer`, bạn chỉ cần một lần cấp phát bộ nhớ cho chuỗi kết quả cuối cùng (khi gọi `.String()`), thay vì hàng nghìn lần cấp phát và sao chép như khi nối chuỗi trực tiếp. Điều này giúp mã của bạn nhanh hơn và tiết kiệm tài nguyên bộ nhớ hơn rất nhiều.
 
-### Ép kiểu
+## Ép kiểu
 Ngôn ngữ Go rất nghiêm ngặt và chặt chẽ, nên chúng không cho phép tự động chuyển đổi (ép kiểu) kiểu dữ liệu.
 ```golang
 //WRONG
