@@ -124,7 +124,9 @@ https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-Algorithms/Readme.md
 https://github.com/goex-top/awesome-go-quant
 
 # Golang Courses
-[9 Best Golang Programming Courses for Beginners to Learn in 2022](https://medium.com/javarevisited/what-is-go-or-golang-programming-language-why-learn-go-in-2020-1cbf0afc71db)
+- [9 Best Golang Programming Courses for Beginners to Learn in 2022](https://medium.com/javarevisited/what-is-go-or-golang-programming-language-why-learn-go-in-2020-1cbf0afc71db)
+- [Grokking the Coding Interview: Patterns for Coding Questions](https://www.designgurus.io/course/grokking-the-coding-interview?aff=84Y9hP)
+- [Grokking Data Structures & Algorithms for Coding Interviews](https://www.designgurus.io/course/grokking-data-structures-for-coding-interviews)
 
 ## Dạy Golang bằng tiếng Việt
 - Lập trình Go: https://phocode.com/blog/2016/08/26/go-con-tro/
