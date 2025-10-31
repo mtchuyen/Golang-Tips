@@ -5,6 +5,41 @@
 - HashMap
 - EnumMap
 - SynchronizedMap
+
+### How do maps work? (Key-value pairs!)
+Maps are like dictionaries or hash tables. They store **key-value** pairs.
+
+```go
+func main() {
+ // Declare and initialize a map
+ ages := map[string]int{
+  "Alice": 30,
+  "Bob":   25,
+ }
+ fmt.Println(ages) // Output: map[Alice:30 Bob:25]
+ 
+ // Add a new entry
+ ages["Charlie"] = 35
+ fmt.Println(ages) // Output: map[Alice:30 Bob:25 Charlie:35]
+ 
+ // Get a value
+ bobsAge := ages["Bob"]
+ fmt.Println("Bob's age:", bobsAge)
+ 
+ // Check if a key exists
+ if sarahsAge, ok := ages["Sarah"]; ok { // `ok` is a boolean indicating presence
+  fmt.Println("Sarah's age:", sarahsAge)
+ } else {
+  fmt.Println("Sarah not found.") // Output: Sarah not found.
+ }
+ 
+ // Delete an entry
+ delete(ages, "Bob")
+ fmt.Println(ages) // Output: map[Alice:30 Charlie:35]
+}
+```
+
+
 #### Một số thư viện Map
 - concurrent map: https://github.com/orcaman/concurrent-map
 - concurrentHashMap: https://github.com/hfdpx/concurrentHashMap
