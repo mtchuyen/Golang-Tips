@@ -222,7 +222,8 @@ a := [3]int{1, 2, 3}
 b := a
 b[0] = 9
 fmt.Println(a) // [1 2 3]
-→ a và b là hai bản sao độc lập.
+fmt.Println(b) // [9 2 3]
+// → a và b là hai bản sao độc lập.
 ```
 - ***Không*** có vùng nhớ chung ⇒ không phải reference type.
 
@@ -231,23 +232,92 @@ fmt.Println(a) // [1 2 3]
 ## 3.2. Struct
 ***Struct*** (structure) là một `user-defined` data ***type***.
 
-Define một Structure:
+Structs are like classes in other languages, but **without methods** directly attached. They're just collections of fields (data).
+- **without methods**: Struct không bắt buộc phải có methods
+- Muốn có methods thì cần tự định nghĩa
 
-```
+### 3.2.1. Define structure:
+
+```go 
 type StructName struct {
-    field1 fieldType1
-    field2 fieldType2
+    field1 Type1
+    field2 Type2
+}
+
+type Person struct {
+ Name string
+ Age  int
+ City string
 }
 ```
 
 Sau khi `struct` được define, ta có thể khai báo giá trị với syntax:
 
+```go 
+func main() {
+ // Create a Person struct
+ p1 := Person{
+  Name: "Alice",
+  Age:  30,
+  City: "New York",
+ }
+ fmt.Println(p1)      // Output: {Alice 30 New York}
+ fmt.Println(p1.Name) // Access fields using dot notation
+}
 ```
-variable_name := structure_variable_type {value1, value2...value_n}
+or:
+```go
+func main() {
+ // Another way to create a struct
+ p2 := Person{"Bob", 25, "London"} // Order matters here!
+ fmt.Println(p2.Age)
+}
 ```
 Go không support mô hình hướng đối tượng nhưng `structure` gần giống với `class` architecture. Và có thể gọi `Method` (nói ở phần ngay dưới đây) cũng chính là `function`
 
-Ref:
+### 3.2.2. Access and modify
+- Access:
+```go
+fmt.Println(p1.Name) // Access fields using dot notation
+```
+- Modify:
+```
+// Structs can be mutable
+p1.Age = 31
+fmt.Println(p1.Age) // Output: 31
+```
+Bởi vì Struct **lưu trực tiếp** các giá trị (by value), không trỏ đến vùng nhớ khác. Nên có thể modify trực tiếp
+
+### 3.2.3 Add Method to a Struct
+- Methods are functions that operate on a specific type (like a struct). They have a "receiver".
+- Có 2 loại "receiver": **value** receiver (is a copy) & ***pointer*** receiver (modifies the original)
+
+```go 
+type Person struct {
+ Name string
+ Age  int
+}
+
+// This is a method with a value receiver (p is a copy)
+func (p Person) Greet() string {
+ return "Hello, my name is " + p.Name
+}
+
+// This is a method with a pointer receiver (modifies the original Person)
+func (p *Person) HaveBirthday() {
+ p.Age++ // Modifies the original p.Age
+}
+
+func main() {
+ p := Person{"Alice", 30}
+ fmt.Println(p.Greet()) // Output: Hello, my name is Alice
+ 
+ p.HaveBirthday()       // Call the method
+ fmt.Println(p.Age)     // Output: 31 (Age is updated)
+}
+```
+
+### Ref:
 - https://medium.com/@anh.nt094/golang-eb65bfe1a8bb
 
 #### Struct Composition in Go
