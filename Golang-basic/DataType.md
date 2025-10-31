@@ -404,7 +404,7 @@ func BuildSlice(n int) []int {
 
 Khi bạn chạy vòng lặp `for`, các thao tác `append` sẽ diễn ra cực kỳ nhanh chóng vì chúng không cần phải cấp phát lại bộ nhớ cho đến khi đạt đủ `n` phần tử. Điều này giúp loại bỏ hoàn toàn chi phí "ngầm" của việc cấp phát lại, làm cho code của bạn nhanh hơn và hiệu quả hơn về bộ nhớ, đặc biệt là với các slice lớn.
 
-## 4.2. Map
+## 4.2. [Map]([url](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/Map.md))
 ## 4.3. Channel
 ## 4.4. Pointer
 ## 4.5. Function
