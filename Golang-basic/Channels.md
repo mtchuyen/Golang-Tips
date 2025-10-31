@@ -1,4 +1,5 @@
 ## Basic
+Should be read first: (Goroutine)[https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/Goroutine.md] 
 
 ### What are Channels?
 Channels are the Go way to communicate between ***goroutines***. They let goroutines send and receive data safely.
