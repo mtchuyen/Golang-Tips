@@ -10,6 +10,44 @@
 - [Real Life Go Benchmarking](https://www.cloudbees.com/blog/real-life-go-benchmarking/)
 - [Overview of Benchmark Testing in Golang](https://www.geeksforgeeks.org/overview-of-benchmark-testing-in-golang/)
 
+
+## How do loops work in Go? 
+Go only has one loop keyword: ***for***. It's super versatile!
+- No `while` or `do-while`!
+
+```go
+func main() {
+ // Traditional for loop
+ for i := 0; i < 5; i++ {
+  fmt.Println("Count:", i)
+ }
+
+ // "While" loop equivalent
+ j := 0
+ for j < 3 { // Just the condition
+  fmt.Println("While-like:", j)
+  j++
+ }
+ // Infinite loop (break out with `break`)
+ k := 0
+ for { // No condition, just forever
+  fmt.Println("Infinite loop, k:", k)
+  k++
+  if k == 2 {
+   break // Exits the loop
+  }
+ }
+}
+```
+
+ ### Looping over collections (like arrays, slices, maps) with `range`
+```go 
+ colors := []string{"red", "green", "blue"}
+ for index, value := range colors {
+  fmt.Printf("Color at %d is %s\n", index, value)
+ }
+```
+
 ## [Các data Type trong Go](https://github.com/mtchuyen/Golang-Tips/blob/master/Golang-basic/DataType.md)
 
 Golang có các data ***Type***:
