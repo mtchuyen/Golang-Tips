@@ -120,7 +120,8 @@ Các ứng dụng trên thì ta không thể dùng Linked Lists bình thường 
 
 #### Ref:
 
-https://viblo.asia/p/golang-data-structures-and-algorithms-linked-lists-0gdJz07vVz5
+- https://viblo.asia/p/golang-data-structures-and-algorithms-linked-lists-0gdJz07vVz5
+- https://medium.com/@noahblogwriter2025/the-12-data-structures-every-developer-should-master-before-an-interview-a5be06a5c71d
 
 
 
