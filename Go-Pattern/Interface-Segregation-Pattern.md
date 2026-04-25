@@ -1,5 +1,7 @@
 # Interface Segregation Pattern
 
+Dave Cheney talks: **Small interfaces are beautiful**
+
 ---
 
 ## 1. ISP là gì?
@@ -12,6 +14,71 @@
 
 * ❌ Không tạo interface “to, nhiều chức năng”
 * ✅ Tách thành nhiều interface nhỏ, đúng nhu cầu từng client
+
+**Interface Segregation Pattern (ISP) (Nguyên lý Phân tách Interface)** là một nguyên lý trong bộ **SOLID** (5 nguyên lý thiết kế phần mềm hướng đối tượng), nói rằng: c**lient (code sử dụng interface) không nên bị ép phụ thuộc vào những method nó không dùng**. 
+
+Nói đơn giản: **đừng tạo interface quá to**, hãy chia thành nhiều interface nhỏ, đúng nhu cầu từng nơi dùng. 
+
+Trong Golang, nguyên lý này đặc biệt quan trọng vì Go xem interface là **hành vi (behavior)** chứ không phải “hệ phân cấp kiểu dữ liệu” như nhiều ngôn ngữ khác. Làm tốt ISP giúp code dễ test, ít coupling (phụ thuộc chặt), dễ thay đổi, và tránh những “God Interface” (interface khổng lồ làm mọi thứ).
+
+### Hãy tưởng tượng: thuê nhân viên văn phòng.
+
+Một công ty viết hợp đồng thuê nhân viên:
+- Biết pha cà phê
+- Biết kế toán
+- Biết lập trình
+- Biết bảo vệ
+- Biết sửa điều hòa
+
+Mọi nhân viên đều phải làm tất cả.
+
+**Kết quả? Kế toán phải học sửa điều hòa.**
+
+**Đó là vi phạm ISP.**
+
+Công ty tốt hơn chia vai trò:
+- Accountant
+- Programmer
+- Security
+
+Ai làm việc nào ký đúng hợp đồng đó.
+
+Interface cũng vậy. **Đừng bắt cá phải leo cây.**
+
+### Hình ảnh diễn tả
+
+#### Anti-pattern (God Interface)
+```
+                +---------------------+
+Client A ------>| Big Interface        |
+Client B ------>| Read                 |
+Client C ------>| Write                |
+                | Delete               |
+                | Backup               |
+                | Monitor              |
+                +---------------------+
+
+```
+
+Clients bị ép phụ thuộc method không dùng
+
+#### ISP đúng
+
+```
+         +---------+
+ClientA->| Reader  |
+         +---------+
+
+         +---------+
+ClientB->| Writer  |
+         +---------+
+
+         +----------------+
+ClientC->| Reader + Writer |
+         +----------------+
+```
+
+Dependency đúng nhu cầu.
 
 ---
 
@@ -51,7 +118,16 @@ func (r Robot) Sleep() {
 
 ## 3. Cách đúng: Segregate Interface
 
-👉 Tách nhỏ:
+**Quy tắc "Need, not Future"**
+- Thiết kế interface cho nhu cầu hiện tại, không cho tưởng tượng tương lai.
+
+**Khi nào thì tác nhỏ:**
+- Có client nào dùng method này chưa?
+- Nếu bỏ method này interface có gọn hơn không?
+
+Nếu có → tách.
+
+**👉 Tách nhỏ:**
 
 ```go
 type Worker interface {
@@ -67,7 +143,7 @@ type Sleeper interface {
 }
 ```
 
-### Áp dụng:
+**Áp dụng:**
 
 ```go
 type Human struct{}
@@ -89,7 +165,7 @@ func (r Robot) Work() {}
 
 ---
 
-## 4. Tư duy cốt lõi (quan trọng nhất)
+## 4. Tư duy cốt lõi
 
 Bạn cần nhớ 3 ý này:
 
@@ -101,6 +177,9 @@ Bạn cần nhớ 3 ý này:
 
 
 ### 2. Interface càng nhỏ càng tốt (idiomatic Go)
+
+**Interface nhỏ, tập trung một vai trò**
+- Mỗi interface chỉ nên mô tả một nhóm hành vi nhỏ, có mục đích rõ ràng. Nếu interface có quá nhiều method, thường nó đang gánh nhiều trách nhiệm.
 
 Go có pattern nổi tiếng:
 
@@ -219,6 +298,15 @@ func Process(r io.Reader) {
 * Interface nhỏ sẵn rồi
 * Code đơn giản (over-engineering là sai)
 
+
+### Lỗi thường gặp: Over-segregation (tách quá mức)
+
+**Sai**: Khi logic quá đơn giản
+```
+type Opener interface { Open() }
+type Closer interface { Close() }
+type Flusher interface { Flush() }
+```
 ---
 
 ## 8. Checklist để review code
@@ -232,9 +320,9 @@ Khi nhìn interface, hỏi:
 
 ---
 
-# 9. Bài tập áp dụng (24–72h)
+## 9. Bài tập áp dụng (24–72h)
 
-## 🎯 Bài 1 (cực quan trọng)
+### Bài 1 (cực quan trọng)
 
 Refactor code này:
 
@@ -256,7 +344,7 @@ type Notification interface {
 
 ---
 
-## 🎯 Bài 2 (gần thực tế backend)
+### Bài 2 (gần thực tế backend)
 
 Thiết kế interface cho:
 
@@ -273,7 +361,7 @@ Thiết kế interface cho:
 
 ---
 
-# 10. Tóm tắt để nhớ nhanh
+## 10. Tóm tắt để nhớ nhanh
 
 👉 1 câu:
 
