@@ -183,9 +183,191 @@ Output: `Total Expense Per Month $14050`
 
 ### 4. Pattern cho Interface
 
-#### 4.1. [Interface Segregation Pattern](https://github.com/mtchuyen/Golang-Tips/blob/master/Go-Pattern/Interface-Segregation-Pattern.md)
+#### 4.1. [Interface Segregation Principle](https://github.com/mtchuyen/Golang-Tips/blob/master/Go-Pattern/Interface-Segregation-Pattern.md)
+
+#### 4.2. Dependency Inversion Principle (DIP)
+
+High-level module không phụ thuộc vào low-level module — cả hai phụ thuộc vào abstraction
+
+Ví dụ
+```
+type Storage interface {
+    Save(data []byte) error
+}
+
+type Service struct {
+    store Storage
+}
+```
+
+Service không biết Redis, MySQL hay S3
+
+Đây là DIP + interface Go
+
+#### 4.3. Liskov Substitution (LSP)
+👉 Interface define contract → implementation phải “hành xử đúng”
+
+#### 4.4. Composition over Inheritance
+
+Go không có inheritance → dùng interface + struct composition
+
+```
+type Logger interface {
+    Log(msg string)
+}
+
+type Service struct {
+    logger Logger
+}
+```
 
 ---
+
+### 5. Go Interface Idioms
+#### 5.1. “Interface nhỏ là vua” (Small interface)
+Chuẩn Go:
+```
+type Reader interface {
+    Read(p []byte) (n int, err error)
+}
+```
+👉 1 method nhưng dùng khắp hệ sinh thái
+
+#### 5.2. Accept interface, return concrete
+
+**Golden rule:**
+```
+func Process(r io.Reader) {}
+
+func NewService() *Service {
+    return &Service{}
+}
+```
+Vì sao?
+- Input → cần flexibility
+- Output → cần rõ ràng
+
+#### 5.3. Define interface tại nơi sử dụng (consumer side)
+
+**❌ Sai:**
+
+```
+// package storage
+type Storage interface {
+    Save()
+}
+```
+
+**✅ Đúng:**
+
+```
+// package service
+type Storage interface {
+    Save()
+}
+```
+
+👉 Interface thuộc về người dùng, không phải người implement
+
+#### 5.4. Zero value usable (tránh nil interface bug)
+```
+var s Service // usable luôn
+```
+
+**👉 Tránh thiết kế khiến interface bị nil khó kiểm soát**
+
+#### 5.5. Avoid empty interface (interface{} / any) nếu không cần
+
+Chỉ dùng khi:
+- generic data
+- JSON, map, etc.
+
+---
+
+### 6.Các pattern phổ biến dùng interface
+
+#### 6.1. Strategy Pattern (rất hay dùng)
+
+```
+type PaymentStrategy interface {
+    Pay(amount int) error
+}
+type VNPay struct{}
+type Momo struct{}
+```
+
+👉 Swap runtime behavior
+
+#### 6.2. Adapter Pattern
+
+👉 Convert interface A → B
+
+```
+type LegacyLogger struct{}
+
+func (l *LegacyLogger) WriteLog(msg string) {}
+```
+
+Adapter:
+
+```
+type Logger interface {
+    Log(msg string)
+}
+
+type LoggerAdapter struct {
+    legacy *LegacyLogger
+}
+
+func (a *LoggerAdapter) Log(msg string) {
+    a.legacy.WriteLog(msg)
+}
+```
+
+#### 6.3. Decorator Pattern
+
+👉 Wrap thêm behavior
+
+```
+type Handler interface {
+    Handle(req string)
+}
+type LoggingDecorator struct {
+    next Handler
+}
+
+func (d *LoggingDecorator) Handle(req string) {
+    log.Println("before")
+    d.next.Handle(req)
+}
+```
+
+#### 6.4. Mocking / Testability Pattern
+
+👉 Interface để test
+
+```
+type DB interface {
+    Query(q string) error
+}
+type MockDB struct{}
+```
+
+👉 Đây là use-case thực tế nhất của interface
+
+#### 6.5. Functional Options (kết hợp interface nhẹ)
+
+```
+type Option func(*Server)
+
+func WithLogger(l Logger) Option {
+    return func(s *Server) {
+        s.logger = l
+    }
+}
+```
+---
+
 ### Type: đại diện cho kiểu giá trị mà chúng ta sử dụng. 
 
 ***Tác dụng:***
