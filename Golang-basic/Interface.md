@@ -206,6 +206,9 @@ Service không biết Redis, MySQL hay S3
 
 #### 4.3. Liskov Substitution (LSP)
 👉 Interface define contract → implementation phải “hành xử đúng”
+> Subtypes phải có thể thay thế cho base types mà không làm thay đổi tính đúng đắn của chương trình.
+
+👉 Nói đơn giản: Nếu code đang chạy với interface A, bạn thay bằng implementation B 👉 Chương trình vẫn chạy đúng, không bị “hành xử lạ”
 
 #### 4.4. Composition over Inheritance
 
