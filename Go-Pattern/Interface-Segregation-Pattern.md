@@ -361,13 +361,11 @@ Thiết kế interface cho:
 
 ---
 
-## 10. Tóm tắt để nhớ nhanh
+## 10. Tóm tắt
 
 **Interface Segregation** nói rằng **đừng ép code phụ thuộc vào method nó không cần**. Trong Go, điều này mạnh hơn vì **interface mô tả hành vi** chứ không phải kiểu dữ liệu. Mẫu thiết kế đúng là: interface nhỏ, định nghĩa ở nơi sử dụng, dễ mock, ghép lại bằng composition khi cần. Dấu hiệu vi phạm thường là “God Interface”, mock phức tạp, hoặc implement phải viết method rỗng. Hãy nhớ quy tắc **Need, not Future** (thiết kế cho nhu cầu thật, không cho giả định).
 
-👉 1 câu:
-
-> “Chỉ expose đúng những gì client cần — không hơn.”
+👉 1 câu: **Chỉ expose đúng những gì client cần — không hơn.**
 
 👉 3 dấu hiệu sai:
 
