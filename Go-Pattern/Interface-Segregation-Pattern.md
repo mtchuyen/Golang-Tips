@@ -21,7 +21,7 @@ Nói đơn giản: **đừng tạo interface quá to**, hãy chia thành nhiều
 
 Trong Golang, nguyên lý này đặc biệt quan trọng vì Go xem interface là **hành vi (behavior)** chứ không phải “hệ phân cấp kiểu dữ liệu” như nhiều ngôn ngữ khác. Làm tốt ISP giúp code dễ test, ít coupling (phụ thuộc chặt), dễ thay đổi, và tránh những “God Interface” (interface khổng lồ làm mọi thứ).
 
-### Hãy tưởng tượng: thuê nhân viên văn phòng.
+### Ví dụ: thuê nhân viên văn phòng.
 
 Một công ty viết hợp đồng thuê nhân viên:
 - Biết pha cà phê
@@ -45,7 +45,7 @@ Ai làm việc nào ký đúng hợp đồng đó.
 
 Interface cũng vậy. **Đừng bắt cá phải leo cây.**
 
-### Hình ảnh diễn tả
+### Ví dụ
 
 #### Anti-pattern (God Interface)
 ```
