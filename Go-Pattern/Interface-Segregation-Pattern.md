@@ -21,7 +21,7 @@ Nói đơn giản: **đừng tạo interface quá to**, hãy chia thành nhiều
 
 Trong Golang, nguyên lý này đặc biệt quan trọng vì Go xem interface là **hành vi (behavior)** chứ không phải “hệ phân cấp kiểu dữ liệu” như nhiều ngôn ngữ khác. Làm tốt ISP giúp code dễ test, ít coupling (phụ thuộc chặt), dễ thay đổi, và tránh những “God Interface” (interface khổng lồ làm mọi thứ).
 
-### Ví dụ: thuê nhân viên văn phòng.
+### Ví dụ 1: thuê nhân viên văn phòng.
 
 Một công ty viết hợp đồng thuê nhân viên:
 - Biết pha cà phê
@@ -45,12 +45,12 @@ Ai làm việc nào ký đúng hợp đồng đó.
 
 Interface cũng vậy. **Đừng bắt cá phải leo cây.**
 
-### Ví dụ
+### Ví dụ 2: Big Interface
 
 #### Anti-pattern (God Interface)
 ```
                 +---------------------+
-Client A ------>| Big Interface        |
+Client A ------>| **Big Interface**    |
 Client B ------>| Read                 |
 Client C ------>| Write                |
                 | Delete               |
@@ -169,14 +169,14 @@ func (r Robot) Work() {}
 
 Bạn cần nhớ 3 ý này:
 
-### 1. Interface = contract cho CLIENT, không phải cho IMPLEMENTATION
+### 4.1. Interface = contract cho CLIENT, không phải cho IMPLEMENTATION
 
 * Đừng nghĩ: “object này làm được gì?”
 * Hãy nghĩ: “client cần dùng gì?”
 
 
 
-### 2. Interface càng nhỏ càng tốt (idiomatic Go)
+### 4.2. Interface càng nhỏ càng tốt (idiomatic Go)
 
 **Interface nhỏ, tập trung một vai trò**
 - Mỗi interface chỉ nên mô tả một nhóm hành vi nhỏ, có mục đích rõ ràng. Nếu interface có quá nhiều method, thường nó đang gánh nhiều trách nhiệm.
@@ -193,7 +193,7 @@ type Reader interface {
 
 
 
-### 🔹 3. Composition > God Interface
+### 4.3. Composition > God Interface
 
 Thay vì:
 
@@ -320,9 +320,9 @@ Khi nhìn interface, hỏi:
 
 ---
 
-## 9. Bài tập áp dụng (24–72h)
+## 9. Bài tập áp dụng
 
-### Bài 1 (cực quan trọng)
+### Bài 1
 
 Refactor code này:
 
@@ -344,7 +344,7 @@ type Notification interface {
 
 ---
 
-### Bài 2 (gần thực tế backend)
+### Bài 2
 
 Thiết kế interface cho:
 
