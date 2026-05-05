@@ -201,6 +201,96 @@ https://github.com/iwanbk/bcache
 
 https://github.com/viney-shih/go-cache
 
+### 6.1. At a high level:
+
+- Các request được định tuyến thông qua hàm băm nhất quán (Requests are routed through consistent hashing)
+- Dữ liệu được phân mảnh trên các nút (Data is sharded across nodes)
+- Mỗi mảnh có N bản sao (Each shard has N replicas)
+- Các thao tác READ ưu tiên các bản sao cục bộ hoặc gần nhất (Reads prefer local or nearest replicas)
+- Các thao tác WRITE được thực hiện đồng bộ với một số lượng tối thiểu nhất định (Writes are synchronous to a quorum)
+  
+```
+Client
+  |
+  v
++------------------+
+| Request Router   |
++------------------+
+          |
+          v
+   +-------------------+
+   | Consistent Hash   |
+   |       Ring        |
+   +-------------------+
+      /        |        \
+     v         v         v
++---------+ +---------+ +---------+
+| Shard A | | Shard B | | Shard C |
++---------+ +---------+ +---------+
+   |   |       |   |       |   |
+   v   v       v   v       v   v
++----+ +----+ +----+ +----+ +----+ +----+
+| A1 | | A2 | | B1 | | B2 | | C1 | | C2 |
++----+ +----+ +----+ +----+ +----+ +----+
+
+(Read path prefers nearest healthy replica)
+(Write path commits to quorum)
+```
+
+### 6.2. Khi nào dùng Distributed Caching là hiệu quả
+
+```
+Should you build a distributed cache?
+
+Latency SLO < 10 ms?
+  |
+  +-- No  --> Stop. Measure elsewhere.
+  |
+  +-- Yes
+        |
+        Read-heavy workload (>90% reads)?
+          |
+          +-- No  --> Probably not worth it.
+          |
+          +-- Yes
+                |
+                Can tolerate stale reads?
+                  |
+                  +-- No  --> Cache will hurt correctness.
+                  |
+                  +-- Yes
+                        |
+                        Team has strong on-call & ops maturity?
+                          |
+                          +-- No  --> Operational risk too high.
+                          |
+                          +-- Yes --> Justified (with discipline).
+```
+
+Nếu bạn không đáp ứng hầu hết các điều kiện này, lợi ích về hiệu năng sẽ không bù đắp được sự phức tạp.
+
+**Khi nào KHÔNG nên triển khai Distributed Caching:**
+
+Source: [Yash Batra](Building Distributed Caches in Rust: 1000x Faster Performance Than You'd Expect)
+- If you're a small team, stop here.
+- If your QPS is modest, stop here.
+- If your data model changes monthly, stop here.
+- If you don't have clear latency SLOs — or no one gets paged when they're violated — stop here.
+
+
+### 6.3. Sự phức tạp, đánh đổi với Distributed Caching
+**Độ phức tạp vận hành tăng đột ngột:**
+- trách nhiệm về phân phối dữ liệu, cân bằng tải,
+- lỗi cục bộ và hành vi áp suất ngược (backpressure)
+
+**Cache invalidation:**
+- Đọc dữ liệu cũ (đã expire)
+- Bị miss cache làm giảm tính chính xác
+
+**Việc debug trạng thái phân tán rất khó khăn:**
+- Việc tái tạo lỗi thường rất khó
+
+
 ### sharding
 https://github.com/kailask/sharded-kvs
 
