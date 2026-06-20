@@ -27,3 +27,15 @@ https://betterprogramming.pub/what-is-protobuf-and-why-you-should-use-it-14d5264
 
 ### Go gRPC vs REST
 https://helios04.medium.com/go-grpc-vs-rest-2c6a2428edbd
+
+## [The Benchmark](https://medium.com/@maahisoft20/forget-json-these-4-data-formats-made-my-apis-5x-faster-a43a7b3935d6)
+
+```
+Format        | Size     | Serialize  | Deserialize
+------------- | -------- | ---------- | -----------
+JSON          | 1.8 MB   | 142 ms     | 98 ms
+MessagePack   | 1.1 MB   | 61 ms      | 44 ms
+Protobuf      | 680 KB   | 38 ms      | 29 ms
+Avro          | 590 KB   | 35 ms      | 31 ms
+FlatBuffers   | 720 KB   | 28 ms      | ~2 ms *
+```
